@@ -23,7 +23,17 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 }
 ```
 
-### Create Response Model
+### Request
+
+```swift
+Balblair().get("api/v2/items", success: { (result) in
+  print(result)
+})
+```
+
+### With ObjectMapper
+
+#### Create Response Model
 
 ```swift
 struct QiitaResult: Mappable {
@@ -39,7 +49,7 @@ struct QiitaResult: Mappable {
 }
 ```
 
-### Create Request Model
+#### Create Request Model
 
 ```swift
 struct QiitaRequest: ApiRequest {
@@ -51,16 +61,42 @@ struct QiitaRequest: ApiRequest {
 }
 ```
 
-### Request
+#### Request
 
 ```swift
 QiitaRequest().request(progress: { print($0) }, success: { print($0) }, failure: { print($0, $1) })
 ```
 
-### Request with RxSwift
+#### Request with RxSwift
 
 ```swift
 _ = QiitaRequest().response.subscribeNext { print($0) }
+```
+
+### Create customize configuration
+
+```swift
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+  Balblair.defaultConfiguration = Configuration()
+  return true
+}
+
+class Configuration: BalblairConfiguration {
+  let baseUrl = "https://qiita.com/"
+  var headerBuilder: BalblairHeaderBuilder = HeaderBuilder()
+  func apiClientShouldBeginRequest(apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?) -> Bool { return true }
+  func apiClientShouldProgress(apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, progress: NSProgress) -> Bool { return true }
+  func apiClientShouldSuccess(apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, result: AnyObject?) -> ErrorType? { return nil }
+  func apiClientShouldFailure(apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, result: AnyObject?, error: ErrorType) -> Bool { return true }
+}
+
+class HeaderBuilder: BalblairHeaderBuilder {
+  func build() -> [String : String] {
+    return [:]
+  }
+
+}
+
 ```
 
 ## Installation

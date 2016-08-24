@@ -23,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 class Configuration: BalblairConfiguration {
   let baseUrl = "https://qiita.com/"
   var headerBuilder: BalblairHeaderBuilder = HeaderBuilder()
+  func apiClientShouldBeginRequest(apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?) -> Bool { return true }
+  func apiClientShouldProgress(apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, progress: NSProgress) -> Bool { return true }
+  func apiClientShouldSuccess(apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, result: AnyObject?) -> ErrorType? { return nil }
+  func apiClientShouldFailure(apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, result: AnyObject?, error: ErrorType) -> Bool { return true }
 }
 
 class HeaderBuilder: BalblairHeaderBuilder {
