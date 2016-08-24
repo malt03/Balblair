@@ -6,6 +6,8 @@
 [![CocoaPods](https://img.shields.io/cocoapods/v/Balblair.svg?style=flat)](http://cocoapods.org/pods/Balblair)
 ![License](https://img.shields.io/github/license/malt03/Balblair.svg?style=flat)
 
+Balblair is an api client library written in Swift.
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
