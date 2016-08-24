@@ -9,34 +9,40 @@
 Pod::Spec.new do |s|
   s.name             = 'Balblair'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Balblair.'
+  s.summary          = 'Api client with ObjectMapper and RxSwift.'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.description      = <<-DESC
+This pod is api client.
+This is type safe.
+This is easy to use with RxSwift.
+                       DESC
 
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/Balblair'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/malt03/Balblair'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Koji Murata' => 'koji.murata@dena.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/Balblair.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'https://github.com/malt03/Balblair.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'Balblair/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'Balblair' => ['Balblair/Assets/*.png']
-  # }
+  s.subspec 'Core' do |ss|
+    ss.source_files = 'Balblair/Core/Classes/**/*'
+    ss.dependency 'Alamofire', '> 3.4'
+  end
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.subspec 'ObjectMapper' do |ss|
+    ss.source_files = 'Balblair/ObjectMapper/Classes/**/*'
+    ss.dependency 'Balblair/Core'
+    ss.dependency 'ObjectMapper', '> 1.3'
+  end
+
+  s.subspec 'Rx' do |ss|
+    ss.source_files = 'Balblair/Rx/Classes/**/*'
+    ss.dependency 'Balblair/Core'
+    ss.dependency 'Balblair/ObjectMapper'
+    ss.dependency 'RxSwift', '> 2.6'
+  end
 end

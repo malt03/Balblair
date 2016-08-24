@@ -1,24 +1,20 @@
 //
 //  ViewController.swift
-//  Balblair
+//  ApiClient
 //
-//  Created by Koji Murata on 08/25/2016.
+//  Created by Koji Murata on 08/03/2016.
 //  Copyright (c) 2016 Koji Murata. All rights reserved.
 //
 
 import UIKit
+import Balblair
+import RxSwift
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+class ViewController: UIViewController, UIScrollViewDelegate {
+  @IBAction private func push() {
+//    QiitaRequest().request(progress: { print($0) }, success: { print($0) }, failure: { print($0, $1) })
+    _ = QiitaRequest().response.subscribeNext { (result) in
+      print(result.map { $0.title })
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+  }
 }
-
