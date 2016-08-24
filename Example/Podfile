@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Balblair_Example' do
+  pod 'Balblair', :path => '../'
+
+  target 'Balblair_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
