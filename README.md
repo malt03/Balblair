@@ -72,7 +72,7 @@ pod "Balblair"
 
 ## Author
 
-Koji Murata, koji.murata@dena.com
+Koji Murata, malt.koji@gmail.com
 
 ## License
 
