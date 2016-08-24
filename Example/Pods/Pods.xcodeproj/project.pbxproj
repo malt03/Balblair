@@ -192,6 +192,7 @@
 		EA3A48D4E0AFA881E755C50975B11A1A /* ObserverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7ADC1CB5278AB83FA8820935E58671 /* ObserverType.swift */; };
 		EAE5D0A9A59BAEC231AB1379943FEA5D /* CompositeDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5826E58236AF8D6A39E20033BCE2578 /* CompositeDisposable.swift */; };
 		EB41D54ADF892A9615CACCAD479408BA /* RxMutableBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD55CC11243D8002EA051C22538937 /* RxMutableBox.swift */; };
+		ED27DEA41D6DFE530079C8AE /* BalblairHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED27DEA21D6DFE090079C8AE /* BalblairHeader.swift */; };
 		ED35DACE55535B57DE1B86A5D33D36AB /* SubscribeOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749C4F7063402704083E21F987743016 /* SubscribeOn.swift */; };
 		EFE92E8D3813DD26E78E93EEAF6D7E7E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58E4318CF30963BA3FCA357E7FD6ED /* Request.swift */; };
 		F19FFAF7B82F94D606B8D230F4895EA3 /* Observable+StandardSequenceOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FB0B6F6765388D55B4F21B57C4A6D4 /* Observable+StandardSequenceOperators.swift */; };
@@ -471,6 +472,7 @@
 		EA080BDB208E83FB71180E36EE0504E3 /* ShareReplay1WhileConnected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareReplay1WhileConnected.swift; path = RxSwift/Observables/Implementations/ShareReplay1WhileConnected.swift; sourceTree = "<group>"; };
 		EA496CD6ABB7CC6E7F52DD95C5E14CF1 /* OperationQueueScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OperationQueueScheduler.swift; path = RxSwift/Schedulers/OperationQueueScheduler.swift; sourceTree = "<group>"; };
 		EADBB73802D86D48F73B4D00C9DAFAAD /* DisposeBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DisposeBase.swift; path = RxSwift/Disposables/DisposeBase.swift; sourceTree = "<group>"; };
+		ED27DEA21D6DFE090079C8AE /* BalblairHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalblairHeader.swift; sourceTree = "<group>"; };
 		ED6C55015A6D00BB57182DCF5BFBE0FA /* Pods-Balblair_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Balblair_Example.modulemap"; sourceTree = "<group>"; };
 		EE6D68009EB2D2DCCE36DA2F3CC303DD /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = RxSwift/Observables/Implementations/Error.swift; sourceTree = "<group>"; };
 		EEC67F121B15ADD9033923A597E8CBF6 /* DisposeBag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DisposeBag.swift; path = RxSwift/Disposables/DisposeBag.swift; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 			children = (
 				2315E871BE1D4E4095CD7A0299375934 /* Balblair.swift */,
 				410F725974D1DA7F9B14F890906E6D9A /* BalblairConfiguration.swift */,
+				ED27DEA21D6DFE090079C8AE /* BalblairHeader.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1282,6 +1285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED27DEA41D6DFE530079C8AE /* BalblairHeader.swift in Sources */,
 				09E8907E22D66693A53D3CAA2BBE5E1C /* Balblair.swift in Sources */,
 				0A451CA64B86A43190E3AD61A9966C8B /* BalblairConfiguration.swift in Sources */,
 				652BE699707EAC94E53F8F228EBECAF3 /* ApiRequest+RxSwift.swift in Sources */,

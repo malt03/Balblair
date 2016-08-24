@@ -15,8 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    Balblair.defaultConfiguration = Balblair.Configuration(baseUrl: "https://qiita.com/", header: [:])
+    Balblair.defaultConfiguration = Configuration()
     return true
   }
 }
 
+class Configuration: BalblairConfiguration {
+  let baseUrl = "https://qiita.com/"
+  var headerBuilder: BalblairHeaderBuilder = HeaderBuilder()
+}
+
+class HeaderBuilder: BalblairHeaderBuilder {
+  func build() -> [String : String] {
+    return [:]
+  }
+}

@@ -14,7 +14,7 @@ public class Balblair {
   public typealias SuccessCallback = (result: AnyObject?) -> Void
   public typealias FailureCallback = (result: AnyObject?, error: ErrorType) -> Void
   
-  public static var defaultConfiguration = Balblair.Configuration(baseUrl: "http://example.com")
+  public static var defaultConfiguration: BalblairConfiguration = Balblair.Configuration(baseUrl: "http://example.com")
   
   public enum Method {
     case GET
@@ -102,7 +102,7 @@ public class Balblair {
     success: SuccessCallback? = nil,
     failure: FailureCallback? = nil) -> Request
   {
-    let request = Alamofire.request(method.alamofires, configuration.baseUrl + path, parameters: parameters, headers: configuration.header)
+    let request = Alamofire.request(method.alamofires, configuration.baseUrl + path, parameters: parameters, headers: configuration.headerBuilder.build())
     
     if !configuration.apiClientShouldBeginRequest(self, method: method, path: path, parameters: parameters) { return request }
 
