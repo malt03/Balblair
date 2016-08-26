@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Balblair'
-  s.version          = '0.1.1'
+  s.version          = '0.2.0'
   s.summary          = 'Api client with ObjectMapper and RxSwift.'
 
   s.description      = <<-DESC

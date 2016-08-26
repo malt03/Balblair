@@ -15,7 +15,7 @@ struct QiitaRequest: ApiRequest {
 
   let method = Balblair.Method.GET
   let path = "api/v2/items"
-  let parameters = NoParamsModel()
+  let parameters = NoParamsModel.instance
 }
 
 struct QiitaResult: Mappable {

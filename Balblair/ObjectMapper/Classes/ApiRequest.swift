@@ -10,10 +10,12 @@ import Foundation
 import Alamofire
 import ObjectMapper
 
-public struct NoParamsModel: Mappable {
-  public init() {}
+public final class NoParamsModel: Mappable {
+  public static let instance = NoParamsModel()
+
+  private init() {}
   public init?(_ map: Map) {}
-  mutating public func mapping(map: Map) {}
+  public func mapping(map: Map) {}
 }
 
 public protocol ApiRequest {
