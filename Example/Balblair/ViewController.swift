@@ -11,6 +11,7 @@ import Balblair
 import RxSwift
 
 class ViewController: UIViewController, UIScrollViewDelegate {
+  
   @IBAction private func push() {
 //    Balblair().get("api/v2/items", success: { (result) in
 //      print(result)
@@ -18,8 +19,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 //    QiitaRequest().request(progress: { print($0) }, success: { print($0) }, failure: { print($0, $1) })
     
-    _ = QiitaRequest().response.subscribeNext { (result) in
+    QiitaRequest().createTask().success { (result) in
       print(result.map { $0.title })
     }
+    
+//    _ = QiitaRequest().response.subscribeNext { (result) in
+//      print(result.map { $0.title })
+//    }
   }
 }
