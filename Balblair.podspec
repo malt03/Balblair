@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 This pod is api client.
 This is type safe.
-This is easy to use with RxSwift or SwiftTask.
+This is easy to use with ObjectMapper and RxSwift or SwiftTask.
                        DESC
 
   s.description      = <<-DESC
