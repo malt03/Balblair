@@ -67,6 +67,12 @@ struct QiitaRequest: ApiRequest {
 QiitaRequest().request(progress: { print($0) }, success: { print($0) }, failure: { print($0, $1) })
 ```
 
+#### Request with SwiftTask
+
+```swift
+QiitaRequest().createTask().success { print($0) }
+```
+
 #### Request with RxSwift
 
 ```swift

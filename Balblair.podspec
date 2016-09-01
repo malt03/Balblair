@@ -9,12 +9,12 @@
 Pod::Spec.new do |s|
   s.name             = 'Balblair'
   s.version          = '0.2.0'
-  s.summary          = 'Api client with ObjectMapper and RxSwift.'
+  s.summary          = 'Api client with ObjectMapper and RxSwift or SwiftTask.'
 
   s.description      = <<-DESC
 This pod is api client.
 This is type safe.
-This is easy to use with RxSwift.
+This is easy to use with RxSwift or SwiftTask.
                        DESC
 
   s.description      = <<-DESC
@@ -44,5 +44,12 @@ TODO: Add long description of the pod here.
     ss.dependency 'Balblair/Core'
     ss.dependency 'Balblair/ObjectMapper'
     ss.dependency 'RxSwift', '> 2.6'
+  end
+
+  s.subspec 'SwiftTask' do |ss|
+    ss.source_files = 'Balblair/SwiftTask/Classes/**/*'
+    ss.dependency 'Balblair/Core'
+    ss.dependency 'Balblair/ObjectMapper'
+    ss.dependency 'SwiftTask', '> 5.0'
   end
 end

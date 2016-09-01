@@ -1,7 +1,7 @@
 {
   "name": "Balblair",
-  "version": "0.1.0",
-  "summary": "Api client with ObjectMapper and RxSwift.",
+  "version": "0.2.0",
+  "summary": "Api client with ObjectMapper and RxSwift or SwiftTask.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/malt03/Balblair",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/malt03/Balblair.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "8.0"
@@ -52,6 +52,21 @@
         ],
         "RxSwift": [
           "> 2.6"
+        ]
+      }
+    },
+    {
+      "name": "SwiftTask",
+      "source_files": "Balblair/SwiftTask/Classes/**/*",
+      "dependencies": {
+        "Balblair/Core": [
+
+        ],
+        "Balblair/ObjectMapper": [
+
+        ],
+        "SwiftTask": [
+          "> 5.0"
         ]
       }
     }

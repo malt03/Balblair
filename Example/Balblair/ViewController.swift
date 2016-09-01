@@ -11,15 +11,23 @@ import Balblair
 import RxSwift
 
 class ViewController: UIViewController, UIScrollViewDelegate {
+  
   @IBAction private func push() {
 //    Balblair().get("api/v2/items", success: { (result) in
 //      print(result)
 //    })
 
+    // with ObjectMapper
 //    QiitaRequest().request(progress: { print($0) }, success: { print($0) }, failure: { print($0, $1) })
     
-    _ = QiitaRequest().response.subscribeNext { (result) in
+    // with ObjectMapper and SwiftTask
+    QiitaRequest().createTask().success { (result) in
       print(result.map { $0.title })
     }
+    
+    // with ObjectMapper and RxSwift
+//    _ = QiitaRequest().response.subscribeNext { (result) in
+//      print(result.map { $0.title })
+//    }
   }
 }
