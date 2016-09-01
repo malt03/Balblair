@@ -17,12 +17,15 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 //      print(result)
 //    })
 
+    // with ObjectMapper
 //    QiitaRequest().request(progress: { print($0) }, success: { print($0) }, failure: { print($0, $1) })
     
+    // with ObjectMapper and SwiftTask
     QiitaRequest().createTask().success { (result) in
       print(result.map { $0.title })
     }
     
+    // with ObjectMapper and RxSwift
 //    _ = QiitaRequest().response.subscribeNext { (result) in
 //      print(result.map { $0.title })
 //    }
