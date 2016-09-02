@@ -17,10 +17,6 @@ This is type safe.
 This is easy to use with ObjectMapper and RxSwift or SwiftTask.
                        DESC
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
   s.homepage         = 'https://github.com/malt03/Balblair'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Koji Murata' => 'malt.koji@gmail.com' }
