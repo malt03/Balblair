@@ -200,6 +200,7 @@
 		E9C37CBEBA6FE68F4B3D007E4751C7FF /* ToArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB8A86836C77A31CE6F9C74D718223F /* ToArray.swift */; };
 		EAF6239C10B148E749B556ABEB0082D0 /* Reduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BCEB7AD83AB3BD8EBFE44844DF3A85 /* Reduce.swift */; };
 		EC5102D671F5067AB542E1D412970122 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9916154347DA8BA2E0900DAA614BFC43 /* Disposable.swift */; };
+		ED072E441D7ED99800D973A6 /* Balblair+SwiftTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED072E421D7ED99200D973A6 /* Balblair+SwiftTask.swift */; };
 		EE3292E84F7138DD3443DE5D644C096E /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DB1D9E1FC6853DB82EF130A9407F66 /* ToJSON.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EED7E2024C5BB0CE1EBE24DEA4F6ED8F /* SwiftTask-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C45C47586A9F150C1A526DE0F789E84 /* SwiftTask-dummy.m */; };
 		EF9CED541799B41B5397D777AEBF5E51 /* SubscribeOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FC6D2072CF10DC7A81B9BF6844F5A1 /* SubscribeOn.swift */; };
@@ -511,6 +512,7 @@
 		EA838659F8811A62A91601D225209A59 /* VirtualTimeScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VirtualTimeScheduler.swift; path = RxSwift/Schedulers/VirtualTimeScheduler.swift; sourceTree = "<group>"; };
 		EAD72DAC208E7B1F1D9387137FBBF480 /* Pods_Balblair_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Balblair_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4DD8FFDF7A906E8FBFF296DC1012E3 /* InfiniteSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InfiniteSequence.swift; path = RxSwift/DataStructures/InfiniteSequence.swift; sourceTree = "<group>"; };
+		ED072E421D7ED99200D973A6 /* Balblair+SwiftTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Balblair+SwiftTask.swift"; sourceTree = "<group>"; };
 		ED6C55015A6D00BB57182DCF5BFBE0FA /* Pods-Balblair_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Balblair_Example.modulemap"; sourceTree = "<group>"; };
 		EE29C3DB3975FBF0678956A4CF90FB10 /* AddRef.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AddRef.swift; path = RxSwift/Observables/Implementations/AddRef.swift; sourceTree = "<group>"; };
 		EF2140EFA1133246BB36E40CEA7F939F /* BehaviorSubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BehaviorSubject.swift; path = RxSwift/Subjects/BehaviorSubject.swift; sourceTree = "<group>"; };
@@ -1030,6 +1032,7 @@
 			isa = PBXGroup;
 			children = (
 				21E64E371C663199E69718F3E0E071CA /* ApiRequest+SwiftTask.swift */,
+				ED072E421D7ED99200D973A6 /* Balblair+SwiftTask.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1590,6 +1593,7 @@
 				8E7EF48379086CE172A7B219F0328E73 /* ApiRequest+RxSwift.swift in Sources */,
 				E7F72935D3CCD98BFDE326CDFA494EE4 /* ApiRequest+SwiftTask.swift in Sources */,
 				56CEE0876CD44796EE1FF19EB83ED416 /* ApiRequest.swift in Sources */,
+				ED072E441D7ED99800D973A6 /* Balblair+SwiftTask.swift in Sources */,
 				3B167F9DA654DB3FA09A7769618E24BE /* Balblair-dummy.m in Sources */,
 				266774BD0C0069122488A583A6E13E46 /* Balblair.swift in Sources */,
 				74AEA4C922DDD35C1B9A93CB48AD16E1 /* BalblairConfiguration.swift in Sources */,

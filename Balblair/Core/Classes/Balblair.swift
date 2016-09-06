@@ -94,7 +94,32 @@ public class Balblair {
     request(.DELETE, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
   }
   
-  public func request(
+  public func upload(
+    method: Method = .POST,
+    path: String,
+    constructingBody: ((MultipartFormData) -> Void),
+    progress: ProgressCallback? = nil,
+    success: SuccessCallback? = nil,
+    failure: FailureCallback? = nil,
+    encodingCompletion: ((request: Request) -> Void)? = nil)
+  {
+    Alamofire.upload(
+      method.alamofires,
+      configuration.baseUrl + path,
+      headers: configuration.headerBuilder.build(),
+      multipartFormData: constructingBody,
+      encodingCompletion: { (encodingResult) in
+        switch encodingResult {
+        case .Success(request: let request, streamingFromDisk: _, streamFileURL: _):
+          encodingCompletion?(request: request)
+          self.run(request, method: method, path: path, parameters: nil, progress: progress, success: success, failure: failure)
+        case .Failure(let error):
+          self.failure(method, path: path, parameters: nil, result: nil, error: error, handler: failure)
+        }
+    })
+  }
+  
+  internal func request(
     method: Method,
     path: String,
     parameters: [String: AnyObject]? = nil,
@@ -103,9 +128,21 @@ public class Balblair {
     failure: FailureCallback? = nil) -> Request
   {
     let request = Alamofire.request(method.alamofires, configuration.baseUrl + path, parameters: parameters, headers: configuration.headerBuilder.build())
+    run(request, method: method, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
+    return request
+  }
+  
+  private func run(
+    request: Request,
+    method: Method,
+    path: String,
+    parameters: [String: AnyObject]?,
+    progress: ProgressCallback?,
+    success: SuccessCallback?,
+    failure: FailureCallback?)
+  {
+    if !configuration.apiClientShouldBeginRequest(self, method: method, path: path, parameters: parameters) { return }
     
-    if !configuration.apiClientShouldBeginRequest(self, method: method, path: path, parameters: parameters) { return request }
-
     request.progress { (_, totalBytesWritten, totalBytesExpectedToWrite) in
       let p = NSProgress(totalUnitCount: totalBytesExpectedToWrite)
       p.completedUnitCount = totalBytesWritten
@@ -118,7 +155,6 @@ public class Balblair {
       }
       success?(result: response.result.value)
     }
-    return request
   }
   
   private func progress(method: Method, path: String, parameters: [String: AnyObject]?, progress: NSProgress, handler: ProgressCallback?) {
