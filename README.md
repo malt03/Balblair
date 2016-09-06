@@ -73,12 +73,6 @@ QiitaRequest().request(progress: { print($0) }, success: { print($0) }, failure:
 QiitaRequest().createTask().success { print($0) }
 ```
 
-#### Request with RxSwift
-
-```swift
-_ = QiitaRequest().response.subscribeNext { print($0) }
-```
-
 ### Create customize configuration
 
 ```swift
