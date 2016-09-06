@@ -8,7 +8,6 @@
 
 import UIKit
 import Balblair
-import RxSwift
 
 class ViewController: UIViewController, UIScrollViewDelegate {
   
@@ -24,10 +23,5 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     QiitaRequest().createTask().success { (result) in
       print(result.map { $0.title })
     }
-    
-    // with ObjectMapper and RxSwift
-//    _ = QiitaRequest().response.subscribeNext { (result) in
-//      print(result.map { $0.title })
-//    }
   }
 }

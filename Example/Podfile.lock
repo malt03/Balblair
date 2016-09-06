@@ -1,25 +1,19 @@
 PODS:
   - Alamofire (3.4.1)
-  - Balblair (0.2.0):
-    - Balblair/Core (= 0.2.0)
-    - Balblair/ObjectMapper (= 0.2.0)
-    - Balblair/Rx (= 0.2.0)
-    - Balblair/SwiftTask (= 0.2.0)
-  - Balblair/Core (0.2.0):
+  - Balblair (0.3.0):
+    - Balblair/Core (= 0.3.0)
+    - Balblair/ObjectMapper (= 0.3.0)
+    - Balblair/SwiftTask (= 0.3.0)
+  - Balblair/Core (0.3.0):
     - Alamofire (> 3.4)
-  - Balblair/ObjectMapper (0.2.0):
+  - Balblair/ObjectMapper (0.3.0):
     - Balblair/Core
     - ObjectMapper (> 1.3)
-  - Balblair/Rx (0.2.0):
-    - Balblair/Core
-    - Balblair/ObjectMapper
-    - RxSwift (> 2.6)
-  - Balblair/SwiftTask (0.2.0):
+  - Balblair/SwiftTask (0.3.0):
     - Balblair/Core
     - Balblair/ObjectMapper
     - SwiftTask (> 5.0)
   - ObjectMapper (1.4.0)
-  - RxSwift (2.6.0)
   - SwiftTask (5.0.0)
 
 DEPENDENCIES:
@@ -31,9 +25,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  Balblair: 85d096d709940f5ef1099f1a505085094f371736
+  Balblair: d6ad7230f2f1ab43b0b191de872dc13cf405694c
   ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
-  RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
   SwiftTask: 7fcd92f8ac16876e82c0e4ced0cea7e028456b6b
 
 PODFILE CHECKSUM: 5be833434c616f28e6c5f177f7eb718a828fb2bd

@@ -20,6 +20,7 @@ public final class NoParamsModel: Mappable {
 
 public protocol ApiRequest {
   associatedtype ResultType
+  associatedtype ErrorModelType: ErrorModelProtocol = DefaultErrorModel
   associatedtype ParametersType
   
   var method: Balblair.Method { get }
@@ -31,19 +32,17 @@ extension ApiRequest where ResultType: Mappable, ParametersType: Mappable {
   public func request(progress
     progress: Balblair.ProgressCallback? = nil,
     success: ((result: ResultType) -> Void)? = nil,
-    failure: Balblair.FailureCallback? = nil) -> Request
+    failure: ((errorModel: ErrorModelType) -> Void)? = nil) -> Request
   {
     return Balblair().request(method, path: path, parameters: parameters.toJSON(), progress: progress, success: { (result) in
       guard let object = Mapper<ResultType>().map(result) else {
-        let error = NSError(domain: "malt.balblair", code: -1, userInfo: [
-          NSLocalizedDescriptionKey: NSLocalizedString("Parse error", comment: ""),
-          NSLocalizedFailureReasonErrorKey: NSLocalizedString("Parse error", comment: ""),
-          ])
-        failure?(result: result, error: error)
+        failure?(errorModel: ErrorModelType.create(BalblairError.ParseError, result: result))
         return
       }
       success?(result: object)
-      }, failure: failure)
+    }, failure: { (result, error) in
+      failure?(errorModel: ErrorModelType.create(error, result: result))
+    })
   }
 }
 
@@ -51,19 +50,17 @@ extension ApiRequest where ResultType: _ArrayType, ResultType.Element: Mappable,
   public func request(progress
     progress: Balblair.ProgressCallback? = nil,
     success: ((result: ResultType) -> Void)? = nil,
-    failure: Balblair.FailureCallback? = nil) -> Request
+    failure: ((errorModel: ErrorModelType) -> Void)? = nil) -> Request
   {
     return Balblair().request(method, path: path, parameters: parameters.toJSON(), progress: progress, success: { (result) in
       guard let object = Mapper<ResultType.Element>().mapArray(result) as? ResultType else {
-        let error = NSError(domain: "malt.balblair", code: -1, userInfo: [
-          NSLocalizedDescriptionKey: NSLocalizedString("Parse error", comment: ""),
-          NSLocalizedFailureReasonErrorKey: NSLocalizedString("Parse error", comment: ""),
-          ])
-        failure?(result: result, error: error)
+        failure?(errorModel: ErrorModelType.create(BalblairError.ParseError, result: result))
         return
       }
       success?(result: object)
-      }, failure: failure)
+    }, failure: { (result, error) in
+      failure?(errorModel: ErrorModelType.create(error, result: result))
+    })
   }
 }
 
@@ -71,19 +68,17 @@ extension ApiRequest where ResultType: Mappable, ParametersType == [String: AnyO
   public func request(progress
     progress: Balblair.ProgressCallback? = nil,
     success: ((result: ResultType) -> Void)? = nil,
-    failure: Balblair.FailureCallback? = nil) -> Request
+    failure: ((errorModel: ErrorModelType) -> Void)? = nil) -> Request
   {
     return Balblair().request(method, path: path, parameters: parameters, progress: progress, success: { (result) in
       guard let object = Mapper<ResultType>().map(result) else {
-        let error = NSError(domain: "malt.balblair", code: -1, userInfo: [
-          NSLocalizedDescriptionKey: NSLocalizedString("Parse error", comment: ""),
-          NSLocalizedFailureReasonErrorKey: NSLocalizedString("Parse error", comment: ""),
-          ])
-        failure?(result: result, error: error)
+        failure?(errorModel: ErrorModelType.create(BalblairError.ParseError, result: result))
         return
       }
       success?(result: object)
-      }, failure: failure)
+    }, failure: { (result, error) in
+      failure?(errorModel: ErrorModelType.create(error, result: result))
+    })
   }
 }
 
@@ -91,18 +86,16 @@ extension ApiRequest where ResultType: _ArrayType, ResultType.Element: Mappable,
   public func request(progress
     progress: Balblair.ProgressCallback? = nil,
     success: ((result: ResultType) -> Void)? = nil,
-    failure: Balblair.FailureCallback? = nil) -> Request
+    failure: ((errorModel: ErrorModelType) -> Void)? = nil) -> Request
   {
     return Balblair().request(method, path: path, parameters: parameters, progress: progress, success: { (result) in
       guard let object = Mapper<ResultType.Element>().mapArray(result) as? ResultType else {
-        let error = NSError(domain: "malt.balblair", code: -1, userInfo: [
-          NSLocalizedDescriptionKey: NSLocalizedString("Parse error", comment: ""),
-          NSLocalizedFailureReasonErrorKey: NSLocalizedString("Parse error", comment: ""),
-          ])
-        failure?(result: result, error: error)
+        failure?(errorModel: ErrorModelType.create(BalblairError.ParseError, result: result))
         return
       }
       success?(result: object)
-      }, failure: failure)
+    }, failure: { (result, error) in
+      failure?(errorModel: ErrorModelType.create(error, result: result))
+    })
   }
 }
