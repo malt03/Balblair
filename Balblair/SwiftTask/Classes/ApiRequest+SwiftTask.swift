@@ -54,3 +54,7 @@ extension ApiRequest where ResultType: _ArrayType, ResultType.Element: Mappable,
     }
   }
 }
+
+extension ApiRequest {
+  public typealias TaskType = Task<NSProgress, ResultType, ErrorModelType>
+}
