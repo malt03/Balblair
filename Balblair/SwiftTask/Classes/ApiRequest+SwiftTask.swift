@@ -12,7 +12,7 @@ import SwiftTask
 import ObjectMapper
 
 extension ApiRequest where ResultType: Mappable, ParametersType: Mappable {
-  public func createTask(_ immediately: Bool = true) -> Task<Progress, ResultType, ErrorModelType> {
+  public func createTask(immediately: Bool = true) -> Task<Progress, ResultType, ErrorModelType> {
     return Task<Progress, ResultType, ErrorModelType>(paused: !immediately) { (progress, fulfill, reject, configure) in
       let request = self.request(progress: progress, success: fulfill, failure: reject)
       configure.cancel = {
@@ -23,7 +23,7 @@ extension ApiRequest where ResultType: Mappable, ParametersType: Mappable {
 }
 
 extension ApiRequest where ResultType: _ArrayProtocol, ResultType.Element: Mappable, ParametersType: Mappable {
-  public func createTask(_ immediately: Bool = true) -> Task<Progress, ResultType, ErrorModelType> {
+  public func createTask(immediately: Bool = true) -> Task<Progress, ResultType, ErrorModelType> {
     return Task<Progress, ResultType, ErrorModelType>(paused: !immediately) { (progress, fulfill, reject, configure) in
       let request = self.request(progress: progress, success: fulfill, failure: reject)
       configure.cancel = {
@@ -34,7 +34,7 @@ extension ApiRequest where ResultType: _ArrayProtocol, ResultType.Element: Mappa
 }
 
 extension ApiRequest where ResultType: Mappable, ParametersType == [String: Any] {
-  public func createTask(_ immediately: Bool = true) -> Task<Progress, ResultType, ErrorModelType> {
+  public func createTask(immediately: Bool = true) -> Task<Progress, ResultType, ErrorModelType> {
     return Task<Progress, ResultType, ErrorModelType>(paused: !immediately) { (progress, fulfill, reject, configure) in
       let request = self.request(progress: progress, success: fulfill, failure: reject)
       configure.cancel = {
@@ -45,7 +45,7 @@ extension ApiRequest where ResultType: Mappable, ParametersType == [String: Any]
 }
 
 extension ApiRequest where ResultType: _ArrayProtocol, ResultType.Element: Mappable, ParametersType == [String: Any] {
-  public func createTask(_ immediately: Bool = true) -> Task<Progress, ResultType, ErrorModelType> {
+  public func createTask(immediately: Bool = true) -> Task<Progress, ResultType, ErrorModelType> {
     return Task<Progress, ResultType, ErrorModelType>(paused: !immediately) { (progress, fulfill, reject, configure) in
       let request = self.request(progress: progress, success: fulfill, failure: reject)
       configure.cancel = {

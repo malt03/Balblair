@@ -33,14 +33,14 @@ extension ApiRequest where ResultType: Mappable, ParametersType: Mappable {
     success: ((_ result: ResultType) -> Void)? = nil,
     failure: ((_ errorModel: ErrorModelType) -> Void)? = nil) -> DataRequest
   {
-    return Balblair().request(method, path: path, parameters: parameters.toJSON(), progress: progress, success: { (result) in
+    return Balblair().request(method: method, path: path, parameters: parameters.toJSON(), progress: progress, success: { (result) in
       guard let object = Mapper<ResultType>().map(JSONObject: result) else {
-        failure?(ErrorModelType.create(BalblairError.parseError, result: result))
+        failure?(ErrorModelType.create(error: BalblairError.parseError, result: result))
         return
       }
       success?(object)
     }, failure: { (result, error) in
-      failure?(ErrorModelType.create(error, result: result))
+      failure?(ErrorModelType.create(error: error, result: result))
     })
   }
 }
@@ -50,14 +50,14 @@ extension ApiRequest where ResultType: _ArrayProtocol, ResultType.Element: Mappa
     success: ((_ result: ResultType) -> Void)? = nil,
     failure: ((_ errorModel: ErrorModelType) -> Void)? = nil) -> Request
   {
-    return Balblair().request(method, path: path, parameters: parameters.toJSON(), progress: progress, success: { (result) in
+    return Balblair().request(method: method, path: path, parameters: parameters.toJSON(), progress: progress, success: { (result) in
       guard let object = Mapper<ResultType.Element>().mapArray(JSONObject: result) as? ResultType else {
-        failure?(ErrorModelType.create(BalblairError.parseError, result: result))
+        failure?(ErrorModelType.create(error: BalblairError.parseError, result: result))
         return
       }
       success?(object)
     }, failure: { (result, error) in
-      failure?(ErrorModelType.create(error, result: result))
+      failure?(ErrorModelType.create(error: error, result: result))
     })
   }
 }
@@ -67,14 +67,14 @@ extension ApiRequest where ResultType: Mappable, ParametersType == [String: Any]
     success: ((_ result: ResultType) -> Void)? = nil,
     failure: ((_ errorModel: ErrorModelType) -> Void)? = nil) -> Request
   {
-    return Balblair().request(method, path: path, parameters: parameters, progress: progress, success: { (result) in
+    return Balblair().request(method: method, path: path, parameters: parameters, progress: progress, success: { (result) in
       guard let object = Mapper<ResultType>().map(JSONObject: result) else {
-        failure?(ErrorModelType.create(BalblairError.parseError, result: result))
+        failure?(ErrorModelType.create(error: BalblairError.parseError, result: result))
         return
       }
       success?(object)
     }, failure: { (result, error) in
-      failure?(ErrorModelType.create(error, result: result))
+      failure?(ErrorModelType.create(error: error, result: result))
     })
   }
 }
@@ -84,14 +84,14 @@ extension ApiRequest where ResultType: _ArrayProtocol, ResultType.Element: Mappa
     success: ((_ result: ResultType) -> Void)? = nil,
     failure: ((_ errorModel: ErrorModelType) -> Void)? = nil) -> Request
   {
-    return Balblair().request(method, path: path, parameters: parameters, progress: progress, success: { (result) in
+    return Balblair().request(method: method, path: path, parameters: parameters, progress: progress, success: { (result) in
       guard let object = Mapper<ResultType.Element>().mapArray(JSONObject: result) as? ResultType else {
-        failure?(ErrorModelType.create(BalblairError.parseError, result: result))
+        failure?(ErrorModelType.create(error: BalblairError.parseError, result: result))
         return
       }
       success?(object)
     }, failure: { (result, error) in
-      failure?(ErrorModelType.create(error, result: result))
+      failure?(ErrorModelType.create(error: error, result: result))
     })
   }
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol ErrorModelProtocol {
-  static func create(_ error: Error, result: Any?) -> Self
+  static func create(error: Error, result: Any?) -> Self
 }
 
 public enum BalblairError: Error {
@@ -20,7 +20,7 @@ public enum BalblairError: Error {
 public struct DefaultErrorModel: ErrorModelProtocol {
   public var error: Error
   public var result: Any?
-  public static func create(_ error: Error, result: Any?) -> DefaultErrorModel {
+  public static func create(error: Error, result: Any?) -> DefaultErrorModel {
     return DefaultErrorModel(error: error, result: result)
   }
 }

@@ -10,45 +10,45 @@ import Alamofire
 import SwiftTask
 
 extension Balblair {
-  public func createGetTask(_ path: String, parameters: [String: Any]? = nil, immediately: Bool = true) -> Task<Progress, Any?, Error> {
+  public func createGetTask(path: String, parameters: [String: Any]? = nil, immediately: Bool = true) -> Task<Progress, Any?, Error> {
     return Task<Progress, Any?, Error>(paused: !immediately) { (progress, fulfill, reject, configure) in
-      self.get(path, parameters: parameters, progress: progress, success: fulfill, failure: { reject($1) })
+      self.get(path: path, parameters: parameters, progress: progress, success: fulfill, failure: { reject($1) })
     }
   }
   
-  public func createPostTask(_ path: String, parameters: [String: Any]? = nil, immediately: Bool = true) -> Task<Progress, Any?, Error> {
+  public func createPostTask(path: String, parameters: [String: Any]? = nil, immediately: Bool = true) -> Task<Progress, Any?, Error> {
     return Task<Progress, Any?, Error>(paused: !immediately) { (progress, fulfill, reject, configure) in
-      self.post(path, parameters: parameters, progress: progress, success: fulfill, failure: { reject($1) })
+      self.post(path: path, parameters: parameters, progress: progress, success: fulfill, failure: { reject($1) })
     }
   }
   
-  public func createPutTask(_ path: String, parameters: [String: Any]? = nil, immediately: Bool = true) -> Task<Progress, Any?, Error> {
+  public func createPutTask(path: String, parameters: [String: Any]? = nil, immediately: Bool = true) -> Task<Progress, Any?, Error> {
     return Task<Progress, Any?, Error>(paused: !immediately) { (progress, fulfill, reject, configure) in
-      self.put(path, parameters: parameters, progress: progress, success: fulfill, failure: { reject($1) })
+      self.put(path: path, parameters: parameters, progress: progress, success: fulfill, failure: { reject($1) })
     }
   }
   
-  public func createPatchTask(_ path: String, parameters: [String: Any]? = nil, immediately: Bool = true) -> Task<Progress, Any?, Error> {
+  public func createPatchTask(path: String, parameters: [String: Any]? = nil, immediately: Bool = true) -> Task<Progress, Any?, Error> {
     return Task<Progress, Any?, Error>(paused: !immediately) { (progress, fulfill, reject, configure) in
-      self.patch(path, parameters: parameters, progress: progress, success: fulfill, failure: { reject($1) })
+      self.patch(path: path, parameters: parameters, progress: progress, success: fulfill, failure: { reject($1) })
     }
   }
   
-  public func createDeleteTask(_ path: String, parameters: [String: Any]? = nil, immediately: Bool = true) -> Task<Progress, Any?, Error> {
+  public func createDeleteTask(path: String, parameters: [String: Any]? = nil, immediately: Bool = true) -> Task<Progress, Any?, Error> {
     return Task<Progress, Any?, Error>(paused: !immediately) { (progress, fulfill, reject, configure) in
-      self.delete(path, parameters: parameters, progress: progress, success: fulfill, failure: { reject($1) })
+      self.delete(path: path, parameters: parameters, progress: progress, success: fulfill, failure: { reject($1) })
     }
   }
   
   public func createUploadTask(
-    _ method: Method = .post,
+    method: Method = .post,
     path: String,
     constructingBody: @escaping ((MultipartFormData) -> Void),
     immediately: Bool = true) -> Task<Progress, Any?, Error>
   {
     return Task<Progress, Any?, Error>(paused: !immediately) { (progress, fulfill, reject, configure) in
       var request: Request?
-      self.upload(method, path: path, constructingBody: constructingBody, progress: progress, success: fulfill, failure: { reject($1) }, encodingCompletion: { (r) in
+      self.upload(method: method, path: path, constructingBody: constructingBody, progress: progress, success: fulfill, failure: { reject($1) }, encodingCompletion: { (r) in
         request = r
       })
       configure.cancel = {
