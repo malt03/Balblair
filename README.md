@@ -106,7 +106,7 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'SwiftTask', git: 'https://github.com/ReactKit/SwiftTask.git', branch: 'swift/3.0'
-pod "Balblair"
+pod "Balblair", git: 'https://github.com/malt03/Balblair.git', tag: '0.5.0'
 ```
 
 ## Author
