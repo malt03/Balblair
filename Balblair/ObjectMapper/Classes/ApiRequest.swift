@@ -29,6 +29,7 @@ public protocol ApiRequest {
 }
 
 extension ApiRequest where ResultType: Mappable, ParametersType: Mappable {
+  @discardableResult
   public func request(progress: Balblair.ProgressCallback? = nil,
     success: ((_ result: ResultType) -> Void)? = nil,
     failure: ((_ errorModel: ErrorModelType) -> Void)? = nil) -> DataRequest
@@ -46,6 +47,7 @@ extension ApiRequest where ResultType: Mappable, ParametersType: Mappable {
 }
 
 extension ApiRequest where ResultType: _ArrayProtocol, ResultType.Element: Mappable, ParametersType: Mappable {
+  @discardableResult
   public func request(progress: Balblair.ProgressCallback? = nil,
     success: ((_ result: ResultType) -> Void)? = nil,
     failure: ((_ errorModel: ErrorModelType) -> Void)? = nil) -> Request
@@ -63,6 +65,7 @@ extension ApiRequest where ResultType: _ArrayProtocol, ResultType.Element: Mappa
 }
 
 extension ApiRequest where ResultType: Mappable, ParametersType == [String: Any] {
+  @discardableResult
   public func request(progress: Balblair.ProgressCallback? = nil,
     success: ((_ result: ResultType) -> Void)? = nil,
     failure: ((_ errorModel: ErrorModelType) -> Void)? = nil) -> Request
@@ -80,6 +83,7 @@ extension ApiRequest where ResultType: Mappable, ParametersType == [String: Any]
 }
 
 extension ApiRequest where ResultType: _ArrayProtocol, ResultType.Element: Mappable, ParametersType == [String: Any] {
+  @discardableResult
   public func request(progress: Balblair.ProgressCallback? = nil,
     success: ((_ result: ResultType) -> Void)? = nil,
     failure: ((_ errorModel: ErrorModelType) -> Void)? = nil) -> Request

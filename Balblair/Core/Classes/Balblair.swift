@@ -120,6 +120,7 @@ open class Balblair {
     )
   }
   
+  @discardableResult
   internal func request(
     method: Method,
     path: String,
