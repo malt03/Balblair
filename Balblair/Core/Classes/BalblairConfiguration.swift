@@ -12,22 +12,22 @@ public protocol BalblairConfiguration {
   var baseUrl: String { get }
   var headerBuilder: BalblairHeaderBuilder { get }
   
-  func apiClientShouldBeginRequest(apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?) -> Bool
-  func apiClientShouldProgress(apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, progress: NSProgress) -> Bool
-  func apiClientShouldSuccess(apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, result: AnyObject?) -> ErrorType?
-  func apiClientShouldFailure(apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, result: AnyObject?, error: ErrorType) -> Bool
+  func apiClientShouldBeginRequest(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?) -> Bool
+  func apiClientShouldProgress(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, progress: Progress) -> Bool
+  func apiClientShouldSuccess(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, result: Any?) -> Error?
+  func apiClientShouldFailure(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, result: Any?, error: Error) -> Bool
 }
 
 extension BalblairConfiguration {
-  public func apiClientShouldBeginRequest(apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?) -> Bool { return true }
-  public func apiClientShouldProgress(apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, progress: NSProgress) -> Bool { return true }
-  public func apiClientShouldSuccess(apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, result: AnyObject?) -> ErrorType? { return nil }
-  public func apiClientShouldFailure(apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, result: AnyObject?, error: ErrorType) -> Bool { return true }
+  public func apiClientShouldBeginRequest(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?) -> Bool { return true }
+  public func apiClientShouldProgress(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, progress: Progress) -> Bool { return true }
+  public func apiClientShouldSuccess(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, result: Any?) -> Error? { return nil }
+  public func apiClientShouldFailure(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, result: Any?, error: Error) -> Bool { return true }
 }
 
 extension Balblair {
   public struct HeaderBuilder: BalblairHeaderBuilder {
-    private let header: [String: String]
+    fileprivate let header: [String: String]
     
     public func build() -> [String: String] {
       return header

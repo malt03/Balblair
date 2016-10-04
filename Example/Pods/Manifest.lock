@@ -1,34 +1,43 @@
 PODS:
-  - Alamofire (3.4.1)
-  - Balblair (0.3.0):
-    - Balblair/Core (= 0.3.0)
-    - Balblair/ObjectMapper (= 0.3.0)
-    - Balblair/SwiftTask (= 0.3.0)
-  - Balblair/Core (0.3.0):
-    - Alamofire (> 3.4)
-  - Balblair/ObjectMapper (0.3.0):
+  - Alamofire (4.0.1)
+  - Balblair (0.4.1):
+    - Balblair/Core (= 0.4.1)
+    - Balblair/ObjectMapper (= 0.4.1)
+    - Balblair/SwiftTask (= 0.4.1)
+  - Balblair/Core (0.4.1):
+    - Alamofire (~> 4.0)
+  - Balblair/ObjectMapper (0.4.1):
     - Balblair/Core
-    - ObjectMapper (> 1.3)
-  - Balblair/SwiftTask (0.3.0):
+    - ObjectMapper (~> 2.0)
+  - Balblair/SwiftTask (0.4.1):
     - Balblair/Core
     - Balblair/ObjectMapper
-    - SwiftTask (> 5.0)
-  - ObjectMapper (1.4.0)
+    - SwiftTask (>= 5.0)
+  - ObjectMapper (2.0.0)
   - SwiftTask (5.0.0)
 
 DEPENDENCIES:
   - Balblair (from `../`)
+  - SwiftTask (from `https://github.com/ReactKit/SwiftTask.git`, branch `swift/3.0`)
 
 EXTERNAL SOURCES:
   Balblair:
     :path: "../"
+  SwiftTask:
+    :branch: swift/3.0
+    :git: https://github.com/ReactKit/SwiftTask.git
+
+CHECKOUT OPTIONS:
+  SwiftTask:
+    :commit: 98f89883509d27229d60ff3f2ececdd82a46d674
+    :git: https://github.com/ReactKit/SwiftTask.git
 
 SPEC CHECKSUMS:
-  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  Balblair: d6ad7230f2f1ab43b0b191de872dc13cf405694c
-  ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Balblair: c909fdb1d9b6dd271156c0ccd4c539590ae09013
+  ObjectMapper: aed2570edabbd3c9b26c939e1cabdb6558f933e0
   SwiftTask: 7fcd92f8ac16876e82c0e4ced0cea7e028456b6b
 
-PODFILE CHECKSUM: 5be833434c616f28e6c5f177f7eb718a828fb2bd
+PODFILE CHECKSUM: 0dba401591aacf3c50ba5ea7f9c791103472eb60
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.2

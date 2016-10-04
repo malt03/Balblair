@@ -11,7 +11,7 @@ import Balblair
 
 class ViewController: UIViewController, UIScrollViewDelegate {
   
-  @IBAction private func push() {
+  @IBAction fileprivate func push() {
 //    Balblair().get("api/v2/items", success: { (result) in
 //      print(result)
 //    })
@@ -22,6 +22,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     // with ObjectMapper and SwiftTask
     QiitaRequest().createTask().success { (result) in
       print(result.map { $0.title })
+    }.failure { (error, isCancelled) in
+      print(error)
     }
   }
 }

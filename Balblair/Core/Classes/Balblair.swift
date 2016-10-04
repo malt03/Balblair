@@ -9,27 +9,27 @@
 import Foundation
 import Alamofire
 
-public class Balblair {
-  public typealias ProgressCallback = (progress: NSProgress) -> Void
-  public typealias SuccessCallback = (result: AnyObject?) -> Void
-  public typealias FailureCallback = (result: AnyObject?, error: ErrorType) -> Void
+open class Balblair {
+  public typealias ProgressCallback = (_ progress: Progress) -> Void
+  public typealias SuccessCallback = (_ result: Any?) -> Void
+  public typealias FailureCallback = (_ result: Any?, _ error: Error) -> Void
   
-  public static var defaultConfiguration: BalblairConfiguration = Balblair.Configuration(baseUrl: "http://example.com")
+  open static var defaultConfiguration: BalblairConfiguration = Balblair.Configuration(baseUrl: "http://example.com")
   
   public enum Method {
-    case GET
-    case POST
-    case PUT
-    case PATCH
-    case DELETE
+    case get
+    case post
+    case put
+    case patch
+    case delete
     
-    var alamofires: Alamofire.Method {
+    var alamofires: HTTPMethod {
       switch self {
-      case .GET:    return .GET
-      case .POST:   return .POST
-      case .PUT:    return .PUT
-      case .PATCH:  return .PATCH
-      case .DELETE: return .DELETE
+      case .get:    return .get
+      case .post:   return .post
+      case .put:    return .put
+      case .patch:  return .patch
+      case .delete: return .delete
       }
     }
   }
@@ -44,108 +44,111 @@ public class Balblair {
     self.configuration = configuration
   }
   
-  public func get(
-    path: String,
-    parameters: [String: AnyObject]? = nil,
+  open func get(
+    _ path: String,
+    parameters: [String: Any]? = nil,
     progress: ProgressCallback? = nil,
     success: SuccessCallback? = nil,
     failure: FailureCallback? = nil)
   {
-    request(.GET, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
+    request(.get, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
   }
 
-  public func post(
-    path: String,
-    parameters: [String: AnyObject]? = nil,
+  open func post(
+    _ path: String,
+    parameters: [String: Any]? = nil,
     progress: ProgressCallback? = nil,
     success: SuccessCallback? = nil,
     failure: FailureCallback? = nil)
   {
-    request(.POST, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
+    request(.post, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
   }
   
-  public func put(
-    path: String,
-    parameters: [String: AnyObject]? = nil,
+  open func put(
+    _ path: String,
+    parameters: [String: Any]? = nil,
     progress: ProgressCallback? = nil,
     success: SuccessCallback? = nil,
     failure: FailureCallback? = nil)
   {
-    request(.PUT, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
+    request(.put, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
   }
   
-  public func patch(
-    path: String,
-    parameters: [String: AnyObject]? = nil,
+  open func patch(
+    _ path: String,
+    parameters: [String: Any]? = nil,
     progress: ProgressCallback? = nil,
     success: SuccessCallback? = nil,
     failure: FailureCallback? = nil)
   {
-    request(.PATCH, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
+    request(.patch, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
   }
   
-  public func delete(
-    path: String,
-    parameters: [String: AnyObject]? = nil,
+  open func delete(
+    _ path: String,
+    parameters: [String: Any]? = nil,
     progress: ProgressCallback? = nil,
     success: SuccessCallback? = nil,
     failure: FailureCallback? = nil)
   {
-    request(.DELETE, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
+    request(.delete, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
   }
   
-  public func upload(
-    method: Method = .POST,
+  open func upload(
+    _ method: Method = .post,
     path: String,
-    constructingBody: ((MultipartFormData) -> Void),
+    constructingBody: @escaping ((MultipartFormData) -> Void),
     progress: ProgressCallback? = nil,
     success: SuccessCallback? = nil,
     failure: FailureCallback? = nil,
-    encodingCompletion: ((request: Request) -> Void)? = nil)
+    encodingCompletion: ((_ request: Request) -> Void)? = nil)
   {
     Alamofire.upload(
-      method.alamofires,
-      configuration.baseUrl + path,
-      headers: configuration.headerBuilder.build(),
       multipartFormData: constructingBody,
+      to: configuration.baseUrl + path,
+      method: method.alamofires,
+      headers: configuration.headerBuilder.build(),
       encodingCompletion: { (encodingResult) in
         switch encodingResult {
-        case .Success(request: let request, streamingFromDisk: _, streamFileURL: _):
-          encodingCompletion?(request: request)
+        case .success(request: let request, streamingFromDisk: _, streamFileURL: _):
+          encodingCompletion?(request)
           self.run(request, method: method, path: path, parameters: nil, progress: progress, success: success, failure: failure)
-        case .Failure(let error):
+        case .failure(let error):
           self.failure(method, path: path, parameters: nil, result: nil, error: error, handler: failure)
         }
-    })
+      }
+    )
   }
   
   internal func request(
-    method: Method,
+    _ method: Method,
     path: String,
-    parameters: [String: AnyObject]? = nil,
+    parameters: [String: Any]? = nil,
     progress: ProgressCallback? = nil,
     success: SuccessCallback? = nil,
-    failure: FailureCallback? = nil) -> Request
+    failure: FailureCallback? = nil) -> DataRequest
   {
+    /*
     let request = Alamofire.request(method.alamofires, configuration.baseUrl + path, parameters: parameters, headers: configuration.headerBuilder.build())
+    run(request, method: method, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
+    return request*/
+    let request = Alamofire.request(configuration.baseUrl + path, method: method.alamofires, parameters: parameters, headers: configuration.headerBuilder.build())
     run(request, method: method, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
     return request
   }
   
   private func run(
-    request: Request,
+    _ request: DataRequest,
     method: Method,
     path: String,
-    parameters: [String: AnyObject]?,
+    parameters: [String: Any]?,
     progress: ProgressCallback?,
     success: SuccessCallback?,
     failure: FailureCallback?)
   {
     if !configuration.apiClientShouldBeginRequest(self, method: method, path: path, parameters: parameters) { return }
     
-    request.progress { (_, totalBytesWritten, totalBytesExpectedToWrite) in
-      let p = NSProgress(totalUnitCount: totalBytesExpectedToWrite)
-      p.completedUnitCount = totalBytesWritten
+    request.downloadProgress { (p) in
       self.progress(method, path: path, parameters: parameters, progress: p, handler: progress)
     }.validate().responseJSON { (response) in
       let result = response.result
@@ -153,29 +156,29 @@ public class Balblair {
         self.failure(method, path: path, parameters: parameters, result: result.value, error: error, handler: failure)
         return
       }
-      success?(result: response.result.value)
+      self.success(method, path: path, parameters: parameters, result: response.result.value, successHandler: success, failureHandler: failure)
     }
   }
   
-  private func progress(method: Method, path: String, parameters: [String: AnyObject]?, progress: NSProgress, handler: ProgressCallback?) {
+  private func progress(_ method: Method, path: String, parameters: [String: Any]?, progress: Progress, handler: ProgressCallback?) {
     guard let h = handler else { return }
     if configuration.apiClientShouldProgress(self, method: method, path: path, parameters: parameters, progress: progress) {
-      h(progress: progress)
+      h(progress)
     }
   }
 
-  private func success(method: Method, path: String, parameters: [String: AnyObject]?, result: AnyObject?, successHandler: SuccessCallback?, failureHandler: FailureCallback?) {
+  private func success(_ method: Method, path: String, parameters: [String: Any]?, result: Any?, successHandler: SuccessCallback?, failureHandler: FailureCallback?) {
     if let error = configuration.apiClientShouldSuccess(self, method: method, path: path, parameters: parameters, result: result) {
       failure(method, path: path, parameters: parameters, result: result, error: error, handler: failureHandler)
     } else {
-      successHandler?(result: result)
+      successHandler?(result)
     }
   }
 
-  private func failure(method: Method, path: String, parameters: [String: AnyObject]?, result: AnyObject?, error: ErrorType, handler: FailureCallback?) {
+  private func failure(_ method: Method, path: String, parameters: [String: Any]?, result: Any?, error: Error, handler: FailureCallback?) {
     guard let h = handler else { return }
     if configuration.apiClientShouldFailure(self, method: method, path: path, parameters: parameters, result: result, error: error) {
-      h(result: result, error: error)
+      h(result, error)
     }
   }
 }

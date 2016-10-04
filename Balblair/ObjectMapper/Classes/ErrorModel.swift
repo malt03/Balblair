@@ -9,18 +9,18 @@
 import Foundation
 
 public protocol ErrorModelProtocol {
-  static func create(error: ErrorType, result: AnyObject?) -> Self
+  static func create(_ error: Error, result: Any?) -> Self
 }
 
-public enum BalblairError: ErrorType {
-  case Unknown
-  case ParseError
+public enum BalblairError: Error {
+  case unknown
+  case parseError
 }
 
 public struct DefaultErrorModel: ErrorModelProtocol {
-  public var error: ErrorType
-  public var result: AnyObject?
-  public static func create(error: ErrorType, result: AnyObject?) -> DefaultErrorModel {
+  public var error: Error
+  public var result: Any?
+  public static func create(_ error: Error, result: Any?) -> DefaultErrorModel {
     return DefaultErrorModel(error: error, result: result)
   }
 }

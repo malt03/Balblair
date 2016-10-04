@@ -12,8 +12,8 @@ import SwiftTask
 import ObjectMapper
 
 extension ApiRequest where ResultType: Mappable, ParametersType: Mappable {
-  public func createTask(immediately: Bool = true) -> Task<NSProgress, ResultType, ErrorModelType> {
-    return Task<NSProgress, ResultType, ErrorModelType>(paused: !immediately) { (progress, fulfill, reject, configure) in
+  public func createTask(_ immediately: Bool = true) -> Task<Progress, ResultType, ErrorModelType> {
+    return Task<Progress, ResultType, ErrorModelType>(paused: !immediately) { (progress, fulfill, reject, configure) in
       let request = self.request(progress: progress, success: fulfill, failure: reject)
       configure.cancel = {
         request.cancel()
@@ -22,9 +22,9 @@ extension ApiRequest where ResultType: Mappable, ParametersType: Mappable {
   }
 }
 
-extension ApiRequest where ResultType: _ArrayType, ResultType.Element: Mappable, ParametersType: Mappable {
-  public func createTask(immediately: Bool = true) -> Task<NSProgress, ResultType, ErrorModelType> {
-    return Task<NSProgress, ResultType, ErrorModelType>(paused: !immediately) { (progress, fulfill, reject, configure) in
+extension ApiRequest where ResultType: _ArrayProtocol, ResultType.Element: Mappable, ParametersType: Mappable {
+  public func createTask(_ immediately: Bool = true) -> Task<Progress, ResultType, ErrorModelType> {
+    return Task<Progress, ResultType, ErrorModelType>(paused: !immediately) { (progress, fulfill, reject, configure) in
       let request = self.request(progress: progress, success: fulfill, failure: reject)
       configure.cancel = {
         request.cancel()
@@ -33,9 +33,9 @@ extension ApiRequest where ResultType: _ArrayType, ResultType.Element: Mappable,
   }
 }
 
-extension ApiRequest where ResultType: Mappable, ParametersType == [String: AnyObject] {
-  public func createTask(immediately: Bool = true) -> Task<NSProgress, ResultType, ErrorModelType> {
-    return Task<NSProgress, ResultType, ErrorModelType>(paused: !immediately) { (progress, fulfill, reject, configure) in
+extension ApiRequest where ResultType: Mappable, ParametersType == [String: Any] {
+  public func createTask(_ immediately: Bool = true) -> Task<Progress, ResultType, ErrorModelType> {
+    return Task<Progress, ResultType, ErrorModelType>(paused: !immediately) { (progress, fulfill, reject, configure) in
       let request = self.request(progress: progress, success: fulfill, failure: reject)
       configure.cancel = {
         request.cancel()
@@ -44,9 +44,9 @@ extension ApiRequest where ResultType: Mappable, ParametersType == [String: AnyO
   }
 }
 
-extension ApiRequest where ResultType: _ArrayType, ResultType.Element: Mappable, ParametersType == [String: AnyObject] {
-  public func createTask(immediately: Bool = true) -> Task<NSProgress, ResultType, ErrorModelType> {
-    return Task<NSProgress, ResultType, ErrorModelType>(paused: !immediately) { (progress, fulfill, reject, configure) in
+extension ApiRequest where ResultType: _ArrayProtocol, ResultType.Element: Mappable, ParametersType == [String: Any] {
+  public func createTask(_ immediately: Bool = true) -> Task<Progress, ResultType, ErrorModelType> {
+    return Task<Progress, ResultType, ErrorModelType>(paused: !immediately) { (progress, fulfill, reject, configure) in
       let request = self.request(progress: progress, success: fulfill, failure: reject)
       configure.cancel = {
         request.cancel()
@@ -56,5 +56,5 @@ extension ApiRequest where ResultType: _ArrayType, ResultType.Element: Mappable,
 }
 
 extension ApiRequest {
-  public typealias TaskType = Task<NSProgress, ResultType, ErrorModelType>
+  public typealias TaskType = Task<Progress, ResultType, ErrorModelType>
 }
