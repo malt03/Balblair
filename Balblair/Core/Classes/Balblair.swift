@@ -97,6 +97,7 @@ open class Balblair {
   open func upload(
     method: Method = .post,
     path: String,
+    parameters: [String: Any]? = nil,
     constructingBody: @escaping ((MultipartFormData) -> Void),
     progress: ProgressCallback? = nil,
     success: SuccessCallback? = nil,
@@ -112,9 +113,9 @@ open class Balblair {
         switch encodingResult {
         case .success(request: let request, streamingFromDisk: _, streamFileURL: _):
           encodingCompletion?(request)
-          self.run(request: request, method: method, path: path, parameters: nil, progress: progress, success: success, failure: failure)
+          self.run(request: request, method: method, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
         case .failure(let error):
-          self.failure(method: method, path: path, parameters: nil, result: nil, error: error, handler: failure)
+          self.failure(method: method, path: path, parameters: parameters, result: nil, error: error, handler: failure)
         }
       }
     )
