@@ -39,6 +39,12 @@ open class Balblair {
     public var name: String
     public var fileName: String
     public var mimeType: String
+    public init(data: Data, name: String, fileName: String, mimeType: String) {
+      self.data = data
+      self.name = name
+      self.fileName = fileName
+      self.mimeType = mimeType
+    }
   }
   
   private let configuration: BalblairConfiguration
