@@ -12,17 +12,17 @@ public protocol BalblairConfiguration {
   var baseUrl: String { get }
   var headerBuilder: BalblairHeaderBuilder { get }
   
-  func apiClientShouldBeginRequest(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?) -> Bool
-  func apiClientShouldProgress(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, progress: Progress) -> Bool
-  func apiClientShouldSuccess(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, result: Any?) -> Error?
-  func apiClientShouldFailure(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, result: Any?, error: Error) -> Bool
+  func apiClientShouldBeginRequest(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, uploadData: [Balblair.UploadData]) -> Bool
+  func apiClientShouldProgress(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, uploadData: [Balblair.UploadData], progress: Progress) -> Bool
+  func apiClientShouldSuccess(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, uploadData: [Balblair.UploadData], result: Any?) -> Error?
+  func apiClientShouldFailure(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, uploadData: [Balblair.UploadData], result: Any?, error: Error) -> Bool
 }
 
 extension BalblairConfiguration {
-  public func apiClientShouldBeginRequest(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?) -> Bool { return true }
-  public func apiClientShouldProgress(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, progress: Progress) -> Bool { return true }
-  public func apiClientShouldSuccess(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, result: Any?) -> Error? { return nil }
-  public func apiClientShouldFailure(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, result: Any?, error: Error) -> Bool { return true }
+  public func apiClientShouldBeginRequest(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, uploadData: [Balblair.UploadData]) -> Bool { return true }
+  public func apiClientShouldProgress(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, uploadData: [Balblair.UploadData], progress: Progress) -> Bool { return true }
+  public func apiClientShouldSuccess(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, uploadData: [Balblair.UploadData], result: Any?) -> Error? { return nil }
+  public func apiClientShouldFailure(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, uploadData: [Balblair.UploadData], result: Any?, error: Error) -> Bool { return true }
 }
 
 extension Balblair {

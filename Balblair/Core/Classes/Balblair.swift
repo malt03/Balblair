@@ -34,6 +34,13 @@ open class Balblair {
     }
   }
   
+  public struct UploadData {
+    public var data: Data
+    public var name: String
+    public var fileName: String
+    public var mimeType: String
+  }
+  
   private let configuration: BalblairConfiguration
   
   public convenience init() {
@@ -98,14 +105,19 @@ open class Balblair {
     method: Method = .post,
     path: String,
     parameters: [String: Any]? = nil,
-    constructingBody: @escaping ((MultipartFormData) -> Void),
+    uploadData: [UploadData],
     progress: ProgressCallback? = nil,
     success: SuccessCallback? = nil,
     failure: FailureCallback? = nil,
     encodingCompletion: ((_ request: Request) -> Void)? = nil)
   {
     Alamofire.upload(
-      multipartFormData: constructingBody,
+      multipartFormData: { (d) in
+        uploadData.forEach { d.append($0.data, withName: $0.name, fileName: $0.fileName, mimeType: $0.mimeType) }
+        parameters?.forEach {
+          guard let data = "\($1)".data(using: .utf8) else { return }
+          d.append(data, withName: $0)
+        } },
       to: configuration.baseUrl + path,
       method: method.alamofires,
       headers: configuration.headerBuilder.build(),
@@ -113,9 +125,9 @@ open class Balblair {
         switch encodingResult {
         case .success(request: let request, streamingFromDisk: _, streamFileURL: _):
           encodingCompletion?(request)
-          self.run(request: request, method: method, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
+          self.run(request: request, method: method, path: path, parameters: parameters, uploadData: uploadData, progress: progress, success: success, failure: failure)
         case .failure(let error):
-          self.failure(method: method, path: path, parameters: parameters, result: nil, error: error, handler: failure)
+          self.failure(method: method, path: path, parameters: parameters, uploadData: uploadData, result: nil, error: error, handler: failure)
         }
       }
     )
@@ -131,7 +143,7 @@ open class Balblair {
     failure: FailureCallback? = nil) -> DataRequest
   {
     let request = Alamofire.request(configuration.baseUrl + path, method: method.alamofires, parameters: parameters, headers: configuration.headerBuilder.build())
-    run(request: request, method: method, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
+    run(request: request, method: method, path: path, parameters: parameters, uploadData: [], progress: progress, success: success, failure: failure)
     return request
   }
   
@@ -140,42 +152,43 @@ open class Balblair {
     method: Method,
     path: String,
     parameters: [String: Any]?,
+    uploadData: [UploadData],
     progress: ProgressCallback?,
     success: SuccessCallback?,
     failure: FailureCallback?)
   {
-    if !configuration.apiClientShouldBeginRequest(self, method: method, path: path, parameters: parameters) { return }
+    if !configuration.apiClientShouldBeginRequest(self, method: method, path: path, parameters: parameters, uploadData: uploadData) { return }
     
     request.downloadProgress { (p) in
-      self.progress(method: method, path: path, parameters: parameters, progress: p, handler: progress)
+      self.progress(method: method, path: path, parameters: parameters, uploadData: uploadData, progress: p, handler: progress)
     }.validate().responseJSON { (response) in
       let result = response.result
       if let error = result.error {
-        self.failure(method: method, path: path, parameters: parameters, result: result.value, error: error, handler: failure)
+        self.failure(method: method, path: path, parameters: parameters, uploadData: uploadData, result: result.value, error: error, handler: failure)
         return
       }
-      self.success(method: method, path: path, parameters: parameters, result: response.result.value, successHandler: success, failureHandler: failure)
+      self.success(method: method, path: path, parameters: parameters, uploadData: uploadData, result: response.result.value, successHandler: success, failureHandler: failure)
     }
   }
   
-  private func progress(method: Method, path: String, parameters: [String: Any]?, progress: Progress, handler: ProgressCallback?) {
+  private func progress(method: Method, path: String, parameters: [String: Any]?, uploadData: [UploadData], progress: Progress, handler: ProgressCallback?) {
     guard let h = handler else { return }
-    if configuration.apiClientShouldProgress(self, method: method, path: path, parameters: parameters, progress: progress) {
+    if configuration.apiClientShouldProgress(self, method: method, path: path, parameters: parameters, uploadData: uploadData, progress: progress) {
       h(progress)
     }
   }
 
-  private func success(method: Method, path: String, parameters: [String: Any]?, result: Any?, successHandler: SuccessCallback?, failureHandler: FailureCallback?) {
-    if let error = configuration.apiClientShouldSuccess(self, method: method, path: path, parameters: parameters, result: result) {
-      failure(method: method, path: path, parameters: parameters, result: result, error: error, handler: failureHandler)
+  private func success(method: Method, path: String, parameters: [String: Any]?, uploadData: [UploadData], result: Any?, successHandler: SuccessCallback?, failureHandler: FailureCallback?) {
+    if let error = configuration.apiClientShouldSuccess(self, method: method, path: path, parameters: parameters, uploadData: uploadData, result: result) {
+      failure(method: method, path: path, parameters: parameters, uploadData: uploadData, result: result, error: error, handler: failureHandler)
     } else {
       successHandler?(result)
     }
   }
 
-  private func failure(method: Method, path: String, parameters: [String: Any]?, result: Any?, error: Error, handler: FailureCallback?) {
+  private func failure(method: Method, path: String, parameters: [String: Any]?, uploadData: [UploadData], result: Any?, error: Error, handler: FailureCallback?) {
     guard let h = handler else { return }
-    if configuration.apiClientShouldFailure(self, method: method, path: path, parameters: parameters, result: result, error: error) {
+    if configuration.apiClientShouldFailure(self, method: method, path: path, parameters: parameters, uploadData: uploadData, result: result, error: error) {
       h(result, error)
     }
   }

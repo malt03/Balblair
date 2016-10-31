@@ -43,12 +43,12 @@ extension Balblair {
   public func createUploadTask(
     method: Method = .post,
     path: String,
-    constructingBody: @escaping ((MultipartFormData) -> Void),
+    uploadData: [UploadData],
     immediately: Bool = true) -> Task<Progress, Any?, Error>
   {
     return Task<Progress, Any?, Error>(paused: !immediately) { (progress, fulfill, reject, configure) in
       var request: Request?
-      self.upload(method: method, path: path, constructingBody: constructingBody, progress: progress, success: fulfill, failure: { reject($1) }, encodingCompletion: { (r) in
+      self.upload(method: method, path: path, uploadData: uploadData, progress: progress, success: fulfill, failure: { reject($1) }, encodingCompletion: { (r) in
         request = r
       })
       configure.cancel = {

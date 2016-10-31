@@ -69,6 +69,8 @@
 		E6DFE4516A6A5D78AD3CFF9652A950A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3802C6F37BF96372357CEC62D66A79C /* Foundation.framework */; };
 		E7C772E235D156BAF08F1CBEFC4DFFE2 /* Balblair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00EEE1E7ED169541832CA2C6B266D5 /* Balblair.swift */; };
 		EA2FC92110BC556B2FA375F466A28F39 /* _RecursiveLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94DCA4E6ADFE0F5D021BD65A655BFAA /* _RecursiveLock.swift */; };
+		EDBAFDAB1DC36BE900CF0E9E /* ApiRequestWithData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBAFDA91DC36BD700CF0E9E /* ApiRequestWithData.swift */; };
+		EDBAFDAD1DC6E9F800CF0E9E /* ApiRequestWithData+SwiftTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBAFDAC1DC6E9F800CF0E9E /* ApiRequestWithData+SwiftTask.swift */; };
 		F581689B7AB82B176876B42F8393F353 /* SwiftTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38EFA28AC7DBBA7AFAF951DB9324618D /* SwiftTask.framework */; };
 		F6BA11620D058E2CE863EC2ED7D73D4C /* DataTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EB452EEE406FC8C67ECDF88D1350CB /* DataTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F750AA8C540173997BF1EC328C9F92B7 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8EDC491E2016DB8B3753FB3C67640 /* Map.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -227,6 +229,8 @@
 		E75372AFFC3E3FD04912B9EAAB2F4797 /* SwiftTask.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftTask.h; path = SwiftTask/SwiftTask.h; sourceTree = "<group>"; };
 		E778A4E8FAB86D4222665373182DA26E /* Balblair-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Balblair-dummy.m"; sourceTree = "<group>"; };
 		ED6C55015A6D00BB57182DCF5BFBE0FA /* Pods-Balblair_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Balblair_Example.modulemap"; sourceTree = "<group>"; };
+		EDBAFDA91DC36BD700CF0E9E /* ApiRequestWithData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequestWithData.swift; sourceTree = "<group>"; };
+		EDBAFDAC1DC6E9F800CF0E9E /* ApiRequestWithData+SwiftTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApiRequestWithData+SwiftTask.swift"; sourceTree = "<group>"; };
 		F0C6E902B86EFDD14105F16D5F1998CB /* Pods-Balblair_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Balblair_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F3802C6F37BF96372357CEC62D66A79C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		FAE05FEE490796E0A502CE530D95D5CD /* Pods-Balblair_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Balblair_Tests.modulemap"; sourceTree = "<group>"; };
@@ -346,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				84892291B6D4A0915245E2D4CDC30849 /* ApiRequest+SwiftTask.swift */,
+				EDBAFDAC1DC6E9F800CF0E9E /* ApiRequestWithData+SwiftTask.swift */,
 				164C854F07885B3F5DCCB45B432625F7 /* Balblair+SwiftTask.swift */,
 			);
 			path = Classes;
@@ -390,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				C7BB569C5C39CF735014A521D58079B0 /* ApiRequest.swift */,
+				EDBAFDA91DC36BD700CF0E9E /* ApiRequestWithData.swift */,
 				D259A9408AAEE2C4279D699C913E458E /* ErrorModel.swift */,
 			);
 			path = Classes;
@@ -883,9 +889,11 @@
 				F7D352B581A8C9F3F7667098998B51FB /* ApiRequest.swift in Sources */,
 				3B9BB9ECE22A260377AA10A6FDB90EEE /* Balblair+SwiftTask.swift in Sources */,
 				8D8D31F7451866FCF4D2DCB1CD31B90A /* Balblair-dummy.m in Sources */,
+				EDBAFDAB1DC36BE900CF0E9E /* ApiRequestWithData.swift in Sources */,
 				E7C772E235D156BAF08F1CBEFC4DFFE2 /* Balblair.swift in Sources */,
 				B2FD1FB203140850C90998BA43651E00 /* BalblairConfiguration.swift in Sources */,
 				C3524D6AEC802200C29A32B426EDB277 /* BalblairHeader.swift in Sources */,
+				EDBAFDAD1DC6E9F800CF0E9E /* ApiRequestWithData+SwiftTask.swift in Sources */,
 				360EF05F74CC43F79AA3ABDF0FF3A3D1 /* ErrorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
