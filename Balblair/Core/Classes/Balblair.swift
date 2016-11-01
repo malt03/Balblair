@@ -120,9 +120,13 @@ open class Balblair {
     Alamofire.upload(
       multipartFormData: { (d) in
         uploadData.forEach { d.append($0.data, withName: $0.name, fileName: $0.fileName, mimeType: $0.mimeType) }
+        var components = [(String, String)]()
         parameters?.forEach {
-          guard let data = "\($1)".data(using: .utf8) else { return }
-          d.append(data, withName: $0)
+          components += Alamofire.URLEncoding().queryComponents(fromKey: $0, value: $1)
+        }
+        components.forEach {
+          guard let data = $1.data(using: .utf8), let name = $0.removingPercentEncoding else { return }
+          d.append(data, withName: name)
         } },
       to: configuration.baseUrl + path,
       method: method.alamofires,
