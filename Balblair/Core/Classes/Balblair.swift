@@ -125,7 +125,7 @@ open class Balblair {
           components += Alamofire.URLEncoding().queryComponents(fromKey: $0, value: $1)
         }
         components.forEach {
-          guard let data = $1.data(using: .utf8), let name = $0.removingPercentEncoding else { return }
+          guard let data = $1.removingPercentEncoding?.data(using: .utf8), let name = $0.removingPercentEncoding else { return }
           d.append(data, withName: name)
         } },
       to: configuration.baseUrl + path,
