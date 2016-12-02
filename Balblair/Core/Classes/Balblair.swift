@@ -174,7 +174,13 @@ open class Balblair {
     }.validate().responseJSON { (response) in
       let result = response.result
       if let error = result.error {
-        self.failure(method: method, path: path, parameters: parameters, uploadData: uploadData, result: result.value, error: error, handler: failure)
+        let value: Any?
+        if let data = response.data {
+          value = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+        } else {
+          value = nil
+        }
+        self.failure(method: method, path: path, parameters: parameters, uploadData: uploadData, result: value, error: error, handler: failure)
         return
       }
       self.success(method: method, path: path, parameters: parameters, uploadData: uploadData, result: response.result.value, successHandler: success, failureHandler: failure)
