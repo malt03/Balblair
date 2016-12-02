@@ -10,11 +10,10 @@ import Foundation
 import Balblair
 import ObjectMapper
 
-extension ApiRequest {
-  var errorHandler: ((_ error: MyErrorType) -> Void)? {
-    return { (error) in
-      print("hoge")
-    }
+protocol MyApiRequest: ApiRequest {}
+extension MyApiRequest {
+  func handleError(_ error: MyErrorType) {
+    print("hoge")
   }
 }
 
@@ -24,7 +23,7 @@ struct MyErrorType: ErrorModelProtocol {
   }
 }
 
-struct QiitaRequest: ApiRequest {
+struct QiitaRequest: MyApiRequest {
   typealias ResultType = [QiitaResult]
   
   let method = Balblair.Method.get
