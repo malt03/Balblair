@@ -9,20 +9,24 @@
 import Foundation
 import Balblair
 import ObjectMapper
-/*
-protocol MyApiRequest: ApiRequest {
-  associatedtype ErrorModelType = MyErrorType
+
+extension ApiRequest {
+  var errorHandler: ((_ error: MyErrorType) -> Void)? {
+    return { (error) in
+      print("hoge")
+    }
+  }
 }
 
 struct MyErrorType: ErrorModelProtocol {
-  public static func create(_ error: Error, result: Any?) -> MyErrorType {
+  public static func create(error: Error, result: Any?) -> MyErrorType {
     return MyErrorType()
   }
 }
-*/
+
 struct QiitaRequest: ApiRequest {
   typealias ResultType = [QiitaResult]
-
+  
   let method = Balblair.Method.get
   let path = "/api/v2/items?page=1&per_page=20"
   let parameters = ["page": "1", "per_page": "20"] as [String: Any]

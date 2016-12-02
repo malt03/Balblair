@@ -23,9 +23,15 @@ public protocol ApiRequest {
   associatedtype ErrorModelType: ErrorModelProtocol = DefaultErrorModel
   associatedtype ParametersType
   
+  var errorHandler: ((_ error: ErrorModelType) -> Void)? { get }
+  
   var method: Balblair.Method { get }
   var path: String { get }
   var parameters: ParametersType { get }
+}
+
+extension ApiRequest {
+  public var errorHandler: ((_ error: ErrorModelType) -> Void)? { return nil }
 }
 
 extension ApiRequest where ResultType: Mappable, ParametersType: Mappable {
@@ -36,12 +42,16 @@ extension ApiRequest where ResultType: Mappable, ParametersType: Mappable {
   {
     return Balblair().request(method: method, path: path, parameters: parameters.toJSON(), progress: progress, success: { (result) in
       guard let object = Mapper<ResultType>().map(JSONObject: result) else {
-        failure?(ErrorModelType.create(error: BalblairError.parseError, result: result))
+        let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
+        self.errorHandler?(errorModel)
+        failure?(errorModel)
         return
       }
       success?(object)
     }, failure: { (result, error) in
-      failure?(ErrorModelType.create(error: error, result: result))
+      let errorModel = ErrorModelType.create(error: error, result: result)
+      self.errorHandler?(errorModel)
+      failure?(errorModel)
     })
   }
 }
@@ -54,12 +64,16 @@ extension ApiRequest where ResultType: _ArrayProtocol, ResultType.Element: Mappa
   {
     return Balblair().request(method: method, path: path, parameters: parameters.toJSON(), progress: progress, success: { (result) in
       guard let object = Mapper<ResultType.Element>().mapArray(JSONObject: result) as? ResultType else {
-        failure?(ErrorModelType.create(error: BalblairError.parseError, result: result))
+        let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
+        self.errorHandler?(errorModel)
+        failure?(errorModel)
         return
       }
       success?(object)
     }, failure: { (result, error) in
-      failure?(ErrorModelType.create(error: error, result: result))
+      let errorModel = ErrorModelType.create(error: error, result: result)
+      self.errorHandler?(errorModel)
+      failure?(errorModel)
     })
   }
 }
@@ -72,12 +86,16 @@ extension ApiRequest where ResultType: Mappable, ParametersType == [String: Any]
   {
     return Balblair().request(method: method, path: path, parameters: parameters, progress: progress, success: { (result) in
       guard let object = Mapper<ResultType>().map(JSONObject: result) else {
-        failure?(ErrorModelType.create(error: BalblairError.parseError, result: result))
+        let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
+        self.errorHandler?(errorModel)
+        failure?(errorModel)
         return
       }
       success?(object)
     }, failure: { (result, error) in
-      failure?(ErrorModelType.create(error: error, result: result))
+      let errorModel = ErrorModelType.create(error: error, result: result)
+      self.errorHandler?(errorModel)
+      failure?(errorModel)
     })
   }
 }
@@ -90,12 +108,16 @@ extension ApiRequest where ResultType: _ArrayProtocol, ResultType.Element: Mappa
   {
     return Balblair().request(method: method, path: path, parameters: parameters, progress: progress, success: { (result) in
       guard let object = Mapper<ResultType.Element>().mapArray(JSONObject: result) as? ResultType else {
-        failure?(ErrorModelType.create(error: BalblairError.parseError, result: result))
+        let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
+        self.errorHandler?(errorModel)
+        failure?(errorModel)
         return
       }
       success?(object)
     }, failure: { (result, error) in
-      failure?(ErrorModelType.create(error: error, result: result))
+      let errorModel = ErrorModelType.create(error: error, result: result)
+      self.errorHandler?(errorModel)
+      failure?(errorModel)
     })
   }
 }
