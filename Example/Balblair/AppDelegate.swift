@@ -22,14 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 class Configuration: BalblairConfiguration {
   let baseUrl = "https://qiita.com/"
-  var headerBuilder: BalblairHeaderBuilder = HeaderBuilder()
-  func apiClientShouldBeginRequest(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?) -> Bool {
-    print(path)
-    return true
-  }
-  func apiClientShouldProgress(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, progress: Progress) -> Bool { return true }
-  func apiClientShouldSuccess(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, result: AnyObject?) -> Error? { return nil }
-  func apiClientShouldFailure(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, result: AnyObject?, error: Error) -> Bool { return true }
+//  var headerBuilder: BalblairHeaderBuilder = HeaderBuilder()
+//  func apiClientShouldBeginRequest(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?) -> Bool {
+//    print(path)
+//    return true
+//  }
+//  func apiClientShouldProgress(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, progress: Progress) -> Bool { return true }
+//  func apiClientShouldSuccess(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, result: AnyObject?) -> Error? { return nil }
+//  func apiClientShouldFailure(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, result: AnyObject?, error: Error) -> Bool { return true }
 }
 
 class HeaderBuilder: BalblairHeaderBuilder {

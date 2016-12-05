@@ -19,6 +19,7 @@ public protocol BalblairConfiguration {
 }
 
 extension BalblairConfiguration {
+  public var headerBuilder: BalblairHeaderBuilder { return Balblair.HeaderBuilder(header: [:]) }
   public func apiClientShouldBeginRequest(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, uploadData: [Balblair.UploadData]) -> Bool { return true }
   public func apiClientShouldProgress(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, uploadData: [Balblair.UploadData], progress: Progress) -> Bool { return true }
   public func apiClientShouldSuccess(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, uploadData: [Balblair.UploadData], result: Any?) -> Error? { return nil }
@@ -27,7 +28,7 @@ extension BalblairConfiguration {
 
 extension Balblair {
   public struct HeaderBuilder: BalblairHeaderBuilder {
-    fileprivate let header: [String: String]
+    public let header: [String: String]
     
     public func build() -> [String: String] {
       return header
