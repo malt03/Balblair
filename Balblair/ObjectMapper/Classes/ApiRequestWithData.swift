@@ -21,14 +21,20 @@ extension ApiRequestWithData where ResultType: Mappable, ParametersType: Mappabl
                       failure: ((_ errorModel: ErrorModelType) -> Void)? = nil,
                       encodingCompletion: ((_ request: Request) -> Void)? = nil)
   {
+    willBeginRequest(parameters: parameters)
     Balblair().upload(method: method, path: path, parameters: parameters.toJSON(), uploadData: uploadData, progress: progress, success: { (result) in
       guard let object = Mapper<ResultType>().map(JSONObject: result) else {
-        failure?(ErrorModelType.create(error: BalblairError.parseError, result: result))
+        let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
+        failure?(errorModel)
+        self.didFailure(error: errorModel)
         return
       }
       success?(object)
+      self.didSuccess(result: object)
     }, failure: { (result, error) in
-      failure?(ErrorModelType.create(error: error, result: result))
+      let errorModel = ErrorModelType.create(error: error, result: result)
+      failure?(errorModel)
+      self.didFailure(error: errorModel)
     }, encodingCompletion: encodingCompletion)
   }
 }
@@ -40,14 +46,20 @@ extension ApiRequestWithData where ResultType: _ArrayProtocol, ResultType.Elemen
                       failure: ((_ errorModel: ErrorModelType) -> Void)? = nil,
                       encodingCompletion: ((_ request: Request) -> Void)? = nil)
   {
+    willBeginRequest(parameters: parameters)
     Balblair().upload(method: method, path: path, parameters: parameters.toJSON(), uploadData: uploadData, progress: progress, success: { (result) in
       guard let object = Mapper<ResultType.Element>().mapArray(JSONObject: result) as? ResultType else {
-        failure?(ErrorModelType.create(error: BalblairError.parseError, result: result))
+        let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
+        failure?(errorModel)
+        self.didFailure(error: errorModel)
         return
       }
       success?(object)
+      self.didSuccess(result: object)
     }, failure: { (result, error) in
-      failure?(ErrorModelType.create(error: error, result: result))
+      let errorModel = ErrorModelType.create(error: error, result: result)
+      failure?(errorModel)
+      self.didFailure(error: errorModel)
     }, encodingCompletion: encodingCompletion)
   }
 }
@@ -59,14 +71,20 @@ extension ApiRequestWithData where ResultType: Mappable, ParametersType == [Stri
                       failure: ((_ errorModel: ErrorModelType) -> Void)? = nil,
                       encodingCompletion: ((_ request: Request) -> Void)? = nil)
   {
+    willBeginRequest(parameters: parameters)
     Balblair().upload(method: method, path: path, parameters: parameters, uploadData: uploadData, progress: progress, success: { (result) in
       guard let object = Mapper<ResultType>().map(JSONObject: result) else {
-        failure?(ErrorModelType.create(error: BalblairError.parseError, result: result))
+        let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
+        failure?(errorModel)
+        self.didFailure(error: errorModel)
         return
       }
       success?(object)
+      self.didSuccess(result: object)
     }, failure: { (result, error) in
-      failure?(ErrorModelType.create(error: error, result: result))
+      let errorModel = ErrorModelType.create(error: error, result: result)
+      failure?(errorModel)
+      self.didFailure(error: errorModel)
     }, encodingCompletion: encodingCompletion)
   }
 }
@@ -78,14 +96,20 @@ extension ApiRequestWithData where ResultType: _ArrayProtocol, ResultType.Elemen
                       failure: ((_ errorModel: ErrorModelType) -> Void)? = nil,
                       encodingCompletion: ((_ request: Request) -> Void)? = nil)
   {
+    willBeginRequest(parameters: parameters)
     Balblair().upload(method: method, path: path, parameters: parameters, uploadData: uploadData, progress: progress, success: { (result) in
       guard let object = Mapper<ResultType.Element>().mapArray(JSONObject: result) as? ResultType else {
-        failure?(ErrorModelType.create(error: BalblairError.parseError, result: result))
+        let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
+        failure?(errorModel)
+        self.didFailure(error: errorModel)
         return
       }
       success?(object)
+      self.didSuccess(result: object)
     }, failure: { (result, error) in
-      failure?(ErrorModelType.create(error: error, result: result))
+      let errorModel = ErrorModelType.create(error: error, result: result)
+      failure?(errorModel)
+      self.didFailure(error: errorModel)
     }, encodingCompletion: encodingCompletion)
   }
 }

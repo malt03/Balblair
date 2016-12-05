@@ -12,8 +12,16 @@ import ObjectMapper
 
 protocol MyApiRequest: ApiRequest {}
 extension MyApiRequest {
-  func handleError(_ error: MyErrorType) {
-    print("hoge")
+  func didFailure(error: MyErrorType) {
+    print(error)
+  }
+  
+  func didSuccess(result: Self.ResultType) {
+    print(result)
+  }
+  
+  func willBeginRequest(parameters: Self.ParametersType) {
+    print(parameters)
   }
 }
 
