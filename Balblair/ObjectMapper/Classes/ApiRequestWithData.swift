@@ -22,7 +22,7 @@ extension ApiRequestWithData where ResultType: Mappable, ParametersType: Mappabl
                       encodingCompletion: ((_ request: Request) -> Void)? = nil)
   {
     willBeginRequest(parameters: parameters)
-    Balblair().upload(method: method, path: path, parameters: parameters.toJSON(), uploadData: uploadData, progress: progress, success: { (result) in
+    Balblair(configuration: configuration).upload(method: method, path: path, parameters: parameters.toJSON(), uploadData: uploadData, progress: progress, success: { (result) in
       guard let object = Mapper<ResultType>().map(JSONObject: result) else {
         let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
         failure?(errorModel)
@@ -47,7 +47,7 @@ extension ApiRequestWithData where ResultType: _ArrayProtocol, ResultType.Elemen
                       encodingCompletion: ((_ request: Request) -> Void)? = nil)
   {
     willBeginRequest(parameters: parameters)
-    Balblair().upload(method: method, path: path, parameters: parameters.toJSON(), uploadData: uploadData, progress: progress, success: { (result) in
+    Balblair(configuration: configuration).upload(method: method, path: path, parameters: parameters.toJSON(), uploadData: uploadData, progress: progress, success: { (result) in
       guard let object = Mapper<ResultType.Element>().mapArray(JSONObject: result) as? ResultType else {
         let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
         failure?(errorModel)
@@ -72,7 +72,7 @@ extension ApiRequestWithData where ResultType: Mappable, ParametersType == [Stri
                       encodingCompletion: ((_ request: Request) -> Void)? = nil)
   {
     willBeginRequest(parameters: parameters)
-    Balblair().upload(method: method, path: path, parameters: parameters, uploadData: uploadData, progress: progress, success: { (result) in
+    Balblair(configuration: configuration).upload(method: method, path: path, parameters: parameters, uploadData: uploadData, progress: progress, success: { (result) in
       guard let object = Mapper<ResultType>().map(JSONObject: result) else {
         let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
         failure?(errorModel)
@@ -97,7 +97,7 @@ extension ApiRequestWithData where ResultType: _ArrayProtocol, ResultType.Elemen
                       encodingCompletion: ((_ request: Request) -> Void)? = nil)
   {
     willBeginRequest(parameters: parameters)
-    Balblair().upload(method: method, path: path, parameters: parameters, uploadData: uploadData, progress: progress, success: { (result) in
+    Balblair(configuration: configuration).upload(method: method, path: path, parameters: parameters, uploadData: uploadData, progress: progress, success: { (result) in
       guard let object = Mapper<ResultType.Element>().mapArray(JSONObject: result) as? ResultType else {
         let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
         failure?(errorModel)
