@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Balblair'
-  s.version          = '0.8.2'
+  s.version          = '0.9.0'
   s.summary          = 'Api client with ObjectMapper and SwiftTask.'
 
   s.description      = <<-DESC
@@ -35,10 +35,10 @@ This is easy to use with ObjectMapper and SwiftTask.
     ss.dependency 'ObjectMapper', '~> 2.0'
   end
 
-  s.subspec 'SwiftTask' do |ss|
-    ss.source_files = 'Balblair/SwiftTask/Classes/**/*'
+  s.subspec 'Rx' do |ss|
+    ss.source_files = 'Balblair/Rx/Classes/**/*'
     ss.dependency 'Balblair/Core'
     ss.dependency 'Balblair/ObjectMapper'
-    ss.dependency 'SwiftTask', '>= 5.0'
+    ss.dependency 'RxSwift', '>= 3.0'
   end
 end

@@ -35,7 +35,7 @@ struct QiitaRequest: MyApiRequest {
   typealias ResultType = [QiitaResult]
   
   let method = Balblair.Method.get
-  let path = "/api/v2/item?page=1&per_page=20"
+  let path = "/api/v2/items?page=1&per_page=20"
   let parameters = ["page": "1", "per_page": "20"] as [String: Any]
 }
 

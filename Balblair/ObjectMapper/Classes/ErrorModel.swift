@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol ErrorModelProtocol {
+public protocol ErrorModelProtocol: Error {
   static func create(error: Error, result: Any?) -> Self
 }
 
