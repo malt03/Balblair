@@ -19,6 +19,7 @@ extension ApiRequestWithData where ResultType: Mappable, ParametersType: Mappabl
         observer.onCompleted()
       }, failure: { (error) in
         observer.onError(error)
+        observer.onCompleted()
       }, encodingCompletion: { (r) in
         request = r
       })
@@ -38,6 +39,7 @@ extension ApiRequestWithData where ResultType: _ArrayProtocol, ResultType.Elemen
         observer.onCompleted()
       }, failure: { (error) in
         observer.onError(error)
+        observer.onCompleted()
       }, encodingCompletion: { (r) in
         request = r
       })
@@ -57,6 +59,7 @@ extension ApiRequestWithData where ResultType: Mappable, ParametersType == [Stri
         observer.onCompleted()
       }, failure: { (error) in
         observer.onError(error)
+        observer.onCompleted()
       }, encodingCompletion: { (r) in
         request = r
       })
@@ -76,6 +79,7 @@ extension ApiRequestWithData where ResultType: _ArrayProtocol, ResultType.Elemen
         observer.onCompleted()
       }, failure: { (error) in
         observer.onError(error)
+        observer.onCompleted()
       }, encodingCompletion: { (r) in
         request = r
       })
