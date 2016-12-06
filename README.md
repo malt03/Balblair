@@ -22,16 +22,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
   return true
 }
 ```
-
-### Request
-
-```swift
-Balblair().get("api/v2/items", success: { (result) in
-  print(result)
-})
-```
-
-### With ObjectMapper
+### Usage
 
 #### Create Response Model
 
@@ -60,17 +51,10 @@ struct QiitaRequest: ApiRequest {
   let parameters = NoParamsModel.instance
 }
 ```
-
 #### Request
 
 ```swift
-QiitaRequest().request(progress: { print($0) }, success: { print($0) }, failure: { print($0, $1) })
-```
-
-#### Request with SwiftTask
-
-```swift
-QiitaRequest().createTask().success { print($0) }
+QiitaRequest().response.subscribe(onNext: { print($0) } )
 ```
 
 ### Create customize configuration
