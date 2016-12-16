@@ -1,7 +1,6 @@
 use_frameworks!
 
 target 'Balblair_Example' do
-  pod 'SwiftTask', git: 'https://github.com/ReactKit/SwiftTask.git', branch: 'swift/3.0'
   pod 'Balblair', :path => '../'
 
   target 'Balblair_Tests' do
