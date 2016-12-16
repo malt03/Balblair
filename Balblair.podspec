@@ -22,7 +22,7 @@ This is easy to use with ObjectMapper and SwiftTask.
   s.author           = { 'Koji Murata' => 'malt.koji@gmail.com' }
   s.source           = { :git => 'https://github.com/malt03/Balblair.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '8.0'
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'Balblair/Core/Classes/**/*'
