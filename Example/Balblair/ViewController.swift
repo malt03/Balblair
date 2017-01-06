@@ -10,12 +10,15 @@ import UIKit
 import Balblair
 
 class ViewController: UIViewController, UIScrollViewDelegate {
-  
   @IBAction fileprivate func push() {
     _ = QiitaRequest().response.subscribe(onNext: { (result) in
       print(result)
     }, onError: { (error) in
       print(error)
+    }, onCompleted: {
+      print("completed")
+    }, onDisposed: { 
+      print("dispose")
     })
   }
 }

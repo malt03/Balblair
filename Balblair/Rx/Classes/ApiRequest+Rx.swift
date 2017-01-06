@@ -18,7 +18,6 @@ extension ApiRequest where ResultType: Mappable, ParametersType: Mappable {
         observer.onCompleted()
       }, failure: { (error) in
         observer.onError(error)
-        observer.onCompleted()
       })
       return Disposables.create {
         request.cancel()
@@ -35,7 +34,6 @@ extension ApiRequest where ResultType: _ArrayProtocol, ResultType.Element: Mappa
         observer.onCompleted()
       }, failure: { (error) in
         observer.onError(error)
-        observer.onCompleted()
       })
       return Disposables.create {
         request.cancel()
@@ -52,7 +50,6 @@ extension ApiRequest where ResultType: Mappable, ParametersType == [String: Any]
         observer.onCompleted()
       }, failure: { (error) in
         observer.onError(error)
-        observer.onCompleted()
       })
       return Disposables.create {
         request.cancel()
@@ -69,7 +66,6 @@ extension ApiRequest where ResultType: _ArrayProtocol, ResultType.Element: Mappa
         observer.onCompleted()
       }, failure: { (error) in
         observer.onError(error)
-        observer.onCompleted()
       })
       return Disposables.create {
         request.cancel()
