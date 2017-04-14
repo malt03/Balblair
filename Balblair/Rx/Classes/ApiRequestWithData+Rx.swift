@@ -29,7 +29,7 @@ extension ApiRequestWithData where ResultType: Mappable, ParametersType: Mappabl
   }
 }
 
-extension ApiRequestWithData where ResultType: _ArrayProtocol, ResultType.Element: Mappable, ParametersType: Mappable {
+extension ApiRequestWithData where ResultType: ExpressibleByArrayLiteral, ResultType.Element: Mappable, ParametersType: Mappable {
   public var response: Observable<ResultType> {
     return Observable.create { (observer) -> Disposable in
       var request: Request? = nil
@@ -67,7 +67,7 @@ extension ApiRequestWithData where ResultType: Mappable, ParametersType == [Stri
   }
 }
 
-extension ApiRequestWithData where ResultType: _ArrayProtocol, ResultType.Element: Mappable, ParametersType == [String: Any] {
+extension ApiRequestWithData where ResultType: ExpressibleByArrayLiteral, ResultType.Element: Mappable, ParametersType == [String: Any] {
   public var response: Observable<ResultType> {
     return Observable.create { (observer) -> Disposable in
       var request: Request? = nil

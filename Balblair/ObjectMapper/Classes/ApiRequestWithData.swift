@@ -15,7 +15,7 @@ public protocol ApiRequestWithData: ApiRequest {
 }
 
 extension ApiRequestWithData where ResultType: Mappable, ParametersType: Mappable {
-  @discardableResult
+  
   public func request(progress: Balblair.ProgressCallback? = nil,
                       success: ((_ result: ResultType) -> Void)? = nil,
                       failure: ((_ errorModel: ErrorModelType) -> Void)? = nil,
@@ -39,8 +39,7 @@ extension ApiRequestWithData where ResultType: Mappable, ParametersType: Mappabl
   }
 }
 
-extension ApiRequestWithData where ResultType: _ArrayProtocol, ResultType.Element: Mappable, ParametersType: Mappable {
-  @discardableResult
+extension ApiRequestWithData where ResultType: ExpressibleByArrayLiteral, ResultType.Element: Mappable, ParametersType: Mappable {
   public func request(progress: Balblair.ProgressCallback? = nil,
                       success: ((_ result: ResultType) -> Void)? = nil,
                       failure: ((_ errorModel: ErrorModelType) -> Void)? = nil,
@@ -65,7 +64,6 @@ extension ApiRequestWithData where ResultType: _ArrayProtocol, ResultType.Elemen
 }
 
 extension ApiRequestWithData where ResultType: Mappable, ParametersType == [String: Any] {
-  @discardableResult
   public func request(progress: Balblair.ProgressCallback? = nil,
                       success: ((_ result: ResultType) -> Void)? = nil,
                       failure: ((_ errorModel: ErrorModelType) -> Void)? = nil,
@@ -89,8 +87,7 @@ extension ApiRequestWithData where ResultType: Mappable, ParametersType == [Stri
   }
 }
 
-extension ApiRequestWithData where ResultType: _ArrayProtocol, ResultType.Element: Mappable, ParametersType == [String: Any] {
-  @discardableResult
+extension ApiRequestWithData where ResultType: ExpressibleByArrayLiteral, ResultType.Element: Mappable, ParametersType == [String: Any] {
   public func request(progress: Balblair.ProgressCallback? = nil,
                       success: ((_ result: ResultType) -> Void)? = nil,
                       failure: ((_ errorModel: ErrorModelType) -> Void)? = nil,
