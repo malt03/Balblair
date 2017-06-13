@@ -4,6 +4,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/Balblair.svg?style=flat)](http://cocoapods.org/pods/Balblair)
 ![Language](https://img.shields.io/badge/language-Swift%203.1-orange.svg)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Balblair.svg?style=flat)](http://cocoapods.org/pods/Balblair)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![License](https://img.shields.io/github/license/malt03/Balblair.svg?style=flat)
 
 Balblair is an api client library written in Swift.
