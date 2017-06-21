@@ -2,7 +2,7 @@
 //  Balblair.h
 //  Balblair
 //
-//  Created by Koji Murata on 2017/06/20.
+//  Created by Koji Murata on 2017/06/21.
 //  Copyright © 2017年 Koji Murata. All rights reserved.
 //
 

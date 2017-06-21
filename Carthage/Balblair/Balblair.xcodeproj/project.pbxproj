@@ -7,165 +7,165 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EDF4F5451EF9418600A7BDAB /* Balblair.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF4F5431EF9418600A7BDAB /* Balblair.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDF4F55C1EF9419D00A7BDAB /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = EDF4F54C1EF9419D00A7BDAB /* .gitkeep */; };
-		EDF4F55D1EF9419D00A7BDAB /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = EDF4F54F1EF9419D00A7BDAB /* .gitkeep */; };
-		EDF4F55E1EF9419D00A7BDAB /* Balblair.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F5501EF9419D00A7BDAB /* Balblair.swift */; };
-		EDF4F55F1EF9419D00A7BDAB /* BalblairConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F5511EF9419D00A7BDAB /* BalblairConfiguration.swift */; };
-		EDF4F5601EF9419D00A7BDAB /* BalblairHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F5521EF9419D00A7BDAB /* BalblairHeader.swift */; };
-		EDF4F5611EF9419D00A7BDAB /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F5551EF9419D00A7BDAB /* ApiRequest.swift */; };
-		EDF4F5621EF9419D00A7BDAB /* ApiRequestWithData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F5561EF9419D00A7BDAB /* ApiRequestWithData.swift */; };
-		EDF4F5631EF9419D00A7BDAB /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F5571EF9419D00A7BDAB /* ErrorModel.swift */; };
-		EDF4F5641EF9419D00A7BDAB /* ApiRequest+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F55A1EF9419D00A7BDAB /* ApiRequest+Rx.swift */; };
-		EDF4F5651EF9419D00A7BDAB /* ApiRequestWithData+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F55B1EF9419D00A7BDAB /* ApiRequestWithData+Rx.swift */; };
-		EDF4F56C1EF9421400A7BDAB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF4F5671EF9421400A7BDAB /* Alamofire.framework */; };
-		EDF4F56D1EF9421400A7BDAB /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF4F5681EF9421400A7BDAB /* ObjectMapper.framework */; };
-		EDF4F56E1EF9421400A7BDAB /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF4F5691EF9421400A7BDAB /* RxBlocking.framework */; };
-		EDF4F56F1EF9421400A7BDAB /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF4F56A1EF9421400A7BDAB /* RxCocoa.framework */; };
-		EDF4F5701EF9421400A7BDAB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF4F56B1EF9421400A7BDAB /* RxSwift.framework */; };
+		EDF4F63D1EFA5F8300A7BDAB /* Balblair.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF4F63B1EFA5F8300A7BDAB /* Balblair.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDF4F6541EFA5F9F00A7BDAB /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = EDF4F6441EFA5F9F00A7BDAB /* .gitkeep */; };
+		EDF4F6551EFA5F9F00A7BDAB /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = EDF4F6471EFA5F9F00A7BDAB /* .gitkeep */; };
+		EDF4F6561EFA5F9F00A7BDAB /* Balblair.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F6481EFA5F9F00A7BDAB /* Balblair.swift */; };
+		EDF4F6571EFA5F9F00A7BDAB /* BalblairConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F6491EFA5F9F00A7BDAB /* BalblairConfiguration.swift */; };
+		EDF4F6581EFA5F9F00A7BDAB /* BalblairHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F64A1EFA5F9F00A7BDAB /* BalblairHeader.swift */; };
+		EDF4F6591EFA5F9F00A7BDAB /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F64D1EFA5F9F00A7BDAB /* ApiRequest.swift */; };
+		EDF4F65A1EFA5F9F00A7BDAB /* ApiRequestWithData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F64E1EFA5F9F00A7BDAB /* ApiRequestWithData.swift */; };
+		EDF4F65B1EFA5F9F00A7BDAB /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F64F1EFA5F9F00A7BDAB /* ErrorModel.swift */; };
+		EDF4F65C1EFA5F9F00A7BDAB /* ApiRequest+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F6521EFA5F9F00A7BDAB /* ApiRequest+Rx.swift */; };
+		EDF4F65D1EFA5F9F00A7BDAB /* ApiRequestWithData+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F6531EFA5F9F00A7BDAB /* ApiRequestWithData+Rx.swift */; };
+		EDF4F6641EFA606400A7BDAB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF4F65F1EFA606400A7BDAB /* Alamofire.framework */; };
+		EDF4F6651EFA606400A7BDAB /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF4F6601EFA606400A7BDAB /* ObjectMapper.framework */; };
+		EDF4F6661EFA606400A7BDAB /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF4F6611EFA606400A7BDAB /* RxBlocking.framework */; };
+		EDF4F6671EFA606400A7BDAB /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF4F6621EFA606400A7BDAB /* RxCocoa.framework */; };
+		EDF4F6681EFA606400A7BDAB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF4F6631EFA606400A7BDAB /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EDF4F5401EF9418600A7BDAB /* Balblair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Balblair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDF4F5431EF9418600A7BDAB /* Balblair.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Balblair.h; sourceTree = "<group>"; };
-		EDF4F5441EF9418600A7BDAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDF4F54C1EF9419D00A7BDAB /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		EDF4F54F1EF9419D00A7BDAB /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		EDF4F5501EF9419D00A7BDAB /* Balblair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Balblair.swift; sourceTree = "<group>"; };
-		EDF4F5511EF9419D00A7BDAB /* BalblairConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalblairConfiguration.swift; sourceTree = "<group>"; };
-		EDF4F5521EF9419D00A7BDAB /* BalblairHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalblairHeader.swift; sourceTree = "<group>"; };
-		EDF4F5551EF9419D00A7BDAB /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
-		EDF4F5561EF9419D00A7BDAB /* ApiRequestWithData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequestWithData.swift; sourceTree = "<group>"; };
-		EDF4F5571EF9419D00A7BDAB /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
-		EDF4F55A1EF9419D00A7BDAB /* ApiRequest+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApiRequest+Rx.swift"; sourceTree = "<group>"; };
-		EDF4F55B1EF9419D00A7BDAB /* ApiRequestWithData+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApiRequestWithData+Rx.swift"; sourceTree = "<group>"; };
-		EDF4F5671EF9421400A7BDAB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		EDF4F5681EF9421400A7BDAB /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = ../Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
-		EDF4F5691EF9421400A7BDAB /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = ../Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
-		EDF4F56A1EF9421400A7BDAB /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		EDF4F56B1EF9421400A7BDAB /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		EDF4F6381EFA5F8300A7BDAB /* Balblair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Balblair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF4F63B1EFA5F8300A7BDAB /* Balblair.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Balblair.h; sourceTree = "<group>"; };
+		EDF4F63C1EFA5F8300A7BDAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDF4F6441EFA5F9F00A7BDAB /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		EDF4F6471EFA5F9F00A7BDAB /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		EDF4F6481EFA5F9F00A7BDAB /* Balblair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Balblair.swift; sourceTree = "<group>"; };
+		EDF4F6491EFA5F9F00A7BDAB /* BalblairConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalblairConfiguration.swift; sourceTree = "<group>"; };
+		EDF4F64A1EFA5F9F00A7BDAB /* BalblairHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalblairHeader.swift; sourceTree = "<group>"; };
+		EDF4F64D1EFA5F9F00A7BDAB /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		EDF4F64E1EFA5F9F00A7BDAB /* ApiRequestWithData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequestWithData.swift; sourceTree = "<group>"; };
+		EDF4F64F1EFA5F9F00A7BDAB /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		EDF4F6521EFA5F9F00A7BDAB /* ApiRequest+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApiRequest+Rx.swift"; sourceTree = "<group>"; };
+		EDF4F6531EFA5F9F00A7BDAB /* ApiRequestWithData+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApiRequestWithData+Rx.swift"; sourceTree = "<group>"; };
+		EDF4F65F1EFA606400A7BDAB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		EDF4F6601EFA606400A7BDAB /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = ../Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		EDF4F6611EFA606400A7BDAB /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = ../Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		EDF4F6621EFA606400A7BDAB /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		EDF4F6631EFA606400A7BDAB /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EDF4F53C1EF9418600A7BDAB /* Frameworks */ = {
+		EDF4F6341EFA5F8300A7BDAB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF4F56C1EF9421400A7BDAB /* Alamofire.framework in Frameworks */,
-				EDF4F56D1EF9421400A7BDAB /* ObjectMapper.framework in Frameworks */,
-				EDF4F56E1EF9421400A7BDAB /* RxBlocking.framework in Frameworks */,
-				EDF4F56F1EF9421400A7BDAB /* RxCocoa.framework in Frameworks */,
-				EDF4F5701EF9421400A7BDAB /* RxSwift.framework in Frameworks */,
+				EDF4F6641EFA606400A7BDAB /* Alamofire.framework in Frameworks */,
+				EDF4F6651EFA606400A7BDAB /* ObjectMapper.framework in Frameworks */,
+				EDF4F6661EFA606400A7BDAB /* RxBlocking.framework in Frameworks */,
+				EDF4F6671EFA606400A7BDAB /* RxCocoa.framework in Frameworks */,
+				EDF4F6681EFA606400A7BDAB /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EDF4F5361EF9418600A7BDAB = {
+		EDF4F62E1EFA5F8300A7BDAB = {
 			isa = PBXGroup;
 			children = (
-				EDF4F5421EF9418600A7BDAB /* Balblair */,
-				EDF4F5411EF9418600A7BDAB /* Products */,
-				EDF4F5661EF9421400A7BDAB /* Frameworks */,
+				EDF4F63A1EFA5F8300A7BDAB /* Balblair */,
+				EDF4F6391EFA5F8300A7BDAB /* Products */,
+				EDF4F65E1EFA606400A7BDAB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		EDF4F5411EF9418600A7BDAB /* Products */ = {
+		EDF4F6391EFA5F8300A7BDAB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F5401EF9418600A7BDAB /* Balblair.framework */,
+				EDF4F6381EFA5F8300A7BDAB /* Balblair.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EDF4F5421EF9418600A7BDAB /* Balblair */ = {
+		EDF4F63A1EFA5F8300A7BDAB /* Balblair */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F5431EF9418600A7BDAB /* Balblair.h */,
-				EDF4F54B1EF9419D00A7BDAB /* Assets */,
-				EDF4F54D1EF9419D00A7BDAB /* Core */,
-				EDF4F5531EF9419D00A7BDAB /* ObjectMapper */,
-				EDF4F5581EF9419D00A7BDAB /* Rx */,
-				EDF4F5441EF9418600A7BDAB /* Info.plist */,
+				EDF4F63B1EFA5F8300A7BDAB /* Balblair.h */,
+				EDF4F6431EFA5F9F00A7BDAB /* Assets */,
+				EDF4F6451EFA5F9F00A7BDAB /* Core */,
+				EDF4F64B1EFA5F9F00A7BDAB /* ObjectMapper */,
+				EDF4F6501EFA5F9F00A7BDAB /* Rx */,
+				EDF4F63C1EFA5F8300A7BDAB /* Info.plist */,
 			);
 			path = Balblair;
 			sourceTree = "<group>";
 		};
-		EDF4F54B1EF9419D00A7BDAB /* Assets */ = {
+		EDF4F6431EFA5F9F00A7BDAB /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F54C1EF9419D00A7BDAB /* .gitkeep */,
+				EDF4F6441EFA5F9F00A7BDAB /* .gitkeep */,
 			);
 			name = Assets;
 			path = ../../../Balblair/Assets;
 			sourceTree = "<group>";
 		};
-		EDF4F54D1EF9419D00A7BDAB /* Core */ = {
+		EDF4F6451EFA5F9F00A7BDAB /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F54E1EF9419D00A7BDAB /* Classes */,
+				EDF4F6461EFA5F9F00A7BDAB /* Classes */,
 			);
 			name = Core;
 			path = ../../../Balblair/Core;
 			sourceTree = "<group>";
 		};
-		EDF4F54E1EF9419D00A7BDAB /* Classes */ = {
+		EDF4F6461EFA5F9F00A7BDAB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F54F1EF9419D00A7BDAB /* .gitkeep */,
-				EDF4F5501EF9419D00A7BDAB /* Balblair.swift */,
-				EDF4F5511EF9419D00A7BDAB /* BalblairConfiguration.swift */,
-				EDF4F5521EF9419D00A7BDAB /* BalblairHeader.swift */,
+				EDF4F6471EFA5F9F00A7BDAB /* .gitkeep */,
+				EDF4F6481EFA5F9F00A7BDAB /* Balblair.swift */,
+				EDF4F6491EFA5F9F00A7BDAB /* BalblairConfiguration.swift */,
+				EDF4F64A1EFA5F9F00A7BDAB /* BalblairHeader.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		EDF4F5531EF9419D00A7BDAB /* ObjectMapper */ = {
+		EDF4F64B1EFA5F9F00A7BDAB /* ObjectMapper */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F5541EF9419D00A7BDAB /* Classes */,
+				EDF4F64C1EFA5F9F00A7BDAB /* Classes */,
 			);
 			name = ObjectMapper;
 			path = ../../../Balblair/ObjectMapper;
 			sourceTree = "<group>";
 		};
-		EDF4F5541EF9419D00A7BDAB /* Classes */ = {
+		EDF4F64C1EFA5F9F00A7BDAB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F5551EF9419D00A7BDAB /* ApiRequest.swift */,
-				EDF4F5561EF9419D00A7BDAB /* ApiRequestWithData.swift */,
-				EDF4F5571EF9419D00A7BDAB /* ErrorModel.swift */,
+				EDF4F64D1EFA5F9F00A7BDAB /* ApiRequest.swift */,
+				EDF4F64E1EFA5F9F00A7BDAB /* ApiRequestWithData.swift */,
+				EDF4F64F1EFA5F9F00A7BDAB /* ErrorModel.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		EDF4F5581EF9419D00A7BDAB /* Rx */ = {
+		EDF4F6501EFA5F9F00A7BDAB /* Rx */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F5591EF9419D00A7BDAB /* Classes */,
+				EDF4F6511EFA5F9F00A7BDAB /* Classes */,
 			);
 			name = Rx;
 			path = ../../../Balblair/Rx;
 			sourceTree = "<group>";
 		};
-		EDF4F5591EF9419D00A7BDAB /* Classes */ = {
+		EDF4F6511EFA5F9F00A7BDAB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F55A1EF9419D00A7BDAB /* ApiRequest+Rx.swift */,
-				EDF4F55B1EF9419D00A7BDAB /* ApiRequestWithData+Rx.swift */,
+				EDF4F6521EFA5F9F00A7BDAB /* ApiRequest+Rx.swift */,
+				EDF4F6531EFA5F9F00A7BDAB /* ApiRequestWithData+Rx.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		EDF4F5661EF9421400A7BDAB /* Frameworks */ = {
+		EDF4F65E1EFA606400A7BDAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F5671EF9421400A7BDAB /* Alamofire.framework */,
-				EDF4F5681EF9421400A7BDAB /* ObjectMapper.framework */,
-				EDF4F5691EF9421400A7BDAB /* RxBlocking.framework */,
-				EDF4F56A1EF9421400A7BDAB /* RxCocoa.framework */,
-				EDF4F56B1EF9421400A7BDAB /* RxSwift.framework */,
+				EDF4F65F1EFA606400A7BDAB /* Alamofire.framework */,
+				EDF4F6601EFA606400A7BDAB /* ObjectMapper.framework */,
+				EDF4F6611EFA606400A7BDAB /* RxBlocking.framework */,
+				EDF4F6621EFA606400A7BDAB /* RxCocoa.framework */,
+				EDF4F6631EFA606400A7BDAB /* RxSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,25 +173,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		EDF4F53D1EF9418600A7BDAB /* Headers */ = {
+		EDF4F6351EFA5F8300A7BDAB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF4F5451EF9418600A7BDAB /* Balblair.h in Headers */,
+				EDF4F63D1EFA5F8300A7BDAB /* Balblair.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		EDF4F53F1EF9418600A7BDAB /* Balblair */ = {
+		EDF4F6371EFA5F8300A7BDAB /* Balblair */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDF4F5481EF9418600A7BDAB /* Build configuration list for PBXNativeTarget "Balblair" */;
+			buildConfigurationList = EDF4F6401EFA5F8300A7BDAB /* Build configuration list for PBXNativeTarget "Balblair" */;
 			buildPhases = (
-				EDF4F53B1EF9418600A7BDAB /* Sources */,
-				EDF4F53C1EF9418600A7BDAB /* Frameworks */,
-				EDF4F53D1EF9418600A7BDAB /* Headers */,
-				EDF4F53E1EF9418600A7BDAB /* Resources */,
+				EDF4F6331EFA5F8300A7BDAB /* Sources */,
+				EDF4F6341EFA5F8300A7BDAB /* Frameworks */,
+				EDF4F6351EFA5F8300A7BDAB /* Headers */,
+				EDF4F6361EFA5F8300A7BDAB /* Resources */,
 			);
 			buildRules = (
 			);
@@ -199,74 +199,74 @@
 			);
 			name = Balblair;
 			productName = Balblair;
-			productReference = EDF4F5401EF9418600A7BDAB /* Balblair.framework */;
+			productReference = EDF4F6381EFA5F8300A7BDAB /* Balblair.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EDF4F5371EF9418600A7BDAB /* Project object */ = {
+		EDF4F62F1EFA5F8300A7BDAB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Koji Murata";
 				TargetAttributes = {
-					EDF4F53F1EF9418600A7BDAB = {
+					EDF4F6371EFA5F8300A7BDAB = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 8AKT7PFJ2M;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = EDF4F53A1EF9418600A7BDAB /* Build configuration list for PBXProject "Balblair" */;
+			buildConfigurationList = EDF4F6321EFA5F8300A7BDAB /* Build configuration list for PBXProject "Balblair" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = EDF4F5361EF9418600A7BDAB;
-			productRefGroup = EDF4F5411EF9418600A7BDAB /* Products */;
+			mainGroup = EDF4F62E1EFA5F8300A7BDAB;
+			productRefGroup = EDF4F6391EFA5F8300A7BDAB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EDF4F53F1EF9418600A7BDAB /* Balblair */,
+				EDF4F6371EFA5F8300A7BDAB /* Balblair */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		EDF4F53E1EF9418600A7BDAB /* Resources */ = {
+		EDF4F6361EFA5F8300A7BDAB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF4F55C1EF9419D00A7BDAB /* .gitkeep in Resources */,
-				EDF4F55D1EF9419D00A7BDAB /* .gitkeep in Resources */,
+				EDF4F6541EFA5F9F00A7BDAB /* .gitkeep in Resources */,
+				EDF4F6551EFA5F9F00A7BDAB /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		EDF4F53B1EF9418600A7BDAB /* Sources */ = {
+		EDF4F6331EFA5F8300A7BDAB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF4F5631EF9419D00A7BDAB /* ErrorModel.swift in Sources */,
-				EDF4F5601EF9419D00A7BDAB /* BalblairHeader.swift in Sources */,
-				EDF4F55E1EF9419D00A7BDAB /* Balblair.swift in Sources */,
-				EDF4F5611EF9419D00A7BDAB /* ApiRequest.swift in Sources */,
-				EDF4F5651EF9419D00A7BDAB /* ApiRequestWithData+Rx.swift in Sources */,
-				EDF4F5621EF9419D00A7BDAB /* ApiRequestWithData.swift in Sources */,
-				EDF4F5641EF9419D00A7BDAB /* ApiRequest+Rx.swift in Sources */,
-				EDF4F55F1EF9419D00A7BDAB /* BalblairConfiguration.swift in Sources */,
+				EDF4F65B1EFA5F9F00A7BDAB /* ErrorModel.swift in Sources */,
+				EDF4F6581EFA5F9F00A7BDAB /* BalblairHeader.swift in Sources */,
+				EDF4F6561EFA5F9F00A7BDAB /* Balblair.swift in Sources */,
+				EDF4F6591EFA5F9F00A7BDAB /* ApiRequest.swift in Sources */,
+				EDF4F65D1EFA5F9F00A7BDAB /* ApiRequestWithData+Rx.swift in Sources */,
+				EDF4F65A1EFA5F9F00A7BDAB /* ApiRequestWithData.swift in Sources */,
+				EDF4F65C1EFA5F9F00A7BDAB /* ApiRequest+Rx.swift in Sources */,
+				EDF4F6571EFA5F9F00A7BDAB /* BalblairConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		EDF4F5461EF9418600A7BDAB /* Debug */ = {
+		EDF4F63E1EFA5F8300A7BDAB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -320,7 +320,7 @@
 			};
 			name = Debug;
 		};
-		EDF4F5471EF9418600A7BDAB /* Release */ = {
+		EDF4F63F1EFA5F8300A7BDAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -367,7 +367,7 @@
 			};
 			name = Release;
 		};
-		EDF4F5491EF9418600A7BDAB /* Debug */ = {
+		EDF4F6411EFA5F8300A7BDAB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
@@ -376,7 +376,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../Build/iOS",
+				);
 				INFOPLIST_FILE = Balblair/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -387,7 +390,7 @@
 			};
 			name = Debug;
 		};
-		EDF4F54A1EF9418600A7BDAB /* Release */ = {
+		EDF4F6421EFA5F8300A7BDAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
@@ -396,7 +399,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../Build/iOS",
+				);
 				INFOPLIST_FILE = Balblair/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -410,24 +416,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EDF4F53A1EF9418600A7BDAB /* Build configuration list for PBXProject "Balblair" */ = {
+		EDF4F6321EFA5F8300A7BDAB /* Build configuration list for PBXProject "Balblair" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EDF4F5461EF9418600A7BDAB /* Debug */,
-				EDF4F5471EF9418600A7BDAB /* Release */,
+				EDF4F63E1EFA5F8300A7BDAB /* Debug */,
+				EDF4F63F1EFA5F8300A7BDAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDF4F5481EF9418600A7BDAB /* Build configuration list for PBXNativeTarget "Balblair" */ = {
+		EDF4F6401EFA5F8300A7BDAB /* Build configuration list for PBXNativeTarget "Balblair" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EDF4F5491EF9418600A7BDAB /* Debug */,
-				EDF4F54A1EF9418600A7BDAB /* Release */,
+				EDF4F6411EFA5F8300A7BDAB /* Debug */,
+				EDF4F6421EFA5F8300A7BDAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = EDF4F5371EF9418600A7BDAB /* Project object */;
+	rootObject = EDF4F62F1EFA5F8300A7BDAB /* Project object */;
 }
