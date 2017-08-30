@@ -39,7 +39,7 @@ extension ApiRequestWithData where ResultType: Mappable, ParametersType: Mappabl
   }
 }
 
-extension ApiRequestWithData where ResultType: ExpressibleByArrayLiteral, ResultType.Element: Mappable, ParametersType: Mappable {
+extension ApiRequestWithData where ResultType: ExpressibleByArrayLiteral, ResultType.ArrayLiteralElement: Mappable, ParametersType: Mappable {
   public func request(progress: Balblair.ProgressCallback? = nil,
                       success: ((_ result: ResultType) -> Void)? = nil,
                       failure: ((_ errorModel: ErrorModelType) -> Void)? = nil,
@@ -47,7 +47,7 @@ extension ApiRequestWithData where ResultType: ExpressibleByArrayLiteral, Result
   {
     willBeginRequest(parameters: parameters)
     Balblair(configuration: configuration).upload(method: method, path: path, parameters: parameters.toJSON(), uploadData: uploadData, progress: progress, success: { (result) in
-      guard let object = Mapper<ResultType.Element>().mapArray(JSONObject: result) as? ResultType else {
+      guard let object = Mapper<ResultType.ArrayLiteralElement>().mapArray(JSONObject: result) as? ResultType else {
         let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
         failure?(errorModel)
         self.didFailure(error: errorModel)
@@ -87,7 +87,7 @@ extension ApiRequestWithData where ResultType: Mappable, ParametersType == [Stri
   }
 }
 
-extension ApiRequestWithData where ResultType: ExpressibleByArrayLiteral, ResultType.Element: Mappable, ParametersType == [String: Any] {
+extension ApiRequestWithData where ResultType: ExpressibleByArrayLiteral, ResultType.ArrayLiteralElement: Mappable, ParametersType == [String: Any] {
   public func request(progress: Balblair.ProgressCallback? = nil,
                       success: ((_ result: ResultType) -> Void)? = nil,
                       failure: ((_ errorModel: ErrorModelType) -> Void)? = nil,
@@ -95,7 +95,7 @@ extension ApiRequestWithData where ResultType: ExpressibleByArrayLiteral, Result
   {
     willBeginRequest(parameters: parameters)
     Balblair(configuration: configuration).upload(method: method, path: path, parameters: parameters, uploadData: uploadData, progress: progress, success: { (result) in
-      guard let object = Mapper<ResultType.Element>().mapArray(JSONObject: result) as? ResultType else {
+      guard let object = Mapper<ResultType.ArrayLiteralElement>().mapArray(JSONObject: result) as? ResultType else {
         let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
         failure?(errorModel)
         self.didFailure(error: errorModel)

@@ -67,7 +67,7 @@ extension ApiRequest where ResultType: Mappable, ParametersType: Mappable {
   }
 }
 
-extension ApiRequest where ResultType: ExpressibleByArrayLiteral, ResultType.Element: Mappable, ParametersType: Mappable {
+extension ApiRequest where ResultType: ExpressibleByArrayLiteral, ResultType.ArrayLiteralElement: Mappable, ParametersType: Mappable {
   @discardableResult
   public func request(progress: Balblair.ProgressCallback? = nil,
     success: ((_ result: ResultType) -> Void)? = nil,
@@ -75,7 +75,7 @@ extension ApiRequest where ResultType: ExpressibleByArrayLiteral, ResultType.Ele
   {
     willBeginRequest(parameters: parameters)
     return Balblair(configuration: configuration).request(method: method, path: path, parameters: parameters.toJSON(), progress: progress, success: { (result) in
-      guard let object = Mapper<ResultType.Element>().mapArray(JSONObject: result) as? ResultType else {
+      guard let object = Mapper<ResultType.ArrayLiteralElement>().mapArray(JSONObject: result) as? ResultType else {
         let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
         failure?(errorModel)
         self.didFailure(error: errorModel)
@@ -115,7 +115,7 @@ extension ApiRequest where ResultType: Mappable, ParametersType == [String: Any]
   }
 }
 
-extension ApiRequest where ResultType: ExpressibleByArrayLiteral, ResultType.Element: Mappable, ParametersType == [String: Any] {
+extension ApiRequest where ResultType: ExpressibleByArrayLiteral, ResultType.ArrayLiteralElement: Mappable, ParametersType == [String: Any] {
   @discardableResult
   public func request(progress: Balblair.ProgressCallback? = nil,
     success: ((_ result: ResultType) -> Void)? = nil,
@@ -123,7 +123,7 @@ extension ApiRequest where ResultType: ExpressibleByArrayLiteral, ResultType.Ele
   {
     willBeginRequest(parameters: parameters)
     return Balblair(configuration: configuration).request(method: method, path: path, parameters: parameters, progress: progress, success: { (result) in
-      guard let object = Mapper<ResultType.Element>().mapArray(JSONObject: result) as? ResultType else {
+      guard let object = Mapper<ResultType.ArrayLiteralElement>().mapArray(JSONObject: result) as? ResultType else {
         let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
         failure?(errorModel)
         self.didFailure(error: errorModel)

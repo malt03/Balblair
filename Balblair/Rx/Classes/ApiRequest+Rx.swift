@@ -26,7 +26,7 @@ extension ApiRequest where ResultType: Mappable, ParametersType: Mappable {
   }
 }
 
-extension ApiRequest where ResultType: ExpressibleByArrayLiteral, ResultType.Element: Mappable, ParametersType: Mappable {
+extension ApiRequest where ResultType: ExpressibleByArrayLiteral, ResultType.ArrayLiteralElement: Mappable, ParametersType: Mappable {
   public var response: Observable<ResultType> {
     return Observable.create { (observer) -> Disposable in
       let request = self.request(success: { (result) in
@@ -58,7 +58,7 @@ extension ApiRequest where ResultType: Mappable, ParametersType == [String: Any]
   }
 }
 
-extension ApiRequest where ResultType: ExpressibleByArrayLiteral, ResultType.Element: Mappable, ParametersType == [String: Any] {
+extension ApiRequest where ResultType: ExpressibleByArrayLiteral, ResultType.ArrayLiteralElement: Mappable, ParametersType == [String: Any] {
   public var response: Observable<ResultType> {
     return Observable.create { (observer) -> Disposable in
       let request = self.request(success: { (result) in
