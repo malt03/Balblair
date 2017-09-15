@@ -1,15 +1,15 @@
 PODS:
-  - Alamofire (4.5.0)
-  - Balblair (1.0.0):
-    - Balblair/Core (= 1.0.0)
-    - Balblair/ObjectMapper (= 1.0.0)
-    - Balblair/Rx (= 1.0.0)
-  - Balblair/Core (1.0.0):
+  - Alamofire (4.5.1)
+  - Balblair (1.1.0):
+    - Balblair/Core (= 1.1.0)
+    - Balblair/ObjectMapper (= 1.1.0)
+    - Balblair/Rx (= 1.1.0)
+  - Balblair/Core (1.1.0):
     - Alamofire (>= 4.0)
-  - Balblair/ObjectMapper (1.0.0):
+  - Balblair/ObjectMapper (1.1.0):
     - Balblair/Core
     - ObjectMapper (>= 2.0)
-  - Balblair/Rx (1.0.0):
+  - Balblair/Rx (1.1.0):
     - Balblair/Core
     - Balblair/ObjectMapper
     - RxSwift (>= 3.0)
@@ -24,8 +24,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  Balblair: ed69b96fe666fe0c55d4c4d716bd9216e504c734
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Balblair: c3492434cfa447800cac5d78ea35f55f6a0f2ce2
   ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
 
