@@ -3,154 +3,204 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EDF4F63D1EFA5F8300A7BDAB /* Balblair.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF4F63B1EFA5F8300A7BDAB /* Balblair.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDF4F6561EFA5F9F00A7BDAB /* Balblair.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F6481EFA5F9F00A7BDAB /* Balblair.swift */; };
-		EDF4F6571EFA5F9F00A7BDAB /* BalblairConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F6491EFA5F9F00A7BDAB /* BalblairConfiguration.swift */; };
-		EDF4F6581EFA5F9F00A7BDAB /* BalblairHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F64A1EFA5F9F00A7BDAB /* BalblairHeader.swift */; };
-		EDF4F6591EFA5F9F00A7BDAB /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F64D1EFA5F9F00A7BDAB /* ApiRequest.swift */; };
-		EDF4F65A1EFA5F9F00A7BDAB /* ApiRequestWithData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F64E1EFA5F9F00A7BDAB /* ApiRequestWithData.swift */; };
-		EDF4F65B1EFA5F9F00A7BDAB /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F64F1EFA5F9F00A7BDAB /* ErrorModel.swift */; };
-		EDF4F65C1EFA5F9F00A7BDAB /* ApiRequest+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F6521EFA5F9F00A7BDAB /* ApiRequest+Rx.swift */; };
-		EDF4F65D1EFA5F9F00A7BDAB /* ApiRequestWithData+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F6531EFA5F9F00A7BDAB /* ApiRequestWithData+Rx.swift */; };
-		EDF4F6641EFA606400A7BDAB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF4F65F1EFA606400A7BDAB /* Alamofire.framework */; };
-		EDF4F6651EFA606400A7BDAB /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF4F6601EFA606400A7BDAB /* ObjectMapper.framework */; };
-		EDF4F6661EFA606400A7BDAB /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF4F6611EFA606400A7BDAB /* RxBlocking.framework */; };
-		EDF4F6671EFA606400A7BDAB /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF4F6621EFA606400A7BDAB /* RxCocoa.framework */; };
-		EDF4F6681EFA606400A7BDAB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF4F6631EFA606400A7BDAB /* RxSwift.framework */; };
+		ED5E987920922ABC00C71ED5 /* Balblair_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = ED5E987720922ABC00C71ED5 /* Balblair_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED5E988620922B0000C71ED5 /* Balblair_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = ED5E988420922B0000C71ED5 /* Balblair_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED5E989920922B4A00C71ED5 /* Balblair.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E988D20922B4A00C71ED5 /* Balblair.swift */; };
+		ED5E989A20922B4A00C71ED5 /* Balblair.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E988D20922B4A00C71ED5 /* Balblair.swift */; };
+		ED5E989B20922B4A00C71ED5 /* BalblairConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E988E20922B4A00C71ED5 /* BalblairConfiguration.swift */; };
+		ED5E989C20922B4A00C71ED5 /* BalblairConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E988E20922B4A00C71ED5 /* BalblairConfiguration.swift */; };
+		ED5E989D20922B4A00C71ED5 /* BalblairHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E988F20922B4A00C71ED5 /* BalblairHeader.swift */; };
+		ED5E989E20922B4A00C71ED5 /* BalblairHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E988F20922B4A00C71ED5 /* BalblairHeader.swift */; };
+		ED5E989F20922B4A00C71ED5 /* ApiRequest+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E989220922B4A00C71ED5 /* ApiRequest+Rx.swift */; };
+		ED5E98A020922B4A00C71ED5 /* ApiRequest+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E989220922B4A00C71ED5 /* ApiRequest+Rx.swift */; };
+		ED5E98A120922B4A00C71ED5 /* ApiRequestWithData+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E989320922B4A00C71ED5 /* ApiRequestWithData+Rx.swift */; };
+		ED5E98A220922B4A00C71ED5 /* ApiRequestWithData+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E989320922B4A00C71ED5 /* ApiRequestWithData+Rx.swift */; };
+		ED5E98A320922B4A00C71ED5 /* ApiRequestWithData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E989620922B4A00C71ED5 /* ApiRequestWithData.swift */; };
+		ED5E98A420922B4A00C71ED5 /* ApiRequestWithData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E989620922B4A00C71ED5 /* ApiRequestWithData.swift */; };
+		ED5E98A520922B4A00C71ED5 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E989720922B4A00C71ED5 /* ApiRequest.swift */; };
+		ED5E98A620922B4A00C71ED5 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E989720922B4A00C71ED5 /* ApiRequest.swift */; };
+		ED5E98A720922B4A00C71ED5 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E989820922B4A00C71ED5 /* ErrorModel.swift */; };
+		ED5E98A820922B4A00C71ED5 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E989820922B4A00C71ED5 /* ErrorModel.swift */; };
+		ED5E98AD20922B7A00C71ED5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5E98AA20922B7A00C71ED5 /* Alamofire.framework */; };
+		ED5E98AE20922B7A00C71ED5 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5E98AB20922B7A00C71ED5 /* ObjectMapper.framework */; };
+		ED5E98AF20922B7B00C71ED5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5E98AC20922B7A00C71ED5 /* RxSwift.framework */; };
+		ED5E98B320922CA600C71ED5 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5E98B020922CA600C71ED5 /* ObjectMapper.framework */; };
+		ED5E98B420922CA600C71ED5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5E98B120922CA600C71ED5 /* Alamofire.framework */; };
+		ED5E98B520922CA600C71ED5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5E98B220922CA600C71ED5 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EDF4F6381EFA5F8300A7BDAB /* Balblair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Balblair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDF4F63B1EFA5F8300A7BDAB /* Balblair.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Balblair.h; sourceTree = "<group>"; };
-		EDF4F63C1EFA5F8300A7BDAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDF4F6481EFA5F9F00A7BDAB /* Balblair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Balblair.swift; sourceTree = "<group>"; };
-		EDF4F6491EFA5F9F00A7BDAB /* BalblairConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalblairConfiguration.swift; sourceTree = "<group>"; };
-		EDF4F64A1EFA5F9F00A7BDAB /* BalblairHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalblairHeader.swift; sourceTree = "<group>"; };
-		EDF4F64D1EFA5F9F00A7BDAB /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
-		EDF4F64E1EFA5F9F00A7BDAB /* ApiRequestWithData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequestWithData.swift; sourceTree = "<group>"; };
-		EDF4F64F1EFA5F9F00A7BDAB /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
-		EDF4F6521EFA5F9F00A7BDAB /* ApiRequest+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApiRequest+Rx.swift"; sourceTree = "<group>"; };
-		EDF4F6531EFA5F9F00A7BDAB /* ApiRequestWithData+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApiRequestWithData+Rx.swift"; sourceTree = "<group>"; };
-		EDF4F65F1EFA606400A7BDAB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		EDF4F6601EFA606400A7BDAB /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = ../Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
-		EDF4F6611EFA606400A7BDAB /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = ../Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
-		EDF4F6621EFA606400A7BDAB /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		EDF4F6631EFA606400A7BDAB /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		ED5E987420922ABC00C71ED5 /* Balblair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Balblair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED5E987720922ABC00C71ED5 /* Balblair_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Balblair_iOS.h; sourceTree = "<group>"; };
+		ED5E987820922ABC00C71ED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED5E988220922B0000C71ED5 /* Balblair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Balblair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED5E988420922B0000C71ED5 /* Balblair_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Balblair_macOS.h; sourceTree = "<group>"; };
+		ED5E988520922B0000C71ED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED5E988D20922B4A00C71ED5 /* Balblair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Balblair.swift; sourceTree = "<group>"; };
+		ED5E988E20922B4A00C71ED5 /* BalblairConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalblairConfiguration.swift; sourceTree = "<group>"; };
+		ED5E988F20922B4A00C71ED5 /* BalblairHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalblairHeader.swift; sourceTree = "<group>"; };
+		ED5E989220922B4A00C71ED5 /* ApiRequest+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApiRequest+Rx.swift"; sourceTree = "<group>"; };
+		ED5E989320922B4A00C71ED5 /* ApiRequestWithData+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApiRequestWithData+Rx.swift"; sourceTree = "<group>"; };
+		ED5E989620922B4A00C71ED5 /* ApiRequestWithData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequestWithData.swift; sourceTree = "<group>"; };
+		ED5E989720922B4A00C71ED5 /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		ED5E989820922B4A00C71ED5 /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		ED5E98AA20922B7A00C71ED5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../../Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		ED5E98AB20922B7A00C71ED5 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = ../../Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		ED5E98AC20922B7A00C71ED5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../../Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		ED5E98B020922CA600C71ED5 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = ../../Build/Mac/ObjectMapper.framework; sourceTree = "<group>"; };
+		ED5E98B120922CA600C71ED5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../../Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
+		ED5E98B220922CA600C71ED5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../../Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EDF4F6341EFA5F8300A7BDAB /* Frameworks */ = {
+		ED5E987020922ABC00C71ED5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF4F6641EFA606400A7BDAB /* Alamofire.framework in Frameworks */,
-				EDF4F6651EFA606400A7BDAB /* ObjectMapper.framework in Frameworks */,
-				EDF4F6661EFA606400A7BDAB /* RxBlocking.framework in Frameworks */,
-				EDF4F6671EFA606400A7BDAB /* RxCocoa.framework in Frameworks */,
-				EDF4F6681EFA606400A7BDAB /* RxSwift.framework in Frameworks */,
+				ED5E98AD20922B7A00C71ED5 /* Alamofire.framework in Frameworks */,
+				ED5E98AE20922B7A00C71ED5 /* ObjectMapper.framework in Frameworks */,
+				ED5E98AF20922B7B00C71ED5 /* RxSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED5E987E20922B0000C71ED5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED5E98B320922CA600C71ED5 /* ObjectMapper.framework in Frameworks */,
+				ED5E98B420922CA600C71ED5 /* Alamofire.framework in Frameworks */,
+				ED5E98B520922CA600C71ED5 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EDF4F62E1EFA5F8300A7BDAB = {
+		ED5E986820922AAB00C71ED5 = {
 			isa = PBXGroup;
 			children = (
-				EDF4F63A1EFA5F8300A7BDAB /* Balblair */,
-				EDF4F6391EFA5F8300A7BDAB /* Products */,
-				EDF4F65E1EFA606400A7BDAB /* Frameworks */,
+				ED5E988A20922B3200C71ED5 /* Shared */,
+				ED5E987620922ABC00C71ED5 /* Balblair-iOS */,
+				ED5E988320922B0000C71ED5 /* Balblair-macOS */,
+				ED5E987520922ABC00C71ED5 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		EDF4F6391EFA5F8300A7BDAB /* Products */ = {
+		ED5E987520922ABC00C71ED5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F6381EFA5F8300A7BDAB /* Balblair.framework */,
+				ED5E987420922ABC00C71ED5 /* Balblair.framework */,
+				ED5E988220922B0000C71ED5 /* Balblair.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EDF4F63A1EFA5F8300A7BDAB /* Balblair */ = {
+		ED5E987620922ABC00C71ED5 /* Balblair-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F63B1EFA5F8300A7BDAB /* Balblair.h */,
-				EDF4F6451EFA5F9F00A7BDAB /* Core */,
-				EDF4F64B1EFA5F9F00A7BDAB /* ObjectMapper */,
-				EDF4F6501EFA5F9F00A7BDAB /* Rx */,
-				EDF4F63C1EFA5F8300A7BDAB /* Info.plist */,
+				ED5E98B720922CD800C71ED5 /* Frameworks */,
+				ED5E987720922ABC00C71ED5 /* Balblair_iOS.h */,
+				ED5E987820922ABC00C71ED5 /* Info.plist */,
 			);
-			path = Balblair;
+			path = "Balblair-iOS";
 			sourceTree = "<group>";
 		};
-		EDF4F6451EFA5F9F00A7BDAB /* Core */ = {
+		ED5E988320922B0000C71ED5 /* Balblair-macOS */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F6461EFA5F9F00A7BDAB /* Classes */,
+				ED5E98B620922CBE00C71ED5 /* Frameworks */,
+				ED5E988420922B0000C71ED5 /* Balblair_macOS.h */,
+				ED5E988520922B0000C71ED5 /* Info.plist */,
+			);
+			path = "Balblair-macOS";
+			sourceTree = "<group>";
+		};
+		ED5E988A20922B3200C71ED5 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				ED5E988B20922B4A00C71ED5 /* Core */,
+				ED5E989420922B4A00C71ED5 /* ObjectMapper */,
+				ED5E989020922B4A00C71ED5 /* Rx */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		ED5E988B20922B4A00C71ED5 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				ED5E988C20922B4A00C71ED5 /* Classes */,
 			);
 			name = Core;
-			path = ../../../Balblair/Core;
+			path = ../../Balblair/Core;
 			sourceTree = "<group>";
 		};
-		EDF4F6461EFA5F9F00A7BDAB /* Classes */ = {
+		ED5E988C20922B4A00C71ED5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F6481EFA5F9F00A7BDAB /* Balblair.swift */,
-				EDF4F6491EFA5F9F00A7BDAB /* BalblairConfiguration.swift */,
-				EDF4F64A1EFA5F9F00A7BDAB /* BalblairHeader.swift */,
+				ED5E988D20922B4A00C71ED5 /* Balblair.swift */,
+				ED5E988E20922B4A00C71ED5 /* BalblairConfiguration.swift */,
+				ED5E988F20922B4A00C71ED5 /* BalblairHeader.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		EDF4F64B1EFA5F9F00A7BDAB /* ObjectMapper */ = {
+		ED5E989020922B4A00C71ED5 /* Rx */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F64C1EFA5F9F00A7BDAB /* Classes */,
-			);
-			name = ObjectMapper;
-			path = ../../../Balblair/ObjectMapper;
-			sourceTree = "<group>";
-		};
-		EDF4F64C1EFA5F9F00A7BDAB /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				EDF4F64D1EFA5F9F00A7BDAB /* ApiRequest.swift */,
-				EDF4F64E1EFA5F9F00A7BDAB /* ApiRequestWithData.swift */,
-				EDF4F64F1EFA5F9F00A7BDAB /* ErrorModel.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		EDF4F6501EFA5F9F00A7BDAB /* Rx */ = {
-			isa = PBXGroup;
-			children = (
-				EDF4F6511EFA5F9F00A7BDAB /* Classes */,
+				ED5E989120922B4A00C71ED5 /* Classes */,
 			);
 			name = Rx;
-			path = ../../../Balblair/Rx;
+			path = ../../Balblair/Rx;
 			sourceTree = "<group>";
 		};
-		EDF4F6511EFA5F9F00A7BDAB /* Classes */ = {
+		ED5E989120922B4A00C71ED5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F6521EFA5F9F00A7BDAB /* ApiRequest+Rx.swift */,
-				EDF4F6531EFA5F9F00A7BDAB /* ApiRequestWithData+Rx.swift */,
+				ED5E989220922B4A00C71ED5 /* ApiRequest+Rx.swift */,
+				ED5E989320922B4A00C71ED5 /* ApiRequestWithData+Rx.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		EDF4F65E1EFA606400A7BDAB /* Frameworks */ = {
+		ED5E989420922B4A00C71ED5 /* ObjectMapper */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F65F1EFA606400A7BDAB /* Alamofire.framework */,
-				EDF4F6601EFA606400A7BDAB /* ObjectMapper.framework */,
-				EDF4F6611EFA606400A7BDAB /* RxBlocking.framework */,
-				EDF4F6621EFA606400A7BDAB /* RxCocoa.framework */,
-				EDF4F6631EFA606400A7BDAB /* RxSwift.framework */,
+				ED5E989520922B4A00C71ED5 /* Classes */,
+			);
+			name = ObjectMapper;
+			path = ../../Balblair/ObjectMapper;
+			sourceTree = "<group>";
+		};
+		ED5E989520922B4A00C71ED5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				ED5E989620922B4A00C71ED5 /* ApiRequestWithData.swift */,
+				ED5E989720922B4A00C71ED5 /* ApiRequest.swift */,
+				ED5E989820922B4A00C71ED5 /* ErrorModel.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		ED5E98B620922CBE00C71ED5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED5E98B120922CA600C71ED5 /* Alamofire.framework */,
+				ED5E98B020922CA600C71ED5 /* ObjectMapper.framework */,
+				ED5E98B220922CA600C71ED5 /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED5E98B720922CD800C71ED5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED5E98AA20922B7A00C71ED5 /* Alamofire.framework */,
+				ED5E98AB20922B7A00C71ED5 /* ObjectMapper.framework */,
+				ED5E98AC20922B7A00C71ED5 /* RxSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -158,70 +208,104 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		EDF4F6351EFA5F8300A7BDAB /* Headers */ = {
+		ED5E987120922ABC00C71ED5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF4F63D1EFA5F8300A7BDAB /* Balblair.h in Headers */,
+				ED5E987920922ABC00C71ED5 /* Balblair_iOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED5E987F20922B0000C71ED5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED5E988620922B0000C71ED5 /* Balblair_macOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		EDF4F6371EFA5F8300A7BDAB /* Balblair */ = {
+		ED5E987320922ABC00C71ED5 /* Balblair-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDF4F6401EFA5F8300A7BDAB /* Build configuration list for PBXNativeTarget "Balblair" */;
+			buildConfigurationList = ED5E987A20922ABC00C71ED5 /* Build configuration list for PBXNativeTarget "Balblair-iOS" */;
 			buildPhases = (
-				EDF4F6331EFA5F8300A7BDAB /* Sources */,
-				EDF4F6341EFA5F8300A7BDAB /* Frameworks */,
-				EDF4F6351EFA5F8300A7BDAB /* Headers */,
-				EDF4F6361EFA5F8300A7BDAB /* Resources */,
+				ED5E986F20922ABC00C71ED5 /* Sources */,
+				ED5E987020922ABC00C71ED5 /* Frameworks */,
+				ED5E987120922ABC00C71ED5 /* Headers */,
+				ED5E987220922ABC00C71ED5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Balblair;
-			productName = Balblair;
-			productReference = EDF4F6381EFA5F8300A7BDAB /* Balblair.framework */;
+			name = "Balblair-iOS";
+			productName = "Balblair-iOS";
+			productReference = ED5E987420922ABC00C71ED5 /* Balblair.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ED5E988120922B0000C71ED5 /* Balblair-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED5E988720922B0000C71ED5 /* Build configuration list for PBXNativeTarget "Balblair-macOS" */;
+			buildPhases = (
+				ED5E987D20922B0000C71ED5 /* Sources */,
+				ED5E987E20922B0000C71ED5 /* Frameworks */,
+				ED5E987F20922B0000C71ED5 /* Headers */,
+				ED5E988020922B0000C71ED5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Balblair-macOS";
+			productName = "Balblair-macOS";
+			productReference = ED5E988220922B0000C71ED5 /* Balblair.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EDF4F62F1EFA5F8300A7BDAB /* Project object */ = {
+		ED5E986920922AAB00C71ED5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0930;
-				ORGANIZATIONNAME = "Koji Murata";
 				TargetAttributes = {
-					EDF4F6371EFA5F8300A7BDAB = {
-						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 8AKT7PFJ2M;
-						ProvisioningStyle = Automatic;
+					ED5E987320922ABC00C71ED5 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					ED5E988120922B0000C71ED5 = {
+						CreatedOnToolsVersion = 9.3;
 					};
 				};
 			};
-			buildConfigurationList = EDF4F6321EFA5F8300A7BDAB /* Build configuration list for PBXProject "Balblair" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = ED5E986C20922AAB00C71ED5 /* Build configuration list for PBXProject "Balblair" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = EDF4F62E1EFA5F8300A7BDAB;
-			productRefGroup = EDF4F6391EFA5F8300A7BDAB /* Products */;
+			mainGroup = ED5E986820922AAB00C71ED5;
+			productRefGroup = ED5E987520922ABC00C71ED5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EDF4F6371EFA5F8300A7BDAB /* Balblair */,
+				ED5E987320922ABC00C71ED5 /* Balblair-iOS */,
+				ED5E988120922B0000C71ED5 /* Balblair-macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		EDF4F6361EFA5F8300A7BDAB /* Resources */ = {
+		ED5E987220922ABC00C71ED5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED5E988020922B0000C71ED5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -231,34 +315,62 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		EDF4F6331EFA5F8300A7BDAB /* Sources */ = {
+		ED5E986F20922ABC00C71ED5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF4F65B1EFA5F9F00A7BDAB /* ErrorModel.swift in Sources */,
-				EDF4F6581EFA5F9F00A7BDAB /* BalblairHeader.swift in Sources */,
-				EDF4F6561EFA5F9F00A7BDAB /* Balblair.swift in Sources */,
-				EDF4F6591EFA5F9F00A7BDAB /* ApiRequest.swift in Sources */,
-				EDF4F65D1EFA5F9F00A7BDAB /* ApiRequestWithData+Rx.swift in Sources */,
-				EDF4F65A1EFA5F9F00A7BDAB /* ApiRequestWithData.swift in Sources */,
-				EDF4F65C1EFA5F9F00A7BDAB /* ApiRequest+Rx.swift in Sources */,
-				EDF4F6571EFA5F9F00A7BDAB /* BalblairConfiguration.swift in Sources */,
+				ED5E989D20922B4A00C71ED5 /* BalblairHeader.swift in Sources */,
+				ED5E98A120922B4A00C71ED5 /* ApiRequestWithData+Rx.swift in Sources */,
+				ED5E989920922B4A00C71ED5 /* Balblair.swift in Sources */,
+				ED5E989F20922B4A00C71ED5 /* ApiRequest+Rx.swift in Sources */,
+				ED5E98A320922B4A00C71ED5 /* ApiRequestWithData.swift in Sources */,
+				ED5E98A520922B4A00C71ED5 /* ApiRequest.swift in Sources */,
+				ED5E98A720922B4A00C71ED5 /* ErrorModel.swift in Sources */,
+				ED5E989B20922B4A00C71ED5 /* BalblairConfiguration.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED5E987D20922B0000C71ED5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED5E989E20922B4A00C71ED5 /* BalblairHeader.swift in Sources */,
+				ED5E98A220922B4A00C71ED5 /* ApiRequestWithData+Rx.swift in Sources */,
+				ED5E989A20922B4A00C71ED5 /* Balblair.swift in Sources */,
+				ED5E98A020922B4A00C71ED5 /* ApiRequest+Rx.swift in Sources */,
+				ED5E98A420922B4A00C71ED5 /* ApiRequestWithData.swift in Sources */,
+				ED5E98A620922B4A00C71ED5 /* ApiRequest.swift in Sources */,
+				ED5E98A820922B4A00C71ED5 /* ErrorModel.swift in Sources */,
+				ED5E989C20922B4A00C71ED5 /* BalblairConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		EDF4F63E1EFA5F8300A7BDAB /* Debug */ = {
+		ED5E986D20922AAB00C71ED5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		ED5E986E20922AAB00C71ED5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		ED5E987B20922ABC00C71ED5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -277,15 +389,25 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -299,28 +421,40 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				INFOPLIST_FILE = "Balblair-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "malt03.Balblair-iOS";
+				PRODUCT_NAME = Balblair;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		EDF4F63F1EFA5F8300A7BDAB /* Release */ = {
+		ED5E987C20922ABC00C71ED5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -339,15 +473,25 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -355,10 +499,22 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				INFOPLIST_FILE = "Balblair-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "malt03.Balblair-iOS";
+				PRODUCT_NAME = Balblair;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -366,76 +522,200 @@
 			};
 			name = Release;
 		};
-		EDF4F6411EFA5F8300A7BDAB /* Debug */ = {
+		ED5E988820922B0000C71ED5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 8AKT7PFJ2M;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/../Build/iOS",
+					"$(PROJECT_DIR)/../Build/Mac",
 				);
-				INFOPLIST_FILE = Balblair/Info.plist;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Balblair-macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.koji.murata.Balblair;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "malt03.Balblair-macOS";
+				PRODUCT_NAME = Balblair;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		EDF4F6421EFA5F8300A7BDAB /* Release */ = {
+		ED5E988920922B0000C71ED5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 8AKT7PFJ2M;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/../Build/iOS",
+					"$(PROJECT_DIR)/../Build/Mac",
 				);
-				INFOPLIST_FILE = Balblair/Info.plist;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Balblair-macOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.koji.murata.Balblair;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "malt03.Balblair-macOS";
+				PRODUCT_NAME = Balblair;
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EDF4F6321EFA5F8300A7BDAB /* Build configuration list for PBXProject "Balblair" */ = {
+		ED5E986C20922AAB00C71ED5 /* Build configuration list for PBXProject "Balblair" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EDF4F63E1EFA5F8300A7BDAB /* Debug */,
-				EDF4F63F1EFA5F8300A7BDAB /* Release */,
+				ED5E986D20922AAB00C71ED5 /* Debug */,
+				ED5E986E20922AAB00C71ED5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDF4F6401EFA5F8300A7BDAB /* Build configuration list for PBXNativeTarget "Balblair" */ = {
+		ED5E987A20922ABC00C71ED5 /* Build configuration list for PBXNativeTarget "Balblair-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EDF4F6411EFA5F8300A7BDAB /* Debug */,
-				EDF4F6421EFA5F8300A7BDAB /* Release */,
+				ED5E987B20922ABC00C71ED5 /* Debug */,
+				ED5E987C20922ABC00C71ED5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED5E988720922B0000C71ED5 /* Build configuration list for PBXNativeTarget "Balblair-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED5E988820922B0000C71ED5 /* Debug */,
+				ED5E988920922B0000C71ED5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = EDF4F62F1EFA5F8300A7BDAB /* Project object */;
+	rootObject = ED5E986920922AAB00C71ED5 /* Project object */;
 }

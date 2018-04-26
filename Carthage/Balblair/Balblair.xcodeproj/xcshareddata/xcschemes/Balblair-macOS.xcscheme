@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EDF4F6371EFA5F8300A7BDAB"
+               BlueprintIdentifier = "ED5E988120922B0000C71ED5"
                BuildableName = "Balblair.framework"
-               BlueprintName = "Balblair"
+               BlueprintName = "Balblair-macOS"
                ReferencedContainer = "container:Balblair.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EDF4F6371EFA5F8300A7BDAB"
+            BlueprintIdentifier = "ED5E988120922B0000C71ED5"
             BuildableName = "Balblair.framework"
-            BlueprintName = "Balblair"
+            BlueprintName = "Balblair-macOS"
             ReferencedContainer = "container:Balblair.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EDF4F6371EFA5F8300A7BDAB"
+            BlueprintIdentifier = "ED5E988120922B0000C71ED5"
             BuildableName = "Balblair.framework"
-            BlueprintName = "Balblair"
+            BlueprintName = "Balblair-macOS"
             ReferencedContainer = "container:Balblair.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
