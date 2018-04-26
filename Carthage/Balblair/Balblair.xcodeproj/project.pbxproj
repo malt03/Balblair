@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EDF4F63D1EFA5F8300A7BDAB /* Balblair.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF4F63B1EFA5F8300A7BDAB /* Balblair.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDF4F6541EFA5F9F00A7BDAB /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = EDF4F6441EFA5F9F00A7BDAB /* .gitkeep */; };
-		EDF4F6551EFA5F9F00A7BDAB /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = EDF4F6471EFA5F9F00A7BDAB /* .gitkeep */; };
 		EDF4F6561EFA5F9F00A7BDAB /* Balblair.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F6481EFA5F9F00A7BDAB /* Balblair.swift */; };
 		EDF4F6571EFA5F9F00A7BDAB /* BalblairConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F6491EFA5F9F00A7BDAB /* BalblairConfiguration.swift */; };
 		EDF4F6581EFA5F9F00A7BDAB /* BalblairHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4F64A1EFA5F9F00A7BDAB /* BalblairHeader.swift */; };
@@ -29,8 +27,6 @@
 		EDF4F6381EFA5F8300A7BDAB /* Balblair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Balblair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF4F63B1EFA5F8300A7BDAB /* Balblair.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Balblair.h; sourceTree = "<group>"; };
 		EDF4F63C1EFA5F8300A7BDAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDF4F6441EFA5F9F00A7BDAB /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		EDF4F6471EFA5F9F00A7BDAB /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		EDF4F6481EFA5F9F00A7BDAB /* Balblair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Balblair.swift; sourceTree = "<group>"; };
 		EDF4F6491EFA5F9F00A7BDAB /* BalblairConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalblairConfiguration.swift; sourceTree = "<group>"; };
 		EDF4F64A1EFA5F9F00A7BDAB /* BalblairHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalblairHeader.swift; sourceTree = "<group>"; };
@@ -83,22 +79,12 @@
 			isa = PBXGroup;
 			children = (
 				EDF4F63B1EFA5F8300A7BDAB /* Balblair.h */,
-				EDF4F6431EFA5F9F00A7BDAB /* Assets */,
 				EDF4F6451EFA5F9F00A7BDAB /* Core */,
 				EDF4F64B1EFA5F9F00A7BDAB /* ObjectMapper */,
 				EDF4F6501EFA5F9F00A7BDAB /* Rx */,
 				EDF4F63C1EFA5F8300A7BDAB /* Info.plist */,
 			);
 			path = Balblair;
-			sourceTree = "<group>";
-		};
-		EDF4F6431EFA5F9F00A7BDAB /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				EDF4F6441EFA5F9F00A7BDAB /* .gitkeep */,
-			);
-			name = Assets;
-			path = ../../../Balblair/Assets;
 			sourceTree = "<group>";
 		};
 		EDF4F6451EFA5F9F00A7BDAB /* Core */ = {
@@ -113,7 +99,6 @@
 		EDF4F6461EFA5F9F00A7BDAB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4F6471EFA5F9F00A7BDAB /* .gitkeep */,
 				EDF4F6481EFA5F9F00A7BDAB /* Balblair.swift */,
 				EDF4F6491EFA5F9F00A7BDAB /* BalblairConfiguration.swift */,
 				EDF4F64A1EFA5F9F00A7BDAB /* BalblairHeader.swift */,
@@ -208,7 +193,7 @@
 		EDF4F62F1EFA5F8300A7BDAB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Koji Murata";
 				TargetAttributes = {
 					EDF4F6371EFA5F8300A7BDAB = {
@@ -240,8 +225,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF4F6541EFA5F9F00A7BDAB /* .gitkeep in Resources */,
-				EDF4F6551EFA5F9F00A7BDAB /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +263,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -287,6 +271,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -340,6 +325,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -347,6 +333,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
