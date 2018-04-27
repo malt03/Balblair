@@ -31,6 +31,8 @@
 		ED5E98B320922CA600C71ED5 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5E98B020922CA600C71ED5 /* ObjectMapper.framework */; };
 		ED5E98B420922CA600C71ED5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5E98B120922CA600C71ED5 /* Alamofire.framework */; };
 		ED5E98B520922CA600C71ED5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5E98B220922CA600C71ED5 /* RxSwift.framework */; };
+		ED81DC3D209319A6007D7517 /* DefaultConfigurationHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81DC3C209319A6007D7517 /* DefaultConfigurationHolder.swift */; };
+		ED81DC3E209319A6007D7517 /* DefaultConfigurationHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81DC3C209319A6007D7517 /* DefaultConfigurationHolder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,7 @@
 		ED5E98B020922CA600C71ED5 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = ../../Build/Mac/ObjectMapper.framework; sourceTree = "<group>"; };
 		ED5E98B120922CA600C71ED5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../../Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		ED5E98B220922CA600C71ED5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../../Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
+		ED81DC3C209319A6007D7517 /* DefaultConfigurationHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultConfigurationHolder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,7 @@
 				ED5E988D20922B4A00C71ED5 /* Balblair.swift */,
 				ED5E988E20922B4A00C71ED5 /* BalblairConfiguration.swift */,
 				ED5E988F20922B4A00C71ED5 /* BalblairHeader.swift */,
+				ED81DC3C209319A6007D7517 /* DefaultConfigurationHolder.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -325,6 +329,7 @@
 				ED5E989F20922B4A00C71ED5 /* ApiRequest+Rx.swift in Sources */,
 				ED5E98A320922B4A00C71ED5 /* ApiRequestWithData.swift in Sources */,
 				ED5E98A520922B4A00C71ED5 /* ApiRequest.swift in Sources */,
+				ED81DC3D209319A6007D7517 /* DefaultConfigurationHolder.swift in Sources */,
 				ED5E98A720922B4A00C71ED5 /* ErrorModel.swift in Sources */,
 				ED5E989B20922B4A00C71ED5 /* BalblairConfiguration.swift in Sources */,
 			);
@@ -340,6 +345,7 @@
 				ED5E98A020922B4A00C71ED5 /* ApiRequest+Rx.swift in Sources */,
 				ED5E98A420922B4A00C71ED5 /* ApiRequestWithData.swift in Sources */,
 				ED5E98A620922B4A00C71ED5 /* ApiRequest.swift in Sources */,
+				ED81DC3E209319A6007D7517 /* DefaultConfigurationHolder.swift in Sources */,
 				ED5E98A820922B4A00C71ED5 /* ErrorModel.swift in Sources */,
 				ED5E989C20922B4A00C71ED5 /* BalblairConfiguration.swift in Sources */,
 			);
