@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 class Configuration: BalblairConfiguration {
-  let baseUrl = "https://qiita.com/"
+  let baseUrl = URL(string: "https://qiita.com")!
   var headerBuilder: BalblairHeaderBuilder = HeaderBuilder()
   func apiClientShouldBeginRequest(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?) -> Bool {
     print(path)

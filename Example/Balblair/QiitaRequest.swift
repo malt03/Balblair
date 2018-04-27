@@ -26,8 +26,9 @@ extension MyApiRequest {
 }
 
 struct MyErrorType: ErrorModelProtocol {
+  let error: Error
   public static func create(error: Error, result: Any?) -> MyErrorType {
-    return MyErrorType()
+    return MyErrorType(error: error)
   }
 }
 
@@ -35,7 +36,7 @@ struct QiitaRequest: MyApiRequest {
   typealias ResultType = [QiitaResult]
   
   let method = Balblair.Method.get
-  let path = "/api/v2/items?page=1&per_page=20"
+  let path = "api/v2/items"
   let parameters = ["page": "1", "per_page": "20"] as [String: Any]
 }
 

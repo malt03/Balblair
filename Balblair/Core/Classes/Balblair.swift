@@ -14,7 +14,10 @@ open class Balblair {
   public typealias SuccessCallback = (_ result: Any?) -> Void
   public typealias FailureCallback = (_ result: Any?, _ error: Error) -> Void
   
-  open static var defaultConfiguration: BalblairConfiguration = Balblair.Configuration(baseUrl: "http://example.com")
+  open static var defaultConfiguration: BalblairConfiguration {
+    get { return DefaultConfigurationHolder.shared.configuration }
+    set { DefaultConfigurationHolder.shared.configuration = newValue }
+  }
   
   public enum Method {
     case get
@@ -128,7 +131,7 @@ open class Balblair {
           guard let data = $1.removingPercentEncoding?.data(using: .utf8), let name = $0.removingPercentEncoding else { return }
           d.append(data, withName: name)
         } },
-      to: configuration.baseUrl + path,
+      to: configuration.baseUrl.appendingPathComponent(path),
       method: method.alamofires,
       headers: configuration.headerBuilder.build(),
       encodingCompletion: { (encodingResult) in
@@ -152,7 +155,12 @@ open class Balblair {
     success: SuccessCallback? = nil,
     failure: FailureCallback? = nil) -> DataRequest
   {
-    let request = Alamofire.request(configuration.baseUrl + path, method: method.alamofires, parameters: parameters, headers: configuration.headerBuilder.build())
+    let request = Alamofire.request(
+      configuration.baseUrl.appendingPathComponent(path),
+      method: method.alamofires,
+      parameters: parameters,
+      headers: configuration.headerBuilder.build()
+    )
     run(request: request, method: method, path: path, parameters: parameters, uploadData: [], progress: progress, success: success, failure: failure)
     return request
   }

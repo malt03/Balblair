@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol BalblairConfiguration {
-  var baseUrl: String { get }
+  var baseUrl: URL { get }
   var headerBuilder: BalblairHeaderBuilder { get }
   
   func apiClientShouldBeginRequest(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: Any]?, uploadData: [Balblair.UploadData]) -> Bool
@@ -36,10 +36,10 @@ extension Balblair {
   }
   
   public struct Configuration: BalblairConfiguration {
-    public let baseUrl: String
+    public let baseUrl: URL
     public let headerBuilder: BalblairHeaderBuilder
     
-    public init(baseUrl: String, header: [String: String] = [:]) {
+    public init(baseUrl: URL, header: [String: String] = [:]) {
       self.baseUrl = baseUrl
       self.headerBuilder = HeaderBuilder(header: header)
     }
