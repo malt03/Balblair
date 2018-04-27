@@ -8,7 +8,6 @@
 
 import Foundation
 import Balblair
-import ObjectMapper
 
 struct QiitaRequest: MyApiRequest {
   typealias ResultType = [QiitaResult]

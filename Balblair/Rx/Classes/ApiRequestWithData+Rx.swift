@@ -8,9 +8,8 @@
 
 import Alamofire
 import RxSwift
-import ObjectMapper
 
-extension ApiRequestWithData where ResultType: Mappable, ParametersType: Mappable {
+extension ApiRequestWithData where ResultType: Decodable, ParametersType: Encodable {
   public var response: Observable<ResultType> {
     return Observable.create { (observer) -> Disposable in
       var request: Request? = nil
@@ -29,45 +28,7 @@ extension ApiRequestWithData where ResultType: Mappable, ParametersType: Mappabl
   }
 }
 
-extension ApiRequestWithData where ResultType: ExpressibleByArrayLiteral, ResultType.ArrayLiteralElement: Mappable, ParametersType: Mappable {
-  public var response: Observable<ResultType> {
-    return Observable.create { (observer) -> Disposable in
-      var request: Request? = nil
-      self.request(success: { (result) in
-        observer.onNext(result)
-        observer.onCompleted()
-      }, failure: { (error) in
-        observer.onError(error)
-      }, encodingCompletion: { (r) in
-        request = r
-      })
-      return Disposables.create {
-        request?.cancel()
-      }
-    }
-  }
-}
-
-extension ApiRequestWithData where ResultType: Mappable, ParametersType == [String: Any] {
-  public var response: Observable<ResultType> {
-    return Observable.create { (observer) -> Disposable in
-      var request: Request? = nil
-      self.request(success: { (result) in
-        observer.onNext(result)
-        observer.onCompleted()
-      }, failure: { (error) in
-        observer.onError(error)
-      }, encodingCompletion: { (r) in
-        request = r
-      })
-      return Disposables.create {
-        request?.cancel()
-      }
-    }
-  }
-}
-
-extension ApiRequestWithData where ResultType: ExpressibleByArrayLiteral, ResultType.ArrayLiteralElement: Mappable, ParametersType == [String: Any] {
+extension ApiRequestWithData where ResultType: Decodable, ParametersType == [String: Any] {
   public var response: Observable<ResultType> {
     return Observable.create { (observer) -> Disposable in
       var request: Request? = nil
