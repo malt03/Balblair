@@ -9,6 +9,10 @@
 import Foundation
 import Alamofire
 
+public struct NoValue: Codable {
+  public init() {}
+}
+
 public protocol ApiRequest {
   associatedtype ResultType
   associatedtype ParametersType
