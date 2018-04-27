@@ -10,19 +10,30 @@ import Foundation
 import Balblair
 import ObjectMapper
 
+struct QiitaRequest: MyApiRequest {
+  typealias ResultType = [QiitaResult]
+  
+  let method = Balblair.Method.get
+  let path = "api/v2/items"
+  let parameters = QiitaParameters()
+}
+
+struct QiitaResult: Decodable {
+  let title: String
+}
+
+struct QiitaParameters: Encodable {
+  let page = 1
+  let per_page = 21
+}
+
 protocol MyApiRequest: ApiRequest {}
 extension MyApiRequest {
-  func didFailure(error: MyErrorType) {
-    print(error)
-  }
+  func didFailure(error: MyErrorType) {}
   
-  func didSuccess(result: Self.ResultType) {
-    print(result)
-  }
+  func didSuccess(result: Self.ResultType) {}
   
-  func willBeginRequest(parameters: Self.ParametersType) {
-    print(parameters)
-  }
+  func willBeginRequest(parameters: Self.ParametersType) {}
 }
 
 struct MyErrorType: ErrorModelProtocol {
@@ -32,14 +43,3 @@ struct MyErrorType: ErrorModelProtocol {
   }
 }
 
-struct QiitaRequest: MyApiRequest {
-  typealias ResultType = [QiitaResult]
-  
-  let method = Balblair.Method.get
-  let path = "api/v2/items"
-  let parameters = ["page": "1", "per_page": "20"] as [String: Any]
-}
-
-struct QiitaResult: Decodable {
-  let title: String
-}

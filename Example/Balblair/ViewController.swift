@@ -15,10 +15,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
       print(result)
     }, onError: { (error) in
       print(error)
-    }, onCompleted: {
-      print("completed")
-    }, onDisposed: { 
-      print("dispose")
     })
   }
 }
