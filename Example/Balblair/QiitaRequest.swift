@@ -40,12 +40,6 @@ struct QiitaRequest: MyApiRequest {
   let parameters = ["page": "1", "per_page": "20"] as [String: Any]
 }
 
-struct QiitaResult: Mappable {
-  var title = ""
-  
-  init?(map: Map) {}
-  
-  mutating func mapping(map: Map) {
-    title <- map["title"]
-  }
+struct QiitaResult: Decodable {
+  let title: String
 }

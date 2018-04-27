@@ -30,12 +30,6 @@ This is easy to use with ObjectMapper and SwiftTask.
     ss.dependency 'Alamofire', '>= 4.0'
   end
 
-  s.subspec 'ObjectMapper' do |ss|
-    ss.source_files = 'Balblair/ObjectMapper/Classes/**/*'
-    ss.dependency 'Balblair/Core'
-    ss.dependency 'ObjectMapper', '>= 2.0'
-  end
-
   s.subspec 'Rx' do |ss|
     ss.source_files = 'Balblair/Rx/Classes/**/*'
     ss.dependency 'Balblair/Core'

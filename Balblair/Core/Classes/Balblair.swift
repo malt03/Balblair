@@ -11,8 +11,8 @@ import Alamofire
 
 open class Balblair {
   public typealias ProgressCallback = (_ progress: Progress) -> Void
-  public typealias SuccessCallback = (_ result: Any?) -> Void
-  public typealias FailureCallback = (_ result: Any?, _ error: Error) -> Void
+  public typealias SuccessCallback = (_ result: Data?) -> Void
+  public typealias FailureCallback = (_ result: Data?, _ error: Error) -> Void
   
   open static var defaultConfiguration: BalblairConfiguration {
     get { return DefaultConfigurationHolder.shared.configuration }
@@ -182,16 +182,10 @@ open class Balblair {
     }.validate().responseJSON { (response) in
       let result = response.result
       if let error = result.error {
-        let value: Any?
-        if let data = response.data {
-          value = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
-        } else {
-          value = nil
-        }
-        self.failure(method: method, path: path, parameters: parameters, uploadData: uploadData, result: value, error: error, handler: failure)
+        self.failure(method: method, path: path, parameters: parameters, uploadData: uploadData, result: response.data, error: error, handler: failure)
         return
       }
-      self.success(method: method, path: path, parameters: parameters, uploadData: uploadData, result: response.result.value, successHandler: success, failureHandler: failure)
+      self.success(method: method, path: path, parameters: parameters, uploadData: uploadData, result: response.data, successHandler: success, failureHandler: failure)
     }
   }
   
@@ -202,7 +196,7 @@ open class Balblair {
     }
   }
 
-  private func success(method: Method, path: String, parameters: [String: Any]?, uploadData: [UploadData], result: Any?, successHandler: SuccessCallback?, failureHandler: FailureCallback?) {
+  private func success(method: Method, path: String, parameters: [String: Any]?, uploadData: [UploadData], result: Data?, successHandler: SuccessCallback?, failureHandler: FailureCallback?) {
     if let error = configuration.apiClientShouldSuccess(self, method: method, path: path, parameters: parameters, uploadData: uploadData, result: result) {
       failure(method: method, path: path, parameters: parameters, uploadData: uploadData, result: result, error: error, handler: failureHandler)
     } else {
@@ -210,7 +204,7 @@ open class Balblair {
     }
   }
 
-  private func failure(method: Method, path: String, parameters: [String: Any]?, uploadData: [UploadData], result: Any?, error: Error, handler: FailureCallback?) {
+  private func failure(method: Method, path: String, parameters: [String: Any]?, uploadData: [UploadData], result: Data?, error: Error, handler: FailureCallback?) {
     guard let h = handler else { return }
     if configuration.apiClientShouldFailure(self, method: method, path: path, parameters: parameters, uploadData: uploadData, result: result, error: error) {
       h(result, error)
