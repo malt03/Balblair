@@ -8,19 +8,20 @@
 
 import Foundation
 
-public protocol ErrorModelProtocol: Error {
-  static func create(error: Error, result: Any?) -> Self
-}
-
 public enum BalblairError: Error {
   case unknown
   case parseError
 }
 
-public struct DefaultErrorModel: ErrorModelProtocol {
+public struct ErrorModel<T: Decodable>: Error {
   public var error: Error
-  public var result: Any?
-  public static func create(error: Error, result: Any?) -> DefaultErrorModel {
-    return DefaultErrorModel(error: error, result: result)
+  public var result: T?
+  public init(error: Error, result: Data?) {
+    self.error = error
+    if let result = result {
+      self.result = try? JSONDecoder().decode(T.self, from: result)
+    }
   }
 }
+
+public struct DefaultErrorResult: Decodable {}

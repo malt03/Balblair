@@ -22,11 +22,13 @@ public protocol ApiRequest {
   var parameters: ParametersType { get }
 
   // optional
-  associatedtype ErrorModelType: ErrorModelProtocol = DefaultErrorModel
+  associatedtype ErrorResultType: Decodable = DefaultErrorResult
   func willBeginRequest(parameters: ParametersType)
   func didSuccess(result: ResultType)
   func didFailure(error: ErrorModelType)
   var configuration: BalblairConfiguration { get }
+  
+  typealias ErrorModelType = ErrorModel<ErrorResultType>
 }
 
 extension ApiRequest {
@@ -48,7 +50,7 @@ extension ApiRequest where ResultType: Decodable, ParametersType: Encodable {
     
     return Balblair(configuration: configuration).request(method: method, path: path, parameters: parameters.dictionary, progress: progress, success: { (result) in
       guard let object = result.flatMap({ try? JSONDecoder().decode(ResultType.self, from: $0) }) else {
-        let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
+        let errorModel = ErrorModelType(error: BalblairError.parseError, result: result)
         failure?(errorModel)
         self.didFailure(error: errorModel)
         return
@@ -56,7 +58,7 @@ extension ApiRequest where ResultType: Decodable, ParametersType: Encodable {
       success?(object)
       self.didSuccess(result: object)
     }, failure: { (result, error) in
-      let errorModel = ErrorModelType.create(error: error, result: result)
+      let errorModel = ErrorModelType(error: error, result: result)
       failure?(errorModel)
       self.didFailure(error: errorModel)
     })
@@ -72,7 +74,7 @@ extension ApiRequest where ResultType: Decodable, ParametersType == [String: Any
     willBeginRequest(parameters: parameters)
     return Balblair(configuration: configuration).request(method: method, path: path, parameters: parameters, progress: progress, success: { (result) in
       guard let object = result.flatMap({ try? JSONDecoder().decode(ResultType.self, from: $0) }) else {
-        let errorModel = ErrorModelType.create(error: BalblairError.parseError, result: result)
+        let errorModel = ErrorModelType(error: BalblairError.parseError, result: result)
         failure?(errorModel)
         self.didFailure(error: errorModel)
         return
@@ -80,7 +82,7 @@ extension ApiRequest where ResultType: Decodable, ParametersType == [String: Any
       success?(object)
       self.didSuccess(result: object)
     }, failure: { (result, error) in
-      let errorModel = ErrorModelType.create(error: error, result: result)
+      let errorModel = ErrorModelType(error: error, result: result)
       failure?(errorModel)
       self.didFailure(error: errorModel)
     })

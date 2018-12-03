@@ -28,17 +28,13 @@ struct QiitaParameters: Encodable {
 
 protocol MyApiRequest: ApiRequest {}
 extension MyApiRequest {
-  func didFailure(error: MyErrorType) {}
+  func didFailure(error: ErrorModel<MyErrorResultType>) {}
   
   func didSuccess(result: Self.ResultType) {}
   
   func willBeginRequest(parameters: Self.ParametersType) {}
 }
 
-struct MyErrorType: ErrorModelProtocol {
-  let error: Error
-  public static func create(error: Error, result: Any?) -> MyErrorType {
-    return MyErrorType(error: error)
-  }
+struct MyErrorResultType: Decodable {
 }
 
