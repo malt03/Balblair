@@ -2,7 +2,7 @@
 
 [![CI Status](http://img.shields.io/travis/malt03/Balblair.svg?style=flat)](https://travis-ci.org/malt03/Balblair)
 [![Platform](https://img.shields.io/cocoapods/p/Balblair.svg?style=flat)](http://cocoapods.org/pods/Balblair)
-![Language](https://img.shields.io/badge/language-Swift%204.1-orange.svg)
+![Language](https://img.shields.io/badge/language-Swift%204.2-orange.svg)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Balblair.svg?style=flat)](http://cocoapods.org/pods/Balblair)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![License](https://img.shields.io/github/license/malt03/Balblair.svg?style=flat)
