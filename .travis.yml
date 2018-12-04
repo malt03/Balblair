@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode8.1
+osx_image: xcode10.0
 cache: 
   directories:
     - vendor/bundle
@@ -13,6 +13,5 @@ script:
   - cd Example && bundle exec rake test:iphonesimulator:$TEST_IOS_VERSION && cd -
 env:
   matrix:
-    - TEST_IOS_VERSION=ios10
-    - TEST_IOS_VERSION=ios8
-    - TEST_IOS_VERSION=ios9
+    - TEST_IOS_VERSION=ios12
+    - TEST_IOS_VERSION=ios11
