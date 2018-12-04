@@ -1,4 +1,4 @@
-ruby '2.3.1'
+ruby '2.5.3'
 source "https://rubygems.org"
 
-gem "cocoapods"
+gem "cocoapods", "1.6.0.beta.2"
