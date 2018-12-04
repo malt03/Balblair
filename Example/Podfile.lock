@@ -4,10 +4,10 @@ PODS:
     - Balblair/Core (= 3.0.0)
     - Balblair/Rx (= 3.0.0)
   - Balblair/Core (3.0.0):
-    - Alamofire (>= 4.0)
+    - Alamofire (>= 4.8.0)
   - Balblair/Rx (3.0.0):
     - Balblair/Core
-    - RxSwift (>= 3.0)
+    - RxSwift (>= 4.4.0)
   - RxAtomic (4.4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
@@ -27,7 +27,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
-  Balblair: 6c306b39bab9d7e492a9e3b93f28b140894b2872
+  Balblair: c3d6aba0663c3df74d22f93c75a176cc5b619e2c
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
 
