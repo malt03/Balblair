@@ -8,7 +8,7 @@ before_install:
   - gem install bundler
 install:
   - bundle install -j4 --path=vendor/bundle --binstubs=vendor/bin
-  - cd Example && pod repo update && bundle exec pod install && cd -
+  - cd Example && bundle exec pod repo update && bundle exec pod install && cd -
 script:
   - cd Example && bundle exec rake test:iphonesimulator:$TEST_IOS_VERSION && cd -
 env:
