@@ -14,7 +14,7 @@ open class Balblair {
   public typealias SuccessCallback = (_ result: Data?) -> Void
   public typealias FailureCallback = (_ result: Data?, _ error: Error) -> Void
   
-  open static var defaultConfiguration: BalblairConfiguration {
+  public static var defaultConfiguration: BalblairConfiguration {
     get { return DefaultConfigurationHolder.shared.configuration }
     set { DefaultConfigurationHolder.shared.configuration = newValue }
   }

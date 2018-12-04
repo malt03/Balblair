@@ -27,12 +27,12 @@ This is easy to use with Codable and SwiftTask.
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'Balblair/Core/Classes/**/*'
-    ss.dependency 'Alamofire', '>= 4.0'
+    ss.dependency 'Alamofire', '>= 4.8.0'
   end
 
   s.subspec 'Rx' do |ss|
     ss.source_files = 'Balblair/Rx/Classes/**/*'
     ss.dependency 'Balblair/Core'
-    ss.dependency 'RxSwift', '>= 3.0'
+    ss.dependency 'RxSwift', '>= 4.4.0'
   end
 end
