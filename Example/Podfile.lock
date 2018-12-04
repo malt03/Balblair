@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.7.2)
+  - Alamofire (4.8.0)
   - Balblair (3.0.0):
     - Balblair/Core (= 3.0.0)
     - Balblair/Rx (= 3.0.0)
@@ -8,7 +8,9 @@ PODS:
   - Balblair/Rx (3.0.0):
     - Balblair/Core
     - RxSwift (>= 3.0)
-  - RxSwift (4.1.2)
+  - RxAtomic (4.4.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
 
 DEPENDENCIES:
   - Balblair (from `../`)
@@ -16,6 +18,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - RxAtomic
     - RxSwift
 
 EXTERNAL SOURCES:
@@ -23,9 +26,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   Balblair: 6c306b39bab9d7e492a9e3b93f28b140894b2872
-  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
 
 PODFILE CHECKSUM: 7cbe86b7de9558f5b720612dcd24d424f51ad4fc
 
