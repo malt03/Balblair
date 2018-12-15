@@ -16,7 +16,7 @@ DEPENDENCIES:
   - Balblair (from `../`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - RxAtomic
     - RxSwift
@@ -27,10 +27,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
-  Balblair: 027b35221c1c2f9bd10a679473cba28a5b3cf4f7
+  Balblair: 3f9e86e4e9fbfac9de9fedbec09a2a9917da45be
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
 
 PODFILE CHECKSUM: 7cbe86b7de9558f5b720612dcd24d424f51ad4fc
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.6.0.beta.2
