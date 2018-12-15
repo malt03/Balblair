@@ -47,16 +47,22 @@ extension ApiRequest where ResultType: Decodable, ParametersType: Encodable {
     failure: ((_ errorModel: ErrorModelType) -> Void)? = nil) -> DataRequest
   {
     willBeginRequest(parameters: parameters)
-    
     return Balblair(configuration: configuration).request(method: method, path: path, parameters: parameters.dictionary, progress: progress, success: { (result) in
-      guard let object = result.flatMap({ try? JSONDecoder().decode(ResultType.self, from: $0) }) else {
-        let errorModel = ErrorModelType(error: BalblairError.parseError, result: result)
+      guard let data = result else {
+        let errorModel = ErrorModelType(error: BalblairError.unknown, result: result)
         failure?(errorModel)
         self.didFailure(error: errorModel)
         return
       }
-      success?(object)
-      self.didSuccess(result: object)
+      do {
+        let object = try JSONDecoder().decode(ResultType.self, from: data)
+        success?(object)
+        self.didSuccess(result: object)
+      } catch {
+        let errorModel = ErrorModelType(error: error, result: result)
+        failure?(errorModel)
+        self.didFailure(error: errorModel)
+      }
     }, failure: { (result, error) in
       let errorModel = ErrorModelType(error: error, result: result)
       failure?(errorModel)
@@ -73,14 +79,21 @@ extension ApiRequest where ResultType: Decodable, ParametersType == [String: Any
   {
     willBeginRequest(parameters: parameters)
     return Balblair(configuration: configuration).request(method: method, path: path, parameters: parameters, progress: progress, success: { (result) in
-      guard let object = result.flatMap({ try? JSONDecoder().decode(ResultType.self, from: $0) }) else {
-        let errorModel = ErrorModelType(error: BalblairError.parseError, result: result)
+      guard let data = result else {
+        let errorModel = ErrorModelType(error: BalblairError.unknown, result: result)
         failure?(errorModel)
         self.didFailure(error: errorModel)
         return
       }
-      success?(object)
-      self.didSuccess(result: object)
+      do {
+        let object = try JSONDecoder().decode(ResultType.self, from: data)
+        success?(object)
+        self.didSuccess(result: object)
+      } catch {
+        let errorModel = ErrorModelType(error: error, result: result)
+        failure?(errorModel)
+        self.didFailure(error: errorModel)
+      }
     }, failure: { (result, error) in
       let errorModel = ErrorModelType(error: error, result: result)
       failure?(errorModel)

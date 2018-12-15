@@ -10,7 +10,14 @@ import Foundation
 
 public enum BalblairError: Error {
   case unknown
-  case parseError
+}
+
+extension BalblairError: LocalizedError {
+  public var errorDescription: String? {
+    switch self {
+    case .unknown: return "unknown Balblair Error."
+    }
+  }
 }
 
 public struct ErrorModel<T: Decodable>: Error {
@@ -21,6 +28,12 @@ public struct ErrorModel<T: Decodable>: Error {
     if let result = result {
       self.result = try? JSONDecoder().decode(T.self, from: result)
     }
+  }
+}
+
+extension ErrorModel: LocalizedError {
+  public var errorDescription: String? {
+    return error.localizedDescription
   }
 }
 
