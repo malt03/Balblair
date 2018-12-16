@@ -27,7 +27,8 @@ public protocol ApiRequest {
   func didSuccess(result: ResultType)
   func didFailure(error: ErrorModelType)
   var configuration: BalblairConfiguration { get }
-  var jsonDecoder: JSONDecoder { get }
+  var decoder: JSONDecoder { get }
+  var encoder: JSONEncoder { get }
   
   typealias ErrorModelType = ErrorModel<ErrorResultType>
 }
@@ -39,7 +40,8 @@ extension ApiRequest {
   public var configuration: BalblairConfiguration {
     return Balblair.defaultConfiguration
   }
-  public var jsonDecoder: JSONDecoder { return JSONDecoder() }
+  public var decoder: JSONDecoder { return JSONDecoder() }
+  public var encoder: JSONEncoder { return JSONEncoder() }
 }
 
 extension ApiRequest where ResultType: Decodable, ParametersType: Encodable {
@@ -49,24 +51,24 @@ extension ApiRequest where ResultType: Decodable, ParametersType: Encodable {
     failure: ((_ errorModel: ErrorModelType) -> Void)? = nil) -> DataRequest
   {
     willBeginRequest(parameters: parameters)
-    return Balblair(configuration: configuration).request(method: method, path: path, parameters: parameters.dictionary, progress: progress, success: { (result) in
+    return Balblair(configuration: configuration).request(method: method, path: path, parameters: parameters.createDictionary(encoder: encoder), progress: progress, success: { (result) in
       guard let data = result else {
-        let errorModel = ErrorModelType(error: BalblairError.unknown, result: result)
+        let errorModel = ErrorModelType(error: BalblairError.unknown, result: result, decoder: self.decoder)
         failure?(errorModel)
         self.didFailure(error: errorModel)
         return
       }
       do {
-        let object = try self.jsonDecoder.decode(ResultType.self, from: data)
+        let object = try self.decoder.decode(ResultType.self, from: data)
         success?(object)
         self.didSuccess(result: object)
       } catch {
-        let errorModel = ErrorModelType(error: error, result: result)
+        let errorModel = ErrorModelType(error: error, result: result, decoder: self.decoder)
         failure?(errorModel)
         self.didFailure(error: errorModel)
       }
     }, failure: { (result, error) in
-      let errorModel = ErrorModelType(error: error, result: result)
+      let errorModel = ErrorModelType(error: error, result: result, decoder: self.decoder)
       failure?(errorModel)
       self.didFailure(error: errorModel)
     })
@@ -82,22 +84,22 @@ extension ApiRequest where ResultType: Decodable, ParametersType == [String: Any
     willBeginRequest(parameters: parameters)
     return Balblair(configuration: configuration).request(method: method, path: path, parameters: parameters, progress: progress, success: { (result) in
       guard let data = result else {
-        let errorModel = ErrorModelType(error: BalblairError.unknown, result: result)
+        let errorModel = ErrorModelType(error: BalblairError.unknown, result: result, decoder: self.decoder)
         failure?(errorModel)
         self.didFailure(error: errorModel)
         return
       }
       do {
-        let object = try self.jsonDecoder.decode(ResultType.self, from: data)
+        let object = try self.decoder.decode(ResultType.self, from: data)
         success?(object)
         self.didSuccess(result: object)
       } catch {
-        let errorModel = ErrorModelType(error: error, result: result)
+        let errorModel = ErrorModelType(error: error, result: result, decoder: self.decoder)
         failure?(errorModel)
         self.didFailure(error: errorModel)
       }
     }, failure: { (result, error) in
-      let errorModel = ErrorModelType(error: error, result: result)
+      let errorModel = ErrorModelType(error: error, result: result, decoder: self.decoder)
       failure?(errorModel)
       self.didFailure(error: errorModel)
     })

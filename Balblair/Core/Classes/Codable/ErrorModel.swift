@@ -23,10 +23,10 @@ extension BalblairError: LocalizedError {
 public struct ErrorModel<T: Decodable>: Error {
   public var error: Error
   public var result: T?
-  public init(error: Error, result: Data?) {
+  public init(error: Error, result: Data?, decoder: JSONDecoder) {
     self.error = error
     if let result = result {
-      self.result = try? JSONDecoder().decode(T.self, from: result)
+      self.result = try? decoder.decode(T.self, from: result)
     }
   }
 }
