@@ -29,7 +29,7 @@ extension ApiRequestWithData where ResultType: Decodable, ParametersType: Encoda
         return
       }
       do {
-        let object = try JSONDecoder().decode(ResultType.self, from: data)
+        let object = try self.jsonDecoder.decode(ResultType.self, from: data)
         success?(object)
         self.didSuccess(result: object)
       } catch {
@@ -60,7 +60,7 @@ extension ApiRequestWithData where ResultType: Decodable, ParametersType == [Str
         return
       }
       do {
-        let object = try JSONDecoder().decode(ResultType.self, from: data)
+        let object = try self.jsonDecoder.decode(ResultType.self, from: data)
         success?(object)
         self.didSuccess(result: object)
       } catch {

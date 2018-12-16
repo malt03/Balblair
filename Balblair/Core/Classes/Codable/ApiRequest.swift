@@ -27,6 +27,7 @@ public protocol ApiRequest {
   func didSuccess(result: ResultType)
   func didFailure(error: ErrorModelType)
   var configuration: BalblairConfiguration { get }
+  var jsonDecoder: JSONDecoder { get }
   
   typealias ErrorModelType = ErrorModel<ErrorResultType>
 }
@@ -38,6 +39,7 @@ extension ApiRequest {
   public var configuration: BalblairConfiguration {
     return Balblair.defaultConfiguration
   }
+  public var jsonDecoder: JSONDecoder { return JSONDecoder() }
 }
 
 extension ApiRequest where ResultType: Decodable, ParametersType: Encodable {
@@ -55,7 +57,7 @@ extension ApiRequest where ResultType: Decodable, ParametersType: Encodable {
         return
       }
       do {
-        let object = try JSONDecoder().decode(ResultType.self, from: data)
+        let object = try self.jsonDecoder.decode(ResultType.self, from: data)
         success?(object)
         self.didSuccess(result: object)
       } catch {
@@ -86,7 +88,7 @@ extension ApiRequest where ResultType: Decodable, ParametersType == [String: Any
         return
       }
       do {
-        let object = try JSONDecoder().decode(ResultType.self, from: data)
+        let object = try self.jsonDecoder.decode(ResultType.self, from: data)
         success?(object)
         self.didSuccess(result: object)
       } catch {
