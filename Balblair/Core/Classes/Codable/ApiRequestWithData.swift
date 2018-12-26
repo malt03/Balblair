@@ -22,12 +22,13 @@ extension ApiRequestWithData where ResultType: Decodable, ParametersType: Encoda
   {
     willBeginRequest(parameters: parameters)
     Balblair(configuration: configuration).upload(method: method, path: path, parameters: parameters.createDictionary(encoder: encoder), uploadData: uploadData, progress: progress, success: { (result) in
-      guard let data = result else {
+      guard var data = result else {
         let errorModel = ErrorModelType(error: BalblairError.unknown, result: result, decoder: self.decoder)
         failure?(errorModel)
         self.didFailure(error: errorModel)
         return
       }
+      if data.count == 0 { data = "{}".data(using: .utf8)! }
       do {
         let object = try self.decoder.decode(ResultType.self, from: data)
         success?(object)
@@ -53,12 +54,13 @@ extension ApiRequestWithData where ResultType: Decodable, ParametersType == [Str
   {
     willBeginRequest(parameters: parameters)
     Balblair(configuration: configuration).upload(method: method, path: path, parameters: parameters, uploadData: uploadData, progress: progress, success: { (result) in
-      guard let data = result else {
+      guard var data = result else {
         let errorModel = ErrorModelType(error: BalblairError.unknown, result: result, decoder: self.decoder)
         failure?(errorModel)
         self.didFailure(error: errorModel)
         return
       }
+      if data.count == 0 { data = "{}".data(using: .utf8)! }
       do {
         let object = try self.decoder.decode(ResultType.self, from: data)
         success?(object)
