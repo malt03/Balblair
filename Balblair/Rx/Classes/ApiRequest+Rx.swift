@@ -10,14 +10,20 @@ import Foundation
 import RxSwift
 
 extension ApiRequest where ResultType: Decodable, ParametersType: Encodable {
-  public var response: Observable<ResultType> {
+  public var response: Observable<ApiRequestStatus<ResultType>> {
     return Observable.create { (observer) -> Disposable in
-      let request = self.request(success: { (result) in
-        observer.onNext(result)
-        observer.onCompleted()
-      }, failure: { (error) in
-        observer.onError(error)
-      })
+      let request = self.request(
+        progress: { (progress) in
+          observer.onNext(.progress(progress))
+        },
+        success: { (result) in
+          observer.onNext(.complete(result))
+          observer.onCompleted()
+        },
+        failure: { (error) in
+          observer.onError(error)
+        }
+      )
       return Disposables.create {
         request.cancel()
       }
@@ -26,14 +32,20 @@ extension ApiRequest where ResultType: Decodable, ParametersType: Encodable {
 }
 
 extension ApiRequest where ResultType: Decodable, ParametersType == [String: Any] {
-  public var response: Observable<ResultType> {
+  public var response: Observable<ApiRequestStatus<ResultType>> {
     return Observable.create { (observer) -> Disposable in
-      let request = self.request(success: { (result) in
-        observer.onNext(result)
-        observer.onCompleted()
-      }, failure: { (error) in
-        observer.onError(error)
-      })
+      let request = self.request(
+        progress: { (progress) in
+          observer.onNext(.progress(progress))
+        },
+        success: { (result) in
+          observer.onNext(.complete(result))
+          observer.onCompleted()
+        },
+        failure: { (error) in
+          observer.onError(error)
+        }
+      )
       return Disposables.create {
         request.cancel()
       }

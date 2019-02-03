@@ -11,8 +11,13 @@ import Balblair
 
 class ViewController: UIViewController, UIScrollViewDelegate {
   @IBAction fileprivate func push() {
-    _ = QiitaRequest().response.subscribe(onNext: { (result) in
-      print(result)
+    _ = QiitaRequest().response.subscribe(onNext: { (status) in
+      switch status {
+      case .progress(let progress):
+        print(progress.fractionCompleted)
+      case .complete(let result):
+        print(result)
+      }
     }, onError: { (error) in
       print(error)
     })

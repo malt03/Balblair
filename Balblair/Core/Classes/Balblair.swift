@@ -177,9 +177,16 @@ open class Balblair {
   {
     if !configuration.apiClientShouldBeginRequest(self, method: method, path: path, parameters: parameters, uploadData: uploadData) { return }
     
-    request.downloadProgress { (p) in
-      self.progress(method: method, path: path, parameters: parameters, uploadData: uploadData, progress: p, handler: progress)
-    }.validate().responseJSON { (response) in
+    if let request = request as? UploadRequest {
+      request.uploadProgress { (p) in
+        self.progress(method: method, path: path, parameters: parameters, uploadData: uploadData, progress: p, handler: progress)
+      }
+    } else {
+      request.downloadProgress { (p) in
+        self.progress(method: method, path: path, parameters: parameters, uploadData: uploadData, progress: p, handler: progress)
+      }
+    }
+    request.validate().responseJSON { (response) in
       let result = response.result
       if let error = result.error {
         self.failure(method: method, path: path, parameters: parameters, uploadData: uploadData, result: response.data, error: error, handler: failure)
