@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		ED2AF3202207B84B00476162 /* ApiRequestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2AF31F2207B84B00476162 /* ApiRequestStatus.swift */; };
 		ED2AF3212207B84B00476162 /* ApiRequestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2AF31F2207B84B00476162 /* ApiRequestStatus.swift */; };
+		ED2AF3232207D04700476162 /* ApiRequest+request.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2AF3222207D04700476162 /* ApiRequest+request.swift */; };
+		ED2AF3242207D04700476162 /* ApiRequest+request.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2AF3222207D04700476162 /* ApiRequest+request.swift */; };
 		ED5E987920922ABC00C71ED5 /* Balblair_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = ED5E987720922ABC00C71ED5 /* Balblair_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED5E988620922B0000C71ED5 /* Balblair_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = ED5E988420922B0000C71ED5 /* Balblair_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED5E98AD20922B7A00C71ED5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5E98AA20922B7A00C71ED5 /* Alamofire.framework */; };
@@ -17,8 +19,6 @@
 		ED5E98B520922CA600C71ED5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5E98B220922CA600C71ED5 /* RxSwift.framework */; };
 		ED81DC5B209330E5007D7517 /* DefaultConfigurationHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81DC4E209330E5007D7517 /* DefaultConfigurationHolder.swift */; };
 		ED81DC5C209330E5007D7517 /* DefaultConfigurationHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81DC4E209330E5007D7517 /* DefaultConfigurationHolder.swift */; };
-		ED81DC5D209330E5007D7517 /* ApiRequestWithData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81DC50209330E5007D7517 /* ApiRequestWithData.swift */; };
-		ED81DC5E209330E5007D7517 /* ApiRequestWithData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81DC50209330E5007D7517 /* ApiRequestWithData.swift */; };
 		ED81DC5F209330E5007D7517 /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81DC51209330E5007D7517 /* Encodable+Extensions.swift */; };
 		ED81DC60209330E5007D7517 /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81DC51209330E5007D7517 /* Encodable+Extensions.swift */; };
 		ED81DC61209330E5007D7517 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81DC52209330E5007D7517 /* ApiRequest.swift */; };
@@ -33,12 +33,11 @@
 		ED81DC6A209330E5007D7517 /* BalblairHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81DC56209330E5007D7517 /* BalblairHeader.swift */; };
 		ED81DC6B209330E5007D7517 /* ApiRequest+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81DC59209330E5007D7517 /* ApiRequest+Rx.swift */; };
 		ED81DC6C209330E5007D7517 /* ApiRequest+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81DC59209330E5007D7517 /* ApiRequest+Rx.swift */; };
-		ED81DC6D209330E5007D7517 /* ApiRequestWithData+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81DC5A209330E5007D7517 /* ApiRequestWithData+Rx.swift */; };
-		ED81DC6E209330E5007D7517 /* ApiRequestWithData+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81DC5A209330E5007D7517 /* ApiRequestWithData+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ED2AF31F2207B84B00476162 /* ApiRequestStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequestStatus.swift; sourceTree = "<group>"; };
+		ED2AF3222207D04700476162 /* ApiRequest+request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApiRequest+request.swift"; sourceTree = "<group>"; };
 		ED5E987420922ABC00C71ED5 /* Balblair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Balblair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED5E987720922ABC00C71ED5 /* Balblair_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Balblair_iOS.h; sourceTree = "<group>"; };
 		ED5E987820922ABC00C71ED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,7 +49,6 @@
 		ED5E98B120922CA600C71ED5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../../Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		ED5E98B220922CA600C71ED5 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../../Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
 		ED81DC4E209330E5007D7517 /* DefaultConfigurationHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultConfigurationHolder.swift; sourceTree = "<group>"; };
-		ED81DC50209330E5007D7517 /* ApiRequestWithData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequestWithData.swift; sourceTree = "<group>"; };
 		ED81DC51209330E5007D7517 /* Encodable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
 		ED81DC52209330E5007D7517 /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		ED81DC53209330E5007D7517 /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
@@ -58,7 +56,6 @@
 		ED81DC55209330E5007D7517 /* BalblairConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalblairConfiguration.swift; sourceTree = "<group>"; };
 		ED81DC56209330E5007D7517 /* BalblairHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalblairHeader.swift; sourceTree = "<group>"; };
 		ED81DC59209330E5007D7517 /* ApiRequest+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApiRequest+Rx.swift"; sourceTree = "<group>"; };
-		ED81DC5A209330E5007D7517 /* ApiRequestWithData+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApiRequestWithData+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +170,7 @@
 		ED81DC4F209330E5007D7517 /* Codable */ = {
 			isa = PBXGroup;
 			children = (
-				ED81DC50209330E5007D7517 /* ApiRequestWithData.swift */,
+				ED2AF3222207D04700476162 /* ApiRequest+request.swift */,
 				ED81DC51209330E5007D7517 /* Encodable+Extensions.swift */,
 				ED81DC52209330E5007D7517 /* ApiRequest.swift */,
 				ED81DC53209330E5007D7517 /* ErrorModel.swift */,
@@ -195,7 +192,6 @@
 			children = (
 				ED81DC59209330E5007D7517 /* ApiRequest+Rx.swift */,
 				ED2AF31F2207B84B00476162 /* ApiRequestStatus.swift */,
-				ED81DC5A209330E5007D7517 /* ApiRequestWithData+Rx.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -316,14 +312,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED2AF3232207D04700476162 /* ApiRequest+request.swift in Sources */,
 				ED81DC65209330E5007D7517 /* Balblair.swift in Sources */,
 				ED2AF3202207B84B00476162 /* ApiRequestStatus.swift in Sources */,
 				ED81DC69209330E5007D7517 /* BalblairHeader.swift in Sources */,
 				ED81DC63209330E5007D7517 /* ErrorModel.swift in Sources */,
 				ED81DC6B209330E5007D7517 /* ApiRequest+Rx.swift in Sources */,
-				ED81DC5D209330E5007D7517 /* ApiRequestWithData.swift in Sources */,
 				ED81DC5F209330E5007D7517 /* Encodable+Extensions.swift in Sources */,
-				ED81DC6D209330E5007D7517 /* ApiRequestWithData+Rx.swift in Sources */,
 				ED81DC61209330E5007D7517 /* ApiRequest.swift in Sources */,
 				ED81DC67209330E5007D7517 /* BalblairConfiguration.swift in Sources */,
 				ED81DC5B209330E5007D7517 /* DefaultConfigurationHolder.swift in Sources */,
@@ -334,14 +329,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED2AF3242207D04700476162 /* ApiRequest+request.swift in Sources */,
 				ED81DC66209330E5007D7517 /* Balblair.swift in Sources */,
 				ED2AF3212207B84B00476162 /* ApiRequestStatus.swift in Sources */,
 				ED81DC6A209330E5007D7517 /* BalblairHeader.swift in Sources */,
 				ED81DC64209330E5007D7517 /* ErrorModel.swift in Sources */,
 				ED81DC6C209330E5007D7517 /* ApiRequest+Rx.swift in Sources */,
-				ED81DC5E209330E5007D7517 /* ApiRequestWithData.swift in Sources */,
 				ED81DC60209330E5007D7517 /* Encodable+Extensions.swift in Sources */,
-				ED81DC6E209330E5007D7517 /* ApiRequestWithData+Rx.swift in Sources */,
 				ED81DC62209330E5007D7517 /* ApiRequest.swift in Sources */,
 				ED81DC68209330E5007D7517 /* BalblairConfiguration.swift in Sources */,
 				ED81DC5C209330E5007D7517 /* DefaultConfigurationHolder.swift in Sources */,

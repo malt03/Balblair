@@ -11,6 +11,7 @@ import Balblair
 
 struct QiitaRequest: MyApiRequest {
   typealias ResultType = [QiitaResult]
+  var encodeType: EncodeType { return .json }
   
   let method = Balblair.Method.get
   let path = "api/v2/items"

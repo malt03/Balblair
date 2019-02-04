@@ -1,35 +1,37 @@
 //
-//  ApiRequest+Rx.swift
+//  ApiRequestWithData+Rx.swift
 //  Pods
 //
 //  Created by Koji Murata on 2016/12/06.
 //
 //
 
-import Foundation
+import Alamofire
 import RxSwift
 
 extension ApiRequest where ResultType: Decodable, ParametersType: Encodable {
   public var response: Observable<ResultType> {
     return Observable.create { (observer) -> Disposable in
-      let request = self.request(
+      var request: Request? = nil
+      self.request(
+        requestCreated: { request = $0 },
         success: { (result) in
           observer.onNext(result)
           observer.onCompleted()
         },
-        failure: { (error) in
-          observer.onError(error)
-        }
+        failure: { observer.onError($0) }
       )
       return Disposables.create {
-        request.cancel()
+        request?.cancel()
       }
     }
   }
   
   public var responseWithProgress: Observable<ApiRequestStatus<ResultType>> {
     return Observable.create { (observer) -> Disposable in
-      let request = self.request(
+      var request: Request? = nil
+      self.request(
+        requestCreated: { request = $0 },
         progress: { (progress) in
           observer.onNext(.progress(progress))
         },
@@ -37,12 +39,10 @@ extension ApiRequest where ResultType: Decodable, ParametersType: Encodable {
           observer.onNext(.complete(result))
           observer.onCompleted()
         },
-        failure: { (error) in
-          observer.onError(error)
-        }
+        failure: { observer.onError($0) }
       )
       return Disposables.create {
-        request.cancel()
+        request?.cancel()
       }
     }
   }
@@ -51,24 +51,26 @@ extension ApiRequest where ResultType: Decodable, ParametersType: Encodable {
 extension ApiRequest where ResultType: Decodable, ParametersType == [String: Any] {
   public var response: Observable<ResultType> {
     return Observable.create { (observer) -> Disposable in
-      let request = self.request(
+      var request: Request? = nil
+      self.request(
+        requestCreated: { request = $0 },
         success: { (result) in
           observer.onNext(result)
           observer.onCompleted()
         },
-        failure: { (error) in
-          observer.onError(error)
-        }
+        failure: { observer.onError($0) }
       )
       return Disposables.create {
-        request.cancel()
+        request?.cancel()
       }
     }
   }
   
   public var responseWithProgress: Observable<ApiRequestStatus<ResultType>> {
     return Observable.create { (observer) -> Disposable in
-      let request = self.request(
+      var request: Request? = nil
+      self.request(
+        requestCreated: { request = $0 },
         progress: { (progress) in
           observer.onNext(.progress(progress))
         },
@@ -76,12 +78,10 @@ extension ApiRequest where ResultType: Decodable, ParametersType == [String: Any
           observer.onNext(.complete(result))
           observer.onCompleted()
         },
-        failure: { (error) in
-          observer.onError(error)
-        }
+        failure: { observer.onError($0) }
       )
       return Disposables.create {
-        request.cancel()
+        request?.cancel()
       }
     }
   }

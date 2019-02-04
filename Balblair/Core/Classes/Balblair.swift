@@ -60,57 +60,7 @@ open class Balblair {
     self.configuration = configuration
   }
   
-  open func get(
-    path: String,
-    parameters: [String: Any]? = nil,
-    progress: ProgressCallback? = nil,
-    success: SuccessCallback? = nil,
-    failure: FailureCallback? = nil)
-  {
-    request(method: .get, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
-  }
-
-  open func post(
-    path: String,
-    parameters: [String: Any]? = nil,
-    progress: ProgressCallback? = nil,
-    success: SuccessCallback? = nil,
-    failure: FailureCallback? = nil)
-  {
-    request(method: .post, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
-  }
-  
-  open func put(
-    path: String,
-    parameters: [String: Any]? = nil,
-    progress: ProgressCallback? = nil,
-    success: SuccessCallback? = nil,
-    failure: FailureCallback? = nil)
-  {
-    request(method: .put, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
-  }
-  
-  open func patch(
-    path: String,
-    parameters: [String: Any]? = nil,
-    progress: ProgressCallback? = nil,
-    success: SuccessCallback? = nil,
-    failure: FailureCallback? = nil)
-  {
-    request(method: .patch, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
-  }
-  
-  open func delete(
-    path: String,
-    parameters: [String: Any]? = nil,
-    progress: ProgressCallback? = nil,
-    success: SuccessCallback? = nil,
-    failure: FailureCallback? = nil)
-  {
-    request(method: .delete, path: path, parameters: parameters, progress: progress, success: success, failure: failure)
-  }
-  
-  open func upload(
+  internal func requestForm(
     method: Method = .post,
     path: String,
     parameters: [String: Any]? = nil,
@@ -118,8 +68,8 @@ open class Balblair {
     progress: ProgressCallback? = nil,
     success: SuccessCallback? = nil,
     failure: FailureCallback? = nil,
-    encodingCompletion: ((_ request: Request) -> Void)? = nil)
-  {
+    encodingCompletion: ((_ request: Request) -> Void)? = nil
+  ) {
     Alamofire.upload(
       multipartFormData: { (d) in
         uploadData.forEach { d.append($0.data, withName: $0.name, fileName: $0.fileName, mimeType: $0.mimeType) }
@@ -147,11 +97,10 @@ open class Balblair {
   }
   
   @discardableResult
-  internal func request(
+  internal func requestJSON(
     method: Method,
     path: String,
     parameters: [String: Any]? = nil,
-    progress: ProgressCallback? = nil,
     success: SuccessCallback? = nil,
     failure: FailureCallback? = nil) -> DataRequest
   {
@@ -161,7 +110,7 @@ open class Balblair {
       parameters: parameters,
       headers: configuration.headerBuilder.build()
     )
-    run(request: request, method: method, path: path, parameters: parameters, uploadData: [], progress: progress, success: success, failure: failure)
+    run(request: request, method: method, path: path, parameters: parameters, uploadData: [], progress: nil, success: success, failure: failure)
     return request
   }
   
@@ -179,10 +128,6 @@ open class Balblair {
     
     if let request = request as? UploadRequest {
       request.uploadProgress { (p) in
-        self.progress(method: method, path: path, parameters: parameters, uploadData: uploadData, progress: p, handler: progress)
-      }
-    } else {
-      request.downloadProgress { (p) in
         self.progress(method: method, path: path, parameters: parameters, uploadData: uploadData, progress: p, handler: progress)
       }
     }
