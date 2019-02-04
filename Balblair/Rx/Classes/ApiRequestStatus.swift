@@ -6,6 +6,7 @@
 //
 
 import RxSwift
+import Foundation
 
 public enum ApiRequestStatus<ResultType> {
   case progress(Progress)
