@@ -9,6 +9,23 @@
 import Foundation
 import Alamofire
 
+extension ApiRequest {
+  private func progressHandler(progress: Balblair.ProgressCallback?) -> Balblair.ProgressCallback {
+    return { (p) in
+      self.didProgress(progress: p)
+      progress?(p)
+    }
+  }
+  
+  private func failureHandler(failure: (( _ errorModel: ErrorModelType) -> Void)?) -> ((Data?, Error) -> Void) {
+    return { (result, error) in
+      let errorModel = ErrorModelType(error: error, result: result, decoder: self.decoder)
+      failure?(errorModel)
+      self.didFailure(error: errorModel)
+    }
+  }
+}
+
 extension ApiRequest where ResultType: Decodable, ParametersType: Encodable {
   public func request(
     requestCreated: ((_ request: Request) -> Void)? = nil,
@@ -35,8 +52,8 @@ extension ApiRequest where ResultType: Decodable, ParametersType: Encodable {
       method: method,
       path: path,
       parameters: parameters.createDictionary(encoder: encoder),
-      uploadData: uploadData,
-      progress: progress,
+      uploadData: uploadData ?? [],
+      progress: progressHandler(progress: progress),
       success: successHandler(success: success, failure: failure),
       failure: failureHandler(failure: failure),
       encodingCompletion: { requestCreated?($0) }
@@ -79,13 +96,7 @@ extension ApiRequest where ResultType: Decodable, ParametersType: Encodable {
     }
   }
   
-  private func failureHandler(failure: (( _ errorModel: ErrorModelType) -> Void)?) -> ((Data?, Error) -> Void) {
-    return { (result, error) in
-      let errorModel = ErrorModelType(error: error, result: result, decoder: self.decoder)
-      failure?(errorModel)
-      self.didFailure(error: errorModel)
-    }
-  }
+  
 }
 
 extension ApiRequest where ResultType: Decodable, ParametersType == [String: Any] {
@@ -114,8 +125,8 @@ extension ApiRequest where ResultType: Decodable, ParametersType == [String: Any
       method: method,
       path: path,
       parameters: parameters,
-      uploadData: uploadData,
-      progress: progress,
+      uploadData: uploadData ?? [],
+      progress: progressHandler(progress: progress),
       success: successHandler(success: success, failure: failure),
       failure: failureHandler(failure: failure),
       encodingCompletion: { requestCreated?($0) }
@@ -155,14 +166,6 @@ extension ApiRequest where ResultType: Decodable, ParametersType == [String: Any
         failure?(errorModel)
         self.didFailure(error: errorModel)
       }
-    }
-  }
-  
-  private func failureHandler(failure: (( _ errorModel: ErrorModelType) -> Void)?) -> ((Data?, Error) -> Void) {
-    return { (result, error) in
-      let errorModel = ErrorModelType(error: error, result: result, decoder: self.decoder)
-      failure?(errorModel)
-      self.didFailure(error: errorModel)
     }
   }
 }

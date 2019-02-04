@@ -27,11 +27,12 @@ public protocol ApiRequest {
   var parameters: ParametersType { get }
 
   // optional
-  var uploadData: [Balblair.UploadData] { get }
+  var uploadData: [Balblair.UploadData]? { get }
   var encodeType: EncodeType { get }
 
   associatedtype ErrorResultType: Decodable = DefaultErrorResult
   func willBeginRequest(parameters: ParametersType)
+  func didProgress(progress: Progress)
   func didSuccess(result: ResultType)
   func didFailure(error: ErrorModelType)
   var configuration: BalblairConfiguration { get }
@@ -42,10 +43,11 @@ public protocol ApiRequest {
 }
 
 extension ApiRequest {
-  public var uploadData: [Balblair.UploadData] { return [] }
+  public var uploadData: [Balblair.UploadData]? { return nil }
   public var encodeType: EncodeType { return .form }
   
   public func willBeginRequest(parameters: ParametersType) {}
+  public func didProgress(progress: Progress) {}
   public func didSuccess(result: ResultType) {}
   public func didFailure(error: ErrorModelType) {}
   public var configuration: BalblairConfiguration {
