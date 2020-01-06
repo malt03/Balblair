@@ -21,15 +21,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 class Configuration: BalblairConfiguration {
-  let baseUrl = URL(string: "https://qiita.com")!
+  let baseUrl = URL(string: "https://httpbin.org")!
   var headerBuilder: BalblairHeaderBuilder = HeaderBuilder()
-  func apiClientShouldBeginRequest(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?) -> Bool {
+  func apiClientShouldBeginRequest(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String : Any]?, uploadData: [Balblair.UploadData]) -> Bool {
     print(path)
     return true
   }
-  func apiClientShouldProgress(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, progress: Progress) -> Bool { return true }
-  func apiClientShouldSuccess(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, result: AnyObject?) -> Error? { return nil }
-  func apiClientShouldFailure(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String: AnyObject]?, result: AnyObject?, error: Error) -> Bool { return true }
+  func apiClientShouldProgress(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String : Any]?, uploadData: [Balblair.UploadData], progress: Progress) -> Bool { return true }
+  func apiClientShouldSuccess(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String : Any]?, uploadData: [Balblair.UploadData], result: Any?) -> Error? {
+    print(String(data: (result as! Data), encoding: .utf8)!)
+    return nil
+  }
+  func apiClientShouldFailure(_ apiClient: Balblair, method: Balblair.Method, path: String, parameters: [String : Any]?, uploadData: [Balblair.UploadData], result: Any?, error: Error) -> Bool { return true }
 }
 
 class HeaderBuilder: BalblairHeaderBuilder {

@@ -11,7 +11,7 @@ import Balblair
 
 class ViewController: UIViewController, UIScrollViewDelegate {
   @IBAction fileprivate func push() {
-    _ = QiitaRequest().responseWithProgress.subscribe(onNext: { (status) in
+    _ = HttpBinRequest().responseWithProgress.subscribe(onNext: { (status) in
       switch status {
       case .progress(let progress):
         print(progress.fractionCompleted)
